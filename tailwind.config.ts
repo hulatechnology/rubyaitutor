@@ -47,6 +47,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        cta: {
+          DEFAULT: "hsl(var(--cta))",
+          hover: "hsl(var(--cta-hover))",
+          foreground: "hsl(var(--cta-foreground))",
+        },
+        brand: {
+          deep: "hsl(var(--brand-deep))",
+          highlight: "hsl(var(--brand-highlight))",
+          panel: "hsl(var(--brand-panel))",
+        },
+        "blue-tint": "hsl(var(--blue-tint))",
         sage: {
           DEFAULT: "hsl(var(--sage))",
           light: "hsl(var(--sage-light))",
