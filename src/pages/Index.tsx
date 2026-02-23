@@ -13,78 +13,78 @@ import {
 
 const reasons = [
   {
-    title: "Gaps in foundational concepts",
-    desc: "If a child didn't fully grasp fractions in Grade 4, algebra in Grade 8 will feel impossible. These invisible gaps compound over time.",
+    title: "Finds the missing concepts",
+    desc: "Ruby analyses your child's answers to identify the exact skills they never fully understood, even from earlier grades.",
   },
   {
-    title: "Memorising instead of understanding",
-    desc: "Many children learn to pass tests — not to understand. When the format changes or the questions get harder, they feel lost.",
+    title: "Explains in a way they grasp",
+    desc: "Lessons adapt to your child's level and language so they finally understand the why, not just the answer.",
   },
   {
-    title: "Fear of asking for help",
-    desc: "Children often hide confusion because they're embarrassed. The longer it goes unnoticed, the harder it is to catch up.",
+    title: "Personal learning path",
+    desc: "Every child follows a different progression based on what they know and what they need next.",
   },
   {
-    title: "Effort without direction",
-    desc: "Studying more doesn't help if your child is studying the wrong things. Without diagnosis, hard work can feel pointless.",
+    title: "Supports ongoing learning",
+    desc: "As your child progresses at school, Ruby continuously adjusts to keep understanding strong.",
   },
 ];
 
 const steps = [
   {
     icon: Search,
-    title: "Your child completes a learning checkup",
-    desc: "A short, friendly conversation — not a test. Ruby adapts in real time to understand what your child knows and where things get fuzzy.",
+    title: "A short learning check",
+    desc: "Ruby asks simple questions to understand how your child is thinking. No scores, no pressure.",
   },
   {
     icon: ClipboardList,
-    title: "Ruby identifies the hidden gaps",
-    desc: "Most struggles aren't about the current topic — they're about something missed months or years ago. Ruby traces the problem back to its root.",
+    title: "Missing concepts are discovered",
+    desc: "Ruby identifies the exact ideas your child didn't fully grasp, even from earlier grades.",
   },
   {
     icon: Route,
-    title: "You receive a personalised learning map",
-    desc: "A clear, jargon-free report showing exactly what your child needs to work on, in the right order.",
+    title: "A clear learning path is created",
+    desc: "You get clear guidance showing exactly how your child will catch up.",
   },
   {
     icon: Sparkles,
-    title: "Your child rebuilds their foundation",
-    desc: "With guided exercises and gentle practice, your child fills in the gaps — so new learning finally makes sense.",
+    title: "Understanding is rebuilt",
+    desc: "Ruby teaches the missing foundations step by step so new schoolwork becomes easier to follow.",
   },
 ];
 
 const reportFeatures = [
-  "A clear summary of your child's current understanding",
-  "The exact foundational gaps holding them back",
-  "Which concepts to work on first, in the right order",
-  "Personalised recommendations for how to practise",
-  "A confidence assessment — how your child feels about learning",
+  "What your child confidently knows and where they struggle",
+  "The specific skills preventing progress",
+  "The first step your child needs to take to move forward",
+  "How Ruby will teach your child moving forward",
+  "How confidence changes as learning starts to make sense",
 ];
 
 const faqs = [
   {
-    q: "What exactly is Ruby?",
-    a: "Ruby is a learning diagnosis system. It identifies the hidden gaps in your child's understanding and gives you a clear plan to help them catch up.",
+    q: "Is the learning check stressful?",
+    a: "No. It isn't a test and there are no scores or time pressure. It's a gentle question and answer activity. Ruby asks simple questions and adjusts based on your child's responses. The goal is to understand how they think, not to catch them out. Many children actually relax during the activity because they can answer privately without worrying about classmates.",
   },
   {
-    q: "How long does the checkup take?",
-    a: "About 15 minutes. It's a gentle, adaptive conversation — not a stressful test. Your child can do it from home at their own pace.",
+    q: "Is Ruby a tutor, an app, or something else?",
+    a: "Ruby is best understood as a learning diagnosis and guidance system. It first works out what your child understands and what they missed, then teaches those specific concepts step by step. So instead of replacing a teacher or giving random help, Ruby identifies the cause of difficulty and guides learning from that point. It combines the attention of a private tutor with a structured learning plan that adapts to your child.",
   },
   {
-    q: "Will my child feel stressed or tested?",
-    a: "Not at all. Ruby is designed to feel like a conversation, not an exam. There are no scores to worry about. Most children find it surprisingly comfortable.",
+    q: "What makes Ruby different from extra classes?",
+    a: "Extra classes repeat the topic. Ruby identifies the cause. If your child struggles with algebra, extra lessons often teach more algebra. But the real issue may be fractions or number sense learned years earlier. Ruby traces mistakes back to the earlier concept and teaches that first. Instead of more work, your child gets the right work in the right order.",
   },
   {
-    q: "How is this different from extra lessons?",
-    a: "Extra lessons usually focus on the current syllabus. But if the real problem is a gap from two years ago, more lessons on today's work won't help. Ruby finds the root cause first.",
+    q: "How much time does this take?",
+    a: "The learning check takes only a few minutes. After that, your child can use Ruby in short sessions that fit around normal school and their homework. Most families use it for brief regular practice rather than long study periods. The aim is steady progress, not extra pressure.",
   },
   {
-    q: "What ages or grades does Ruby support?",
-    a: "Ruby currently supports learners from Grade 3 to Grade 12, across core subjects like Maths, English, and Science.",
+    q: "Should I still use this if my child gets good marks?",
+    a: "Yes. Good marks don't always mean full understanding. Some children cope by memorising methods. When the work becomes more complex, confidence suddenly drops. Ruby helps strengthen foundations early so future topics remain manageable. For strong students, it often improves confidence and prepares them for harder work ahead.",
   },
   {
-    q: "Can I cancel at any time?",
-    a: "Yes. There are no contracts or long-term commitments. You can cancel anytime.",
+    q: "How involved do I need to be as a parent?",
+    a: "Very little. Your child can use Ruby independently. You don't need to teach the lessons or supervise every session. You can simply check the report and follow their progress.",
   },
 ];
 
@@ -100,13 +100,11 @@ const Index = () => {
                 For parents who care deeply
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-                Your child studies hard.<br />
-                <span className="text-primary">Why aren't they improving?</span>
+                Your child isn't struggling with effort.<br />
+                <span className="text-primary">They're struggling with understanding.</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
-                Ruby finds the hidden gaps in your child's learning foundation —
-                the ones that textbooks and tutors often miss — and gives you
-                a clear path to help them grow.
+                Ruby finds the root cause of mistakes and rebuilds understanding step by step
               </p>
               <CTAButton />
             </div>
@@ -126,11 +124,10 @@ const Index = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl mb-5">
-              It's not about studying harder
+              You've probably experienced this before
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              If your child is working hard but still falling behind, it's almost
-              never about intelligence or laziness. Here's what's really going on.
+              Children rarely fall behind in the topic they are learning today. They fall behind in a concept they missed long ago because Math, reading, and science are built step by step. Each new skill depends on the one before it. When a single step is missing, students don't just get one question wrong, they stop understanding entire topics. Ruby finds the exact point learning broke down and rebuilds your child's foundation step by step.
             </p>
           </div>
           <div className="space-y-6">
@@ -155,11 +152,10 @@ const Index = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl mb-5">
-              How Ruby helps your child
+              How Ruby helps your child learn
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Ruby isn't a course or a chatbot. It's a learning diagnosis — a way
-              to finally understand what's really going on beneath the surface.
+              Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
             </p>
           </div>
           <div className="space-y-10">
@@ -186,12 +182,10 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-14 items-center max-w-5xl mx-auto">
             <div>
               <h2 className="text-3xl md:text-4xl mb-5">
-                Your child's learning report
+                See what your child actually understands
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                After the checkup, you'll receive a detailed but easy-to-read
-                report showing exactly where your child stands — and what to do
-                next.
+                Ruby turns your child's answers into a clear explanation of their strengths, their gaps, and how to support them at home.
               </p>
               <div className="space-y-4 mb-10">
                 {reportFeatures.map((f) => (
@@ -345,11 +339,10 @@ const Index = () => {
       <section className="py-24 md:py-28 bg-background">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl mb-5">
-            Every child deserves to understand
+            You don't have to guess anymore
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-            Start with a free learning checkup. It takes just a few minutes and
-            could change everything.
+            In less than 10 questions you'll see exactly where your child is struggling and how to help them move forward.
           </p>
           <CTAButton />
         </div>
