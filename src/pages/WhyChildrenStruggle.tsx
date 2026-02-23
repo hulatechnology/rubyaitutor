@@ -3,24 +3,24 @@ import CTAButton from "@/components/CTAButton";
 
 const reasons = [
   {
-    title: "Gaps in foundational concepts",
-    desc: "If a child didn't fully grasp fractions in Grade 4, algebra in Grade 8 will feel impossible. These invisible gaps compound over time.",
+    title: "Missing building blocks",
+    desc: "If a child never fully understood fractions earlier on, later topics like algebra stop making sense.",
   },
   {
-    title: "Memorising instead of understanding",
-    desc: "Many children learn to pass tests — not to understand. When the format changes or the questions get harder, they feel lost.",
+    title: "Memorising, not understanding",
+    desc: "Your child may know the steps but not the reason. When questions change slightly, they feel stuck.",
   },
   {
-    title: "Fear of asking for help",
-    desc: "Children often hide confusion because they're embarrassed. The longer it goes unnoticed, the harder it is to catch up.",
+    title: "They won't say they're confused",
+    desc: "Children often stay quiet because they don't want to look wrong in front of others.",
   },
   {
-    title: "One-size-fits-all teaching",
-    desc: "Classrooms move at a set pace. If a child needs a little more time on one concept, the class has already moved on.",
+    title: "The class moves on",
+    desc: "Schools must keep pace. If a concept takes longer for one child, there is rarely time to revisit it.",
   },
   {
-    title: "Effort without direction",
-    desc: "Studying more doesn't help if your child is studying the wrong things. Without diagnosis, hard work can feel pointless.",
+    title: "Working hard, no progress",
+    desc: "Without knowing what to fix, effort becomes frustration.",
   },
 ];
 
@@ -28,10 +28,9 @@ const WhyChildrenStruggle = () => (
   <Layout>
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-3xl text-center">
-        <h1 className="text-4xl md:text-5xl mb-6">Why Children Struggle</h1>
+        <h1 className="text-4xl md:text-5xl mb-6">It doesn't start in today's lesson</h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          If your child is working hard but still falling behind, you're not alone.
-          And it's almost never about intelligence or laziness.
+          Children rarely fall behind in the topic they are learning now. They fall behind in something they were expected to already know.
         </p>
       </div>
     </section>
@@ -51,9 +50,9 @@ const WhyChildrenStruggle = () => (
 
     <section className="py-20 bg-background text-center">
       <div className="container mx-auto px-4 max-w-2xl">
-        <h2 className="text-3xl mb-4">The first step is understanding</h2>
+        <h2 className="text-3xl mb-4">You don't have to guess anymore</h2>
         <p className="text-muted-foreground mb-8">
-          Ruby helps you see what's really going on — so you can help your child move forward with clarity.
+          In less than 10 questions you'll see exactly where your child is struggling and how to help them move forward.
         </p>
         <CTAButton />
       </div>

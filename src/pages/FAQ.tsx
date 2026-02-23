@@ -9,36 +9,44 @@ import {
 
 const faqs = [
   {
-    q: "What exactly is Ruby?",
-    a: "Ruby is a learning diagnosis system. It identifies the hidden gaps in your child's understanding — the foundational concepts they missed — and gives you a clear plan to help them catch up.",
+    q: "Is the learning check stressful?",
+    a: "No. It isn't a test and there are no scores or time pressure. It's a gentle question and answer activity. Ruby asks simple questions and adjusts based on your child's responses. The goal is to understand how they think, not to catch them out. Many children actually relax during the activity because they can answer privately without worrying about classmates.",
   },
   {
-    q: "Is this an online course or tutoring service?",
-    a: "No. Ruby is not a course and not a tutor. Think of it more like a learning health check — it diagnoses the problem so you know exactly what kind of help your child needs.",
+    q: "Is Ruby a tutor, an app, or something else?",
+    a: "Ruby is best understood as a learning diagnosis and guidance system. It first works out what your child understands and what they missed, then teaches those specific concepts step by step. So instead of replacing a teacher or giving random help, Ruby identifies the cause of difficulty and guides learning from that point. It combines the attention of a private tutor with a structured learning plan that adapts to your child.",
   },
   {
-    q: "How long does the checkup take?",
-    a: "The initial learning checkup takes about 15 minutes. It's a gentle, adaptive conversation — not a stressful test. Your child can do it from home at their own pace.",
+    q: "Is this like hiring a tutor?",
+    a: "Not quite. A tutor usually helps with current homework or explains today's lesson. Ruby focuses on why the lesson is difficult in the first place. Often the problem comes from an earlier concept your child was expected to already know. By finding and rebuilding those missing foundations, your child can follow school lessons more easily and improve their academic performance.",
   },
   {
-    q: "What ages or grades does Ruby support?",
-    a: "Ruby currently supports learners from Grade 3 to Grade 12, across core subjects like Maths, English, and Science.",
+    q: "What makes Ruby different from extra classes?",
+    a: "Extra classes repeat the topic. Ruby identifies the cause. If your child struggles with algebra, extra lessons often teach more algebra. But the real issue may be fractions or number sense learned years earlier. Ruby traces mistakes back to the earlier concept and teaches that first. Instead of more work, your child gets the right work in the right order.",
   },
   {
-    q: "Will my child feel stressed or tested?",
-    a: "Not at all. Ruby is designed to feel like a conversation, not an exam. There are no scores to worry about, and it adapts to your child's pace. Most children find it surprisingly comfortable.",
+    q: "How much time does this take?",
+    a: "The learning check takes only a few minutes. After that, your child can use Ruby in short sessions that fit around normal school and their homework. Most families use it for brief regular practice rather than long study periods. The aim is steady progress, not extra pressure.",
   },
   {
-    q: "How is this different from extra lessons?",
-    a: "Extra lessons usually focus on the current syllabus. But if the real problem is a gap from two years ago, more lessons on today's work won't help. Ruby finds the root cause first.",
+    q: "What will the results show me?",
+    a: "You receive a clear learning report, not just a score. It will explain: what your child understands confidently, what concepts they missed, where learning first broke down, and what Ruby will teach next. You will finally know why your child has been getting stuck and how improvement will happen.",
   },
   {
-    q: "What do I get after the checkup?",
-    a: "You receive a clear, jargon-free report showing where your child's gaps are, which concepts to focus on, and in what order. It's designed for parents — not educators.",
+    q: "Should I still use this if my child gets good marks?",
+    a: "Yes. Good marks don't always mean full understanding. Some children cope by memorising methods. When the work becomes more complex, confidence suddenly drops. Ruby helps strengthen foundations early so future topics remain manageable. For strong students, it often improves confidence and prepares them for harder work ahead.",
   },
   {
-    q: "Can I cancel at any time?",
-    a: "Yes. If you're on the Guided Recovery plan, you can cancel anytime. There are no contracts or long-term commitments.",
+    q: "How involved do I need to be as a parent?",
+    a: "Very little. Your child can use Ruby independently. You don't need to teach the lessons or supervise every session. You can simply check the report and follow their progress.",
+  },
+  {
+    q: "Which school levels does Ruby cover?",
+    a: "Ruby supports school-age learners from Grade 1 to 12. The system adapts to your child's current understanding rather than their grade alone. If they need to revisit earlier material, Ruby will. If they are ready to move forward, it adjusts accordingly.",
+  },
+  {
+    q: "What happens if I want to stop?",
+    a: "You can stop at any time. There is no long-term commitment. If you decide Ruby is not right for your family, you can cancel and your access will end immediately. The goal is to help your child, not to lock you into a contract.",
   },
 ];
 
