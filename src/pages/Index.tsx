@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
+import TrustStrip from "@/components/TrustStrip";
 import heroImage from "@/assets/hero-illustration.jpg";
 import reportImage from "@/assets/parent-report.jpg";
 import { Search, ClipboardList, Route, Sparkles, CheckCircle, Target, BarChart3, Award } from "lucide-react";
@@ -92,18 +93,18 @@ const Index = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-up">
               <p className="text-sm font-medium text-primary mb-4 tracking-wide uppercase">
                 For parents who care deeply
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-8">
                 Your child isn't struggling with effort.<br />
                 <span className="text-primary">They're struggling with understanding.</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-lg">
                 Ruby finds the root cause of mistakes and rebuilds understanding step by step
               </p>
               <CTAButton />
@@ -120,38 +121,38 @@ const Index = () => {
       </section>
 
       {/* ── Why Children Struggle ── */}
-      <section className="py-20 md:py-24 bg-coral-light">
+      <section className="py-24 md:py-32 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl mb-5">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl mb-6">
               You've probably experienced this before
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Children rarely fall behind in the topic they are learning today. They fall behind in a concept they missed long ago because Math, reading, and science are built step by step. Each new skill depends on the one before it. When a single step is missing, students don't just get one question wrong, they stop understanding entire topics. Ruby finds the exact point learning broke down and rebuilds your child's foundation step by step.
             </p>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-5">
             {reasons.map((r) => (
               <div
                 key={r.title}
-                className="bg-background rounded-xl p-7 border border-border"
+                className="bg-card rounded-xl p-8 border border-border shadow-sm"
               >
-                <h3 className="text-xl mb-2">{r.title}</h3>
+                <h3 className="text-xl mb-3">{r.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{r.desc}</p>
               </div>
             ))}
           </div>
-          <div className="text-center mt-14">
+          <div className="text-center mt-16">
             <CTAButton />
           </div>
         </div>
       </section>
 
       {/* ── How Ruby Works ── */}
-      <section className="py-20 md:py-24 bg-background">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl mb-5">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl mb-6">
               How Ruby helps your child learn
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -161,8 +162,8 @@ const Index = () => {
           <div className="space-y-10">
             {steps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="flex gap-6 items-start">
-                <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center shrink-0">
-                  <span className="text-lg font-semibold text-secondary-foreground">
+                <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shrink-0">
+                  <span className="text-lg font-bold text-primary-foreground">
                     {i + 1}
                   </span>
                 </div>
@@ -173,24 +174,27 @@ const Index = () => {
               </div>
             ))}
           </div>
+          <div className="text-center mt-16">
+            <CTAButton />
+          </div>
         </div>
       </section>
 
       {/* ── The Learning Report ── */}
-      <section className="py-20 md:py-24 bg-sage-light">
+      <section className="py-24 md:py-32 bg-sage-light">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-14 items-center max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
             <div>
-              <h2 className="text-3xl md:text-4xl mb-5">
+              <h2 className="text-3xl md:text-4xl mb-6">
                 See what your child actually understands
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-10">
                 Ruby turns your child's answers into a clear explanation of their strengths, their gaps, and how to support them at home.
               </p>
-              <div className="space-y-4 mb-10">
+              <div className="space-y-4 mb-12">
                 {reportFeatures.map((f) => (
                   <div key={f} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-sage shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <p className="text-foreground leading-relaxed">{f}</p>
                   </div>
                 ))}
@@ -209,10 +213,10 @@ const Index = () => {
       </section>
 
       {/* ── Built to Keep Children Engaged ── */}
-      <section className="py-20 md:py-24 bg-background">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl mb-5">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl mb-6">
               Built to keep children engaged
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -222,12 +226,12 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Session mockup */}
-          <div className="bg-card rounded-2xl border border-border p-8 md:p-10 max-w-2xl mx-auto">
+          {/* Session mockup — dashboard style */}
+          <div className="bg-card rounded-2xl border border-border shadow-sm p-8 md:p-10 max-w-2xl mx-auto">
             {/* Today's mission */}
-            <div className="mb-8">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+            <div className="mb-10">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Target className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -242,17 +246,17 @@ const Index = () => {
             </div>
 
             {/* Progress bar */}
-            <div className="mb-8">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                  <BarChart3 className="w-5 h-5 text-secondary-foreground" />
+            <div className="mb-10">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <BarChart3 className="w-5 h-5 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wide mb-2">
                     Foundation recovery
                   </p>
                   <Progress value={62} className="h-3" />
-                  <p className="text-xs text-muted-foreground mt-1">
+                  <p className="text-xs text-muted-foreground mt-2">
                     62% of gaps resolved
                   </p>
                 </div>
@@ -260,10 +264,10 @@ const Index = () => {
             </div>
 
             {/* Milestone */}
-            <div className="border-t border-border pt-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Award className="w-5 h-5 text-accent-foreground" />
+            <div className="border-t border-border pt-8">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground uppercase tracking-wide">
@@ -272,7 +276,7 @@ const Index = () => {
                   <p className="font-medium text-foreground">
                     Fractions foundation complete
                   </p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground mt-0.5">
                     Achieved after 8 focused sessions
                   </p>
                 </div>
@@ -280,7 +284,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 mt-12 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-3 gap-8 mt-14 max-w-2xl mx-auto">
             {[
               {
                 label: "Routine",
@@ -296,7 +300,7 @@ const Index = () => {
               },
             ].map((item) => (
               <div key={item.label} className="text-center">
-                <p className="font-semibold text-foreground mb-1">{item.label}</p>
+                <p className="font-semibold text-foreground mb-2">{item.label}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
@@ -304,29 +308,29 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-14">
+          <div className="text-center mt-16">
             <CTAButton />
           </div>
         </div>
       </section>
 
       {/* ── FAQ Reassurance ── */}
-      <section className="py-20 md:py-24 bg-coral-light">
+      <section className="py-24 md:py-32 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl text-center mb-12">
+          <h2 className="text-3xl md:text-4xl text-center mb-14">
             Common questions from parents
           </h2>
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, i) => (
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="bg-background border border-border rounded-xl px-6"
+                className="bg-card border border-border rounded-xl px-6 shadow-sm"
               >
                 <AccordionTrigger className="text-left text-base font-medium py-5 hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
@@ -335,13 +339,16 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── Trust Strip ── */}
+      <TrustStrip />
+
       {/* ── Final CTA ── */}
-      <section className="py-24 md:py-28 bg-background">
+      <section className="py-28 md:py-36 bg-background">
         <div className="container mx-auto px-4 text-center max-w-2xl">
-          <h2 className="text-3xl md:text-4xl mb-5">
+          <h2 className="text-3xl md:text-4xl mb-6">
             You don't have to guess anymore
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-12">
             In less than 10 questions you'll see exactly where your child is struggling and how to help them move forward.
           </p>
           <CTAButton />

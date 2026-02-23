@@ -13,12 +13,12 @@ const reportFeatures = [
 
 const YourChildsReport = () => (
   <Layout>
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
           <div>
-            <h1 className="text-4xl md:text-5xl mb-6">See what your child actually understands</h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <h1 className="text-4xl md:text-5xl mb-8">See what your child actually understands</h1>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
               Ruby turns your child's answers into a clear explanation of their strengths, their gaps, and how to support them at home.
             </p>
             <CTAButton />
@@ -34,24 +34,24 @@ const YourChildsReport = () => (
       </div>
     </section>
 
-    <section className="py-16 bg-coral-light">
+    <section className="py-24 md:py-32 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-3xl text-center mb-10">Understand your child's development</h2>
+        <h2 className="text-3xl text-center mb-12">Understand your child's development</h2>
         <div className="space-y-5">
           {reportFeatures.map((f) => (
-            <div key={f} className="flex items-start gap-4 bg-background rounded-lg p-5 border border-border">
-              <CheckCircle className="w-6 h-6 text-sage shrink-0 mt-0.5" />
-              <p className="text-foreground">{f}</p>
+            <div key={f} className="flex items-start gap-4 bg-card rounded-xl p-6 border border-border shadow-sm">
+              <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <p className="text-foreground leading-relaxed">{f}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <section className="py-20 bg-background text-center">
+    <section className="py-28 md:py-36 bg-background text-center">
       <div className="container mx-auto px-4 max-w-2xl">
-        <h2 className="text-3xl mb-4">You don't have to guess anymore</h2>
-        <p className="text-muted-foreground mb-8">
+        <h2 className="text-3xl mb-6">You don't have to guess anymore</h2>
+        <p className="text-muted-foreground leading-relaxed mb-10">
           In less than 10 questions you'll see exactly where your child is struggling and how to help them move forward.
         </p>
         <CTAButton />

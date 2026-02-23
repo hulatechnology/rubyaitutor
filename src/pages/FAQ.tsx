@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
+import TrustStrip from "@/components/TrustStrip";
 import {
   Accordion,
   AccordionContent,
@@ -52,24 +53,24 @@ const faqs = [
 
 const FAQ = () => (
   <Layout>
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 text-center max-w-3xl">
-        <h1 className="text-4xl md:text-5xl mb-6">Frequently Asked Questions</h1>
+        <h1 className="text-4xl md:text-5xl mb-8">Frequently Asked Questions</h1>
         <p className="text-lg text-muted-foreground">
           Everything you need to know about Ruby and how it helps your child.
         </p>
       </div>
     </section>
 
-    <section className="pb-20 bg-background">
+    <section className="pb-24 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
-        <Accordion type="single" collapsible className="space-y-3">
+        <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border rounded-xl px-6">
+            <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border rounded-xl px-6 shadow-sm">
               <AccordionTrigger className="text-left text-base font-medium py-5 hover:no-underline">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+              <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>
@@ -78,10 +79,13 @@ const FAQ = () => (
       </div>
     </section>
 
-    <section className="py-20 bg-sage-light text-center">
+    {/* ── Trust Strip ── */}
+    <TrustStrip />
+
+    <section className="py-28 md:py-36 bg-sage-light text-center">
       <div className="container mx-auto px-4 max-w-2xl">
-        <h2 className="text-3xl mb-4">Still have questions?</h2>
-        <p className="text-muted-foreground mb-8">
+        <h2 className="text-3xl mb-6">Still have questions?</h2>
+        <p className="text-muted-foreground leading-relaxed mb-10">
           Start with a free checkup and see for yourself. Or reach out — we're happy to help.
         </p>
         <CTAButton />
