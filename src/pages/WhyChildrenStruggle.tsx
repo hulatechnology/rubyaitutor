@@ -1,21 +1,21 @@
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
-import { Boxes, Brain, MessageCircleOff, Clock, TrendingUp } from "lucide-react";
-import staircaseImg from "@/assets/learning-staircase.png";
+import { Blocks, ListChecks, HandHelping, Clock, TrendingUp, Home } from "lucide-react";
+import parentHelpingImg from "@/assets/parent-helping-child.png";
 
 const reasons = [
   {
-    icon: Boxes,
+    icon: Blocks,
     title: "Missing building blocks",
     desc: "If a child never fully understood fractions earlier on, later topics like algebra stop making sense.",
   },
   {
-    icon: Brain,
+    icon: ListChecks,
     title: "Memorising, not understanding",
     desc: "Your child may know the steps but not the reason. When questions change slightly, they feel stuck.",
   },
   {
-    icon: MessageCircleOff,
+    icon: HandHelping,
     title: "They won't say they're confused",
     desc: "Children often stay quiet because they don't want to look wrong in front of others.",
   },
@@ -31,6 +31,12 @@ const reasons = [
   },
 ];
 
+const earlyNotices = [
+  "Homework takes much longer than expected",
+  "They understood yesterday but cannot do it today",
+  "They become frustrated very quickly",
+];
+
 const parentNotices = [
   "Homework takes much longer than it should",
   "They forget things they seemed to understand yesterday",
@@ -40,7 +46,7 @@ const parentNotices = [
 
 const WhyChildrenStruggle = () => (
   <Layout>
-    {/* Hero — two-column with staircase illustration */}
+    {/* Hero */}
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-8 md:gap-14 items-center">
@@ -49,11 +55,24 @@ const WhyChildrenStruggle = () => (
             <p className="text-lg text-muted-foreground leading-relaxed">
               Children rarely fall behind in the topic they are learning now. They fall behind in something they were expected to already know.
             </p>
+
+            {/* Reassurance sub-panel */}
+            <div className="mt-8 rounded-lg bg-cream px-6 py-5">
+              <p className="text-sm font-medium text-foreground mb-3">Parents often notice this before school does</p>
+              <ul className="space-y-2">
+                {earlyNotices.map((n, i) => (
+                  <li key={i} className="flex gap-2.5 items-start text-sm text-muted-foreground leading-relaxed">
+                    <span className="w-1 h-1 rounded-full bg-muted-foreground shrink-0 mt-2" />
+                    {n}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <div className="md:w-1/2">
             <img
-              src={staircaseImg}
-              alt="A child standing on a learning staircase with a missing foundation step, illustrating how earlier gaps cause later confusion"
+              src={parentHelpingImg}
+              alt="A parent sitting beside their child at a home table, gently helping with homework while the child looks confused"
               className="w-full max-w-md mx-auto h-auto rounded-2xl"
             />
           </div>
@@ -61,30 +80,27 @@ const WhyChildrenStruggle = () => (
       </div>
     </section>
 
-    {/* Recognition cards with icons and dividers */}
+    {/* Cause blocks with left red border accent */}
     <section className="py-14 md:py-20 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
-        <div className="space-y-5">
+        <div className="space-y-7">
           {reasons.map((r, i) => {
             const Icon = r.icon;
             return (
-              <div key={i}>
-                <div className="bg-card rounded-xl p-8 border border-border shadow-sm">
-                  <div className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center shrink-0 mt-0.5">
-                      <Icon size={20} className="text-muted-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl mb-3">{r.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{r.desc}</p>
-                    </div>
+              <div
+                key={i}
+                className="bg-card rounded-xl p-8 border border-border shadow-sm border-l-[3px]"
+                style={{ borderLeftColor: "hsl(351 75% 48% / 0.25)" }}
+              >
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center shrink-0 mt-0.5">
+                    <Icon size={20} className="text-muted-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl mb-3">{r.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{r.desc}</p>
                   </div>
                 </div>
-                {i < reasons.length - 1 && (
-                  <div className="flex justify-center py-2">
-                    <div className="w-px h-6 bg-border" />
-                  </div>
-                )}
               </div>
             );
           })}
@@ -92,11 +108,14 @@ const WhyChildrenStruggle = () => (
       </div>
     </section>
 
-    {/* Emotional confirmation panel */}
+    {/* Recognition box */}
     <section className="py-10 md:py-14 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
-        <div className="bg-card rounded-xl p-8 md:p-10 border border-border shadow-sm">
-          <h3 className="text-xl mb-6">What parents usually notice at home</h3>
+        <div className="rounded-xl p-8 md:p-10 border border-border shadow-sm" style={{ backgroundColor: "hsl(30 30% 97%)" }}>
+          <div className="flex gap-3 items-center mb-6">
+            <Home size={18} className="text-muted-foreground" />
+            <h3 className="text-xl">What parents usually notice at home</h3>
+          </div>
           <ul className="space-y-3">
             {parentNotices.map((notice, i) => (
               <li key={i} className="flex gap-3 items-start text-muted-foreground leading-relaxed">
