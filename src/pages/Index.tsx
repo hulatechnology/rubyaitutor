@@ -1,12 +1,14 @@
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
 import heroImage from "@/assets/hero-illustration.jpg";
-import parentReportImage from "@/assets/parent-report.png";
 import rubyTeachingUI from "@/assets/ruby-teaching-interface.png";
 import rubyChat from "@/assets/ruby-tutoring-chat.png";
-import { Search, ClipboardList, Route, Sparkles, CheckCircle, Target, BarChart3, Award, Lightbulb, TrendingUp, Clock, HelpCircle, GraduationCap, Shield, Users, ShieldCheck } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
+import reportImg1 from "@/assets/learning-checkup-1.png";
+import reportImg2 from "@/assets/learning-checkup-2.png";
+import reportImg3 from "@/assets/learning-checkup-3.png";
+import { Search, ClipboardList, Route, Sparkles, CheckCircle, Target, Lightbulb, TrendingUp, Clock, HelpCircle, GraduationCap, Shield, Users, ShieldCheck } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -127,44 +129,54 @@ const LearningGapDiagram = () => (
   </svg>
 );
 
-/* Small sample report card UI */
-const SampleReportCard = () => (
-  <div className="bg-card rounded-2xl border border-border shadow-sm p-6 md:p-8">
-    <p className="text-xs text-muted-foreground uppercase tracking-wide mb-4">Sample Learning Report</p>
-    {/* Strengths */}
-    <div className="mb-5">
-      <div className="flex items-center gap-2 mb-2">
-        <CheckCircle className="w-4 h-4 text-primary" />
-        <p className="text-sm font-medium text-foreground">Strengths</p>
-      </div>
-      <div className="ml-6 space-y-1">
-        <p className="text-sm text-muted-foreground">Addition & subtraction</p>
-        <p className="text-sm text-muted-foreground">Number recognition to 1000</p>
-        <p className="text-sm text-muted-foreground">Basic word problems</p>
-      </div>
-    </div>
-    {/* Gaps */}
-    <div className="mb-5">
-      <div className="flex items-center gap-2 mb-2">
-        <Target className="w-4 h-4 text-destructive" />
-        <p className="text-sm font-medium text-foreground">Gaps found</p>
-      </div>
-      <div className="ml-6 space-y-1">
-        <p className="text-sm text-muted-foreground">Place value understanding</p>
-        <p className="text-sm text-muted-foreground">Fraction equivalence</p>
-      </div>
-    </div>
-    {/* Next step */}
-    <div className="border-t border-border pt-4">
-      <div className="flex items-center gap-2 mb-2">
-        <Route className="w-4 h-4 text-primary" />
-        <p className="text-sm font-medium text-foreground">Recommended next step</p>
-      </div>
-      <p className="text-sm text-muted-foreground ml-6">Rebuild place value from Grade 3 level before advancing to decimals</p>
-    </div>
-  </div>
-);
+const reportSlides = [
+  { src: reportImg1, alt: "Understanding Level — assessment summary showing strengths and gaps", label: "Understanding Level" },
+  { src: reportImg2, alt: "Root Cause & What Ruby Will Teach — diagnosis and learning plan", label: "Root Cause & What Ruby Will Teach" },
+  { src: reportImg3, alt: "Parent Guidance & Expected Outcome — practical support advice", label: "Parent Guidance & Expected Outcome" },
+];
 
+const ReportCarousel = () => {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % reportSlides.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="rounded-2xl border border-border shadow-xl overflow-hidden bg-card">
+      <div className="bg-muted/50 px-4 py-2.5 flex items-center gap-2 border-b border-border">
+        <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+        <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+        <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+        <span className="text-xs text-muted-foreground ml-2">Learning Checkup Report</span>
+      </div>
+      <div className="relative aspect-[4/3]">
+        {reportSlides.map((slide, i) => (
+          <img
+            key={i}
+            src={slide.src}
+            alt={slide.alt}
+            className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-700"
+            style={{ opacity: i === active ? 1 : 0 }}
+          />
+        ))}
+      </div>
+      <div className="flex justify-center gap-2 py-3 bg-card border-t border-border">
+        {reportSlides.map((slide, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={`h-2 rounded-full transition-all duration-300 ${i === active ? "w-6 bg-primary" : "w-2 bg-muted-foreground/30"}`}
+            aria-label={slide.label}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 const Index = () => {
   return (
     <Layout>
@@ -301,19 +313,7 @@ const Index = () => {
               </div>
               <CTAButton />
             </div>
-            <div className="rounded-2xl border border-border shadow-xl overflow-hidden bg-card">
-              <div className="bg-muted/50 px-4 py-2.5 flex items-center gap-2 border-b border-border">
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                <span className="text-xs text-muted-foreground ml-2">Learning Checkup Report</span>
-              </div>
-              <img
-                src={parentReportImage}
-                alt="Ruby learning diagnostic report showing assessment summary, understanding levels, root cause analysis, and learning plan"
-                className="w-full"
-              />
-            </div>
+            <ReportCarousel />
           </div>
         </div>
       </section>
@@ -332,66 +332,8 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Session mockup — dashboard style */}
-          <div className="bg-card rounded-2xl border border-border shadow-sm p-8 md:p-10 max-w-2xl mx-auto">
-            {/* Today's mission */}
-            <div className="mb-10">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Target className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">
-                    Today's mission
-                  </p>
-                  <p className="font-medium text-foreground">
-                    Understanding place value in decimals
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Progress bar */}
-            <div className="mb-10">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <BarChart3 className="w-5 h-5 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide mb-2">
-                    Foundation recovery
-                  </p>
-                  <Progress value={62} className="h-3" />
-                  <p className="text-xs text-muted-foreground mt-2">
-                    62% of gaps resolved
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Milestone */}
-            <div className="border-t border-border pt-8">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Award className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">
-                    Latest milestone
-                  </p>
-                  <p className="font-medium text-foreground">
-                    Fractions foundation complete
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-0.5">
-                    Achieved after 8 focused sessions
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Chat UI Preview — moved higher, larger */}
-          <div className="mt-10 max-w-3xl mx-auto">
+          {/* Chat UI Preview — primary visual */}
+          <div className="max-w-3xl mx-auto">
             <p className="text-center text-sm text-muted-foreground mb-4">Your child can ask for help at any moment</p>
             <div className="rounded-2xl border border-border shadow-xl overflow-hidden bg-card">
               <div className="bg-muted/50 px-4 py-2.5 flex items-center gap-2 border-b border-border">
