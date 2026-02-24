@@ -29,32 +29,32 @@ const helpCards = [
   {
     icon: FileText,
     title: "Understanding the learning report",
-    desc: "We will explain what the results actually mean and what to focus on first.",
+    desc: "We'll walk you through what the results actually mean and what to focus on first.",
   },
   {
     icon: HelpCircle,
     title: "Is my child behind?",
-    desc: "We help you interpret whether your child is missing foundations or just needs practice.",
+    desc: "We'll help you understand whether your child is missing foundations or just needs more practice.",
   },
   {
     icon: BookOpen,
     title: "Getting started",
-    desc: "We'll help you decide whether to begin with the checkup or guided support.",
+    desc: "Not sure where to begin? We'll help you decide whether to start with the checkup or guided support.",
   },
   {
     icon: Users,
     title: "Using Ruby at home",
-    desc: "Advice on how often your child should use it and how involved you should be.",
+    desc: "We can advise on how often your child should use it and how involved you need to be.",
   },
   {
     icon: Settings,
     title: "Technical help",
-    desc: "Login issues, devices, or anything not working as expected.",
+    desc: "Login issues, devices, or anything not working the way it should.",
   },
   {
     icon: CreditCard,
     title: "Subscription questions",
-    desc: "Trial, billing, cancellations, and what happens after the checkup.",
+    desc: "Trial, billing, cancellations — we'll explain how everything works.",
   },
 ];
 
@@ -79,11 +79,14 @@ const Contact = () => {
       {/* ── Hero ── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-14 items-center max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-center max-w-5xl mx-auto">
             <div>
-              <h1 className="text-4xl md:text-5xl leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl leading-tight mb-5">
                 We're here to help you and your child
               </h1>
+              <p className="text-base text-foreground/80 font-medium leading-relaxed mb-4 max-w-lg">
+                Many parents contact us before they start. You're not expected to know what your child needs yet.
+              </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
                 If you're unsure about your child's learning, need help
                 understanding a report, or have questions before starting, you
@@ -96,16 +99,16 @@ const Contact = () => {
                 <Mail className="w-5 h-5" />
                 Email Support
               </a>
-              <p className="text-sm text-muted-foreground mt-4 flex items-center gap-2">
+              <p className="text-sm text-foreground/60 mt-4 flex items-center gap-2">
                 <Clock className="w-4 h-4" />
-                We normally reply within one working day.
+                We normally reply the same day during weekdays.
               </p>
             </div>
             <div>
               <img
                 src={supportImage}
                 alt="Friendly support helping a parent and child"
-                className="rounded-2xl shadow-xl w-full"
+                className="rounded-2xl shadow-lg w-full opacity-90"
               />
             </div>
           </div>
@@ -113,7 +116,7 @@ const Contact = () => {
       </section>
 
       {/* ── Quick reassurance strip ── */}
-      <section className="py-8 bg-blue-tint border-y border-border">
+      <section className="py-10 md:py-12 bg-blue-tint/60 border-y border-border">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-8 md:gap-14">
             {reassuranceItems.map((item) => (
@@ -139,25 +142,28 @@ const Contact = () => {
             <h2 className="text-3xl md:text-4xl mb-4">
               What parents usually contact us about
             </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-2">
               These are the most common questions we hear. You're welcome to
               ask us anything.
+            </p>
+            <p className="text-sm text-foreground/50">
+              You don't need a perfect question. Just describe what you're worried about.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
             {helpCards.map((card) => (
               <div
                 key={card.title}
-                className="bg-card rounded-xl p-7 border border-border shadow-sm"
+                className="bg-card rounded-xl p-8 border border-border shadow-sm"
               >
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3 mb-4">
                   <card.icon
                     className="w-5 h-5 text-primary shrink-0"
                     strokeWidth={1.5}
                   />
                   <h3 className="text-lg">{card.title}</h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-[1.8]">
                   {card.desc}
                 </p>
               </div>
@@ -176,20 +182,25 @@ const Contact = () => {
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-5">
               <Mail className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-xl mb-2">Email</h3>
+            <h3 className="text-xl mb-3">Email</h3>
             <a
               href="mailto:support@rubylearning.com"
-              className="text-lg text-primary font-medium hover:underline"
+              className="text-2xl md:text-3xl text-primary font-semibold hover:underline tracking-tight select-all"
             >
               support@rubylearning.com
             </a>
-            <p className="text-muted-foreground mt-3 leading-relaxed">
+            <p className="text-muted-foreground mt-4 leading-relaxed">
               Best for questions about your child, reports, or anything you're
               unsure about.
             </p>
-            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-5 pt-5 border-t border-border">
-              <Clock className="w-4 h-4" />
-              We aim to respond within 24 hours on weekdays.
+            <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground mt-6 pt-6 border-t border-border">
+              <span className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                We aim to respond within 24 hours on weekdays.
+              </span>
+              <span className="text-foreground/70 font-medium">
+                We read every message ourselves.
+              </span>
             </div>
           </div>
         </div>
@@ -202,7 +213,7 @@ const Contact = () => {
             Send us a message
           </h2>
           <p className="text-center text-muted-foreground mb-10">
-            We'll get back to you as soon as we can.
+            Tell us a little about your child and what you're unsure about.
           </p>
 
           {submitted ? (
@@ -218,7 +229,7 @@ const Contact = () => {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="bg-card border border-border rounded-xl p-8 md:p-10 shadow-sm space-y-6"
+              className="bg-card border border-border rounded-xl p-8 md:p-10 shadow-md ring-1 ring-border/50 space-y-6"
             >
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1.5">
@@ -282,7 +293,7 @@ const Contact = () => {
                     setFormState({ ...formState, message: e.target.value })
                   }
                   className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
-                  placeholder="Tell us what you need help with..."
+                  placeholder="Tell us what's on your mind..."
                 />
               </div>
               <button
@@ -293,7 +304,7 @@ const Contact = () => {
                 Send message
               </button>
               <p className="text-xs text-muted-foreground text-center">
-                You are not subscribing to anything by contacting us.
+                Contacting us does not create an account or start a subscription.
               </p>
             </form>
           )}
@@ -301,7 +312,7 @@ const Contact = () => {
       </section>
 
       {/* ── You don't need to figure this out alone ── */}
-      <section className="py-14 md:py-20 bg-blue-tint">
+      <section className="pt-20 md:pt-28 pb-14 md:pb-20 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-2xl text-center">
           <h2 className="text-3xl md:text-4xl mb-8">
             You don't need to figure this out alone
@@ -318,27 +329,29 @@ const Contact = () => {
               us.
             </p>
           </div>
-          <p className="mt-8 text-foreground font-medium">
-            We will tell you honestly whether Ruby is right for your child.
+          <p className="mt-8 text-foreground">
+            <strong>We will tell you honestly whether Ruby is right for your child.</strong>
           </p>
         </div>
       </section>
 
       {/* ── Before you contact us ── */}
-      <section className="py-10 bg-background">
+      <section className="py-10 md:py-14 bg-background">
         <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h3 className="text-xl mb-5">You might find this helpful first</h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <p className="text-sm text-muted-foreground mb-3">
+            If you prefer, you can also read more first:
+          </p>
+          <div className="flex flex-wrap justify-center gap-6">
             <Link
               to="/faq"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+              className="inline-flex items-center gap-2 text-sm font-medium bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
             >
               Frequently Asked Questions
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/your-childs-report"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+              className="inline-flex items-center gap-2 text-sm font-medium bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
             >
               Your Child's Report
               <ArrowRight className="w-4 h-4" />
@@ -351,16 +364,15 @@ const Contact = () => {
       <TrustStrip />
 
       {/* ── Final reassurance CTA ── */}
-      <section className="pt-6 pb-14 md:pb-18 bg-background text-center">
+      <section className="pt-6 pb-20 md:pb-28 bg-background text-center">
         <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-3xl mb-4">
-            You can also start with a free learning checkup
+          <h2 className="text-2xl md:text-3xl mb-4">
+            You can start with a free learning checkup whenever you're ready
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            Many parents begin with the checkup and then contact us to go
-            through the results together.
+            You'll see your child's results first. Then you can decide what to do next, with or without us.
           </p>
-          <CTAButton />
+          <CTAButton className="text-sm px-6 py-3" />
           <p className="text-sm text-muted-foreground mt-4">
             You will see your child's results before deciding anything further.
           </p>
