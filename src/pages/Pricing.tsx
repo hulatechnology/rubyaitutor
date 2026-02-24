@@ -49,7 +49,7 @@ const plans = [
 
 const Pricing = () => (
   <Layout>
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 text-center max-w-3xl">
         <h1 className="text-4xl md:text-5xl mb-8">Choose the right support for your child</h1>
         <p className="text-lg text-muted-foreground leading-relaxed">

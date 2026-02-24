@@ -93,7 +93,7 @@ const Index = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-up">
@@ -121,7 +121,7 @@ const Index = () => {
       </section>
 
       {/* ── Why Children Struggle ── */}
-      <section className="py-24 md:py-32 bg-blue-tint">
+      <section className="py-14 md:py-20 bg-blue-tint">
         <div className="container mx-auto px-6 md:px-10 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
@@ -149,7 +149,7 @@ const Index = () => {
       </section>
 
       {/* ── How Ruby Works ── */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
@@ -181,7 +181,7 @@ const Index = () => {
       </section>
 
       {/* ── The Learning Report ── */}
-      <section className="py-24 md:py-32 bg-sage-light">
+      <section className="py-14 md:py-20 bg-sage-light">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
             <div>
@@ -213,7 +213,7 @@ const Index = () => {
       </section>
 
       {/* ── Built to Keep Children Engaged ── */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
@@ -315,7 +315,7 @@ const Index = () => {
       </section>
 
       {/* ── FAQ Reassurance ── */}
-      <section className="py-24 md:py-32 bg-blue-tint">
+      <section className="py-14 md:py-20 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl md:text-4xl text-center mb-14">
             Common questions from parents
@@ -343,7 +343,7 @@ const Index = () => {
       <TrustStrip />
 
       {/* ── Final CTA ── */}
-      <section className="py-28 md:py-36 bg-background">
+      <section className="py-18 md:py-24 bg-background">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl mb-6">
             You don't have to guess anymore
