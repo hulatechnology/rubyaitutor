@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
+import supportImage from "@/assets/parent-support.jpg";
 
 import {
   Users,
@@ -79,7 +80,8 @@ const Contact = () => {
       {/* ── Hero ── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-center max-w-5xl mx-auto">
+            <div>
               <h1 className="text-4xl md:text-5xl leading-tight mb-5">
                 We're here to help you and your child
               </h1>
@@ -102,6 +104,14 @@ const Contact = () => {
                 <Clock className="w-4 h-4" />
                 We normally reply the same day during weekdays.
               </p>
+            </div>
+            <div>
+              <img
+                src={supportImage}
+                alt="Friendly support helping a parent and child"
+                className="rounded-2xl shadow-lg w-full opacity-90"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -314,7 +324,7 @@ const Contact = () => {
           )}
         </div>
       </section>
-
+import supportImage from "@/assets/parent-support.jpg";
 
       {/* ── Before you contact us ── */}
       <section className="py-10 md:py-14 bg-background">
