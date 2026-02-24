@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
-import supportImage from "@/assets/parent-support.jpg";
-
 import {
   Users,
   Mail,
@@ -80,8 +78,7 @@ const Contact = () => {
       {/* ── Hero ── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-center max-w-5xl mx-auto">
-            <div>
+          <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl leading-tight mb-5">
                 We're here to help you and your child
               </h1>
@@ -102,16 +99,8 @@ const Contact = () => {
               </a>
               <p className="text-sm text-foreground/60 mt-4 flex items-center gap-2">
                 <Clock className="w-4 h-4" />
-                We normally reply the same day during weekdays.
+                We reply the same day during weekdays.
               </p>
-            </div>
-            <div>
-              <img
-                src={supportImage}
-                alt="Friendly support helping a parent and child"
-                className="rounded-2xl shadow-lg w-full opacity-90"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -143,12 +132,9 @@ const Contact = () => {
             <h2 className="text-3xl md:text-4xl mb-4">
               What parents usually contact us about
             </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-2">
+            <p className="text-foreground leading-relaxed max-w-2xl mx-auto">
               These are the most common questions we hear. You're welcome to
-              ask us anything.
-            </p>
-            <p className="text-sm text-foreground/50">
-              You don't need a perfect question. Just describe what you're worried about.
+              ask us anything. You don't need a perfect question. Just describe what you're worried about.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
@@ -173,60 +159,14 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ── You don't need to figure this out alone ── */}
+      {/* ── You don't need to figure this out alone + Form ── */}
       <section className="py-14 md:py-20 bg-blue-tint">
-        <div className="container mx-auto px-4 max-w-3xl text-center mb-10">
-          <h2 className="text-3xl md:text-4xl mb-6">
-            You don't need to figure this out alone
-          </h2>
-          <div className="space-y-2 text-foreground leading-relaxed max-w-xl mx-auto">
-            <p>If your child is working hard but still struggling, contact us.</p>
-            <p>If you are unsure whether they need extra help, contact us.</p>
-            <p>If you received a report and don't know what to do next, contact us.</p>
-            <p className="pt-2"><strong>We will tell you honestly whether Ruby is right for your child.</strong></p>
-          </div>
-        </div>
+        <div className="container mx-auto px-4 max-w-2xl text-center">
+          <p className="text-foreground leading-relaxed max-w-xl mx-auto mb-10">
+            You don't need to figure this out alone. If your child is working hard but still struggling, contact us. If you are unsure whether they need extra help, contact us. If you received a report and don't know what to do next, contact us. <strong>We will tell you honestly whether Ruby is right for your child.</strong>
+          </p>
 
-        {/* ── Contact methods ── */}
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl text-center mb-10">
-            Ways to reach us
-          </h2>
-          <div className="bg-card rounded-xl border border-border shadow-sm p-8 md:p-10 text-center">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-5">
-              <Mail className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl mb-3">Email</h3>
-            <a
-              href="mailto:support@rubylearning.com"
-              className="text-2xl md:text-3xl text-primary font-semibold hover:underline tracking-tight select-all"
-            >
-              support@rubylearning.com
-            </a>
-            <p className="text-muted-foreground mt-4 leading-relaxed">
-              Best for questions about your child, reports, or anything you're
-              unsure about.
-            </p>
-            <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground mt-6 pt-6 border-t border-border">
-              <span className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                We aim to respond within 24 hours on weekdays.
-              </span>
-              <span className="text-foreground/70 font-medium">
-                We read every message ourselves.
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Send us a message form ── */}
-      <section className="py-14 md:py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-3xl md:text-4xl text-center mb-4">
-            Send us a message
-          </h2>
-          <p className="text-center text-muted-foreground mb-10">
+          <p className="text-muted-foreground mb-10">
             Tell us a little about your child and what you're unsure about.
           </p>
 
@@ -324,10 +264,9 @@ const Contact = () => {
           )}
         </div>
       </section>
-import supportImage from "@/assets/parent-support.jpg";
 
       {/* ── Before you contact us ── */}
-      <section className="py-10 md:py-14 bg-background">
+      <section className="py-6 md:py-8 bg-background">
         <div className="container mx-auto px-4 max-w-2xl text-center">
           <p className="text-sm text-muted-foreground mb-3">
             If you prefer, you can also read more first:
