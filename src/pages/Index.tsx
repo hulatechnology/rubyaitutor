@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
 import heroImage from "@/assets/hero-illustration.jpg";
-import reportImage from "@/assets/parent-report.jpg";
+import parentReportImage from "@/assets/parent-report.png";
 import rubyTeachingUI from "@/assets/ruby-teaching-interface.png";
 import rubyChat from "@/assets/ruby-tutoring-chat.png";
 import { Search, ClipboardList, Route, Sparkles, CheckCircle, Target, BarChart3, Award, Lightbulb, TrendingUp, Clock, HelpCircle, GraduationCap, Shield, Users, ShieldCheck } from "lucide-react";
@@ -103,28 +103,27 @@ const faqs = [
 
 /* Simple SVG building-blocks diagram showing a missing foundation block */
 const LearningGapDiagram = () => (
-  <svg viewBox="0 0 320 200" className="w-full max-w-xs mx-auto mb-10" aria-label="Diagram showing learning gaps: a missing block in the foundation causes instability above">
+  <svg viewBox="0 0 400 260" className="w-full max-w-md mx-auto mb-10" aria-label="Diagram showing learning gaps: a missing block in the foundation causes instability above">
     {/* Bottom row - foundation */}
-    <rect x="20" y="160" width="60" height="30" rx="4" fill="hsl(var(--primary))" opacity="0.2" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-    <rect x="90" y="160" width="60" height="30" rx="4" fill="hsl(var(--primary))" opacity="0.2" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+    <rect x="20" y="200" width="75" height="38" rx="5" fill="hsl(var(--primary))" opacity="0.2" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+    <rect x="105" y="200" width="75" height="38" rx="5" fill="hsl(var(--primary))" opacity="0.2" stroke="hsl(var(--primary))" strokeWidth="1.5" />
     {/* Missing block - dashed outline */}
-    <rect x="160" y="160" width="60" height="30" rx="4" fill="none" stroke="hsl(var(--destructive))" strokeWidth="1.5" strokeDasharray="5,4" />
-    <text x="190" y="179" textAnchor="middle" fontSize="9" fill="hsl(var(--destructive))" fontFamily="Inter, sans-serif">missing</text>
-    <rect x="230" y="160" width="60" height="30" rx="4" fill="hsl(var(--primary))" opacity="0.2" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+    <rect x="190" y="200" width="75" height="38" rx="5" fill="none" stroke="hsl(var(--destructive))" strokeWidth="2" strokeDasharray="6,4" />
+    <text x="227" y="224" textAnchor="middle" fontSize="11" fill="hsl(var(--destructive))" fontWeight="500" fontFamily="Inter, sans-serif">missing</text>
+    <rect x="275" y="200" width="75" height="38" rx="5" fill="hsl(var(--primary))" opacity="0.2" stroke="hsl(var(--primary))" strokeWidth="1.5" />
     {/* Second row */}
-    <rect x="55" y="122" width="60" height="30" rx="4" fill="hsl(var(--primary))" opacity="0.15" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-    <rect x="125" y="122" width="60" height="30" rx="4" fill="hsl(var(--primary))" opacity="0.12" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="3,3" />
-    <rect x="195" y="122" width="60" height="30" rx="4" fill="hsl(var(--primary))" opacity="0.12" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="3,3" />
+    <rect x="62" y="154" width="75" height="38" rx="5" fill="hsl(var(--primary))" opacity="0.15" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+    <rect x="147" y="154" width="75" height="38" rx="5" fill="hsl(var(--primary))" opacity="0.1" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="4,3" />
+    <rect x="232" y="154" width="75" height="38" rx="5" fill="hsl(var(--primary))" opacity="0.1" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="4,3" />
     {/* Third row */}
-    <rect x="90" y="84" width="60" height="30" rx="4" fill="hsl(var(--primary))" opacity="0.08" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="3,3" />
-    <rect x="160" y="84" width="60" height="30" rx="4" fill="hsl(var(--primary))" opacity="0.08" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="3,3" />
+    <rect x="105" y="108" width="75" height="38" rx="5" fill="hsl(var(--primary))" opacity="0.07" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="4,3" />
+    <rect x="190" y="108" width="75" height="38" rx="5" fill="hsl(var(--primary))" opacity="0.07" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="4,3" />
     {/* Top block - most unstable */}
-    <rect x="125" y="46" width="60" height="30" rx="4" fill="hsl(var(--primary))" opacity="0.05" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="3,3" />
+    <rect x="147" y="62" width="75" height="38" rx="5" fill="hsl(var(--primary))" opacity="0.04" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="4,3" />
     {/* Labels */}
-    <text x="160" y="22" textAnchor="middle" fontSize="10" fill="hsl(var(--muted-foreground))" fontFamily="Inter, sans-serif">Today's topic</text>
-    <text x="160" y="208" textAnchor="middle" fontSize="10" fill="hsl(var(--muted-foreground))" fontFamily="Inter, sans-serif">Earlier foundations</text>
-    {/* Arrow showing instability */}
-    <line x1="155" y1="40" x2="175" y2="40" stroke="hsl(var(--muted-foreground))" strokeWidth="0.8" opacity="0.4" markerEnd="url(#arrowhead)" />
+    <text x="185" y="30" textAnchor="middle" fontSize="12" fill="hsl(var(--muted-foreground))" fontFamily="Inter, sans-serif">Today's topic</text>
+    <text x="185" y="256" textAnchor="middle" fontSize="12" fill="hsl(var(--muted-foreground))" fontFamily="Inter, sans-serif">Earlier foundations</text>
+    <line x1="180" y1="52" x2="200" y2="52" stroke="hsl(var(--muted-foreground))" strokeWidth="0.8" opacity="0.4" />
   </svg>
 );
 
@@ -235,7 +234,7 @@ const Index = () => {
 
       {/* ── How Ruby Works ── */}
       <section className="py-14 md:py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
               How Ruby helps your child learn
@@ -244,25 +243,25 @@ const Index = () => {
               Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div className="space-y-10">
+          <div className="grid md:grid-cols-5 gap-10 items-start">
+            <div className="md:col-span-2 space-y-8">
               {steps.map(({ icon: Icon, title, desc }, i) => (
-                <div key={title} className="flex gap-6 items-start">
-                  <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shrink-0">
-                    <span className="text-lg font-bold text-primary-foreground">
+                <div key={title} className="flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0">
+                    <span className="text-sm font-bold text-primary-foreground">
                       {i + 1}
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-xl mb-2">{title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{desc}</p>
+                    <h3 className="text-lg mb-1">{title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-            {/* UI Preview Panel */}
-            <div className="rounded-2xl border border-border shadow-lg overflow-hidden bg-card">
-              <div className="bg-muted/50 px-4 py-2 flex items-center gap-2 border-b border-border">
+            {/* UI Preview Panel — primary focal point */}
+            <div className="md:col-span-3 rounded-2xl border border-border shadow-xl overflow-hidden bg-card">
+              <div className="bg-muted/50 px-4 py-2.5 flex items-center gap-2 border-b border-border">
                 <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
                 <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
                 <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
@@ -302,13 +301,18 @@ const Index = () => {
               </div>
               <CTAButton />
             </div>
-            <div className="space-y-6">
+            <div className="rounded-2xl border border-border shadow-xl overflow-hidden bg-card">
+              <div className="bg-muted/50 px-4 py-2.5 flex items-center gap-2 border-b border-border">
+                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+                <span className="text-xs text-muted-foreground ml-2">Learning Checkup Report</span>
+              </div>
               <img
-                src={reportImage}
-                alt="Parent reviewing child's learning report"
-                className="rounded-2xl shadow-xl w-full"
+                src={parentReportImage}
+                alt="Ruby learning diagnostic report showing assessment summary, understanding levels, root cause analysis, and learning plan"
+                className="w-full"
               />
-              <SampleReportCard />
             </div>
           </div>
         </div>
@@ -386,11 +390,11 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Chat UI Preview */}
-          <div className="mt-14 max-w-2xl mx-auto">
+          {/* Chat UI Preview — moved higher, larger */}
+          <div className="mt-10 max-w-3xl mx-auto">
             <p className="text-center text-sm text-muted-foreground mb-4">Your child can ask for help at any moment</p>
-            <div className="rounded-2xl border border-border shadow-lg overflow-hidden bg-card">
-              <div className="bg-muted/50 px-4 py-2 flex items-center gap-2 border-b border-border">
+            <div className="rounded-2xl border border-border shadow-xl overflow-hidden bg-card">
+              <div className="bg-muted/50 px-4 py-2.5 flex items-center gap-2 border-b border-border">
                 <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
                 <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
                 <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
