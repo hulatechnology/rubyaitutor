@@ -16,9 +16,9 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="sticky top-0 z-50 bg-primary backdrop-blur-md border-b border-primary/80">
+    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
-        <Link to="/" className="heading-display text-2xl text-primary-foreground font-bold tracking-tight">
+        <Link to="/" className="heading-display text-2xl text-cta font-bold tracking-tight">
           Ruby
         </Link>
 
@@ -28,8 +28,8 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm font-medium transition-colors hover:text-primary-foreground ${
-                location.pathname === link.to ? "text-primary-foreground" : "text-primary-foreground/70"
+              className={`text-sm font-medium transition-colors hover:text-cta ${
+                location.pathname === link.to ? "text-cta" : "text-foreground"
               }`}
             >
               {link.label}
@@ -47,21 +47,21 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button className="lg:hidden text-primary-foreground" onClick={() => setOpen(!open)}>
+        <button className="lg:hidden text-foreground" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden border-t border-primary/60 bg-primary px-4 pb-6 pt-2">
+        <div className="lg:hidden border-t border-border bg-background px-4 pb-6 pt-2 shadow-lg">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               onClick={() => setOpen(false)}
               className={`block py-3 text-sm font-medium transition-colors ${
-                location.pathname === link.to ? "text-primary-foreground" : "text-primary-foreground/70"
+                location.pathname === link.to ? "text-cta" : "text-foreground"
               }`}
             >
               {link.label}
