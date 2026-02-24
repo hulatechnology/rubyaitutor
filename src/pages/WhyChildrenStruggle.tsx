@@ -26,7 +26,7 @@ const reasons = [
 
 const WhyChildrenStruggle = () => (
   <Layout>
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 max-w-3xl text-center">
         <h1 className="text-4xl md:text-5xl mb-8">It doesn't start in today's lesson</h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
@@ -35,7 +35,7 @@ const WhyChildrenStruggle = () => (
       </div>
     </section>
 
-    <section className="py-24 md:py-32 bg-blue-tint">
+    <section className="py-14 md:py-20 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="space-y-6">
           {reasons.map((r, i) => (
@@ -48,7 +48,7 @@ const WhyChildrenStruggle = () => (
       </div>
     </section>
 
-    <section className="py-28 md:py-36 bg-background text-center">
+    <section className="py-16 md:py-22 bg-background text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-6">You don't have to guess anymore</h2>
         <p className="text-muted-foreground leading-relaxed mb-10">

@@ -53,7 +53,7 @@ const faqs = [
 
 const FAQ = () => (
   <Layout>
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 text-center max-w-3xl">
         <h1 className="text-4xl md:text-5xl mb-8">Frequently Asked Questions</h1>
         <p className="text-lg text-muted-foreground">
@@ -62,7 +62,7 @@ const FAQ = () => (
       </div>
     </section>
 
-    <section className="pb-24 bg-background">
+    <section className="pb-14 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, i) => (
@@ -82,7 +82,7 @@ const FAQ = () => (
     {/* ── Trust Strip ── */}
     <TrustStrip />
 
-    <section className="py-28 md:py-36 bg-sage-light text-center">
+    <section className="py-16 md:py-22 bg-sage-light text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-6">Still have questions?</h2>
         <p className="text-muted-foreground leading-relaxed mb-10">
