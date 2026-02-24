@@ -6,39 +6,41 @@ const plans = [
   {
     name: "Learning Checkup",
     price: "Free",
-    desc: "A starting point to understand your child's learning level.",
+    desc: "A quick learning assessment to understand your child's level and identify where understanding first broke down.",
     features: [
-      "One subject assessment",
-      "Summary of learning gaps",
-      "Basic recommendations",
-      "Takes about 15 minutes",
+      "One learning check",
+      "Clear summary of learning gaps",
+      "Simple next-step guidance",
+      "Takes about 10 minutes",
     ],
     highlight: false,
   },
   {
-    name: "Full Diagnosis",
-    price: "R299",
-    period: "/once-off",
-    desc: "A comprehensive diagnosis across all core subjects with a detailed report.",
+    name: "Full Learning Diagnosis",
+    price: "R149",
+    period: "/month",
+    desc: "A detailed diagnosis across subjects showing exactly what your child missed and how to rebuild their foundation.",
     features: [
-      "All core subjects assessed",
+      "All core subjects available",
       "Detailed learning gap report",
       "Personalised learning path",
+      "Progress tracking dashboard",
       "Foundation-level breakdown",
-      "Printable parent report",
+      "Diagnoses in 11 Languages",
+      "Access to Video Learning",
+      "Available 24/7",
     ],
     highlight: true,
   },
   {
-    name: "Guided Recovery",
-    price: "R499",
+    name: "Ongoing Guided Support",
+    price: "R199",
     period: "/month",
-    desc: "Ongoing support to help your child rebuild their learning foundation.",
+    desc: "Continuous guided learning that helps your child rebuild understanding and stay confident as schoolwork progresses.",
     features: [
-      "Everything in Full Diagnosis",
-      "Weekly guided practice sessions",
-      "Progress tracking dashboard",
-      "Monthly parent updates",
+      "Everything in Full Learning Diagnosis",
+      "Daily guided practice sessions",
+      "Parent progress updates",
       "Priority support",
     ],
     highlight: false,
@@ -49,9 +51,9 @@ const Pricing = () => (
   <Layout>
     <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 text-center max-w-3xl">
-        <h1 className="text-4xl md:text-5xl mb-8">Simple, honest pricing</h1>
+        <h1 className="text-4xl md:text-5xl mb-8">Choose the right support for your child</h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          Start free. Upgrade when you're ready. No contracts, no pressure.
+          All options start with free 7 day trial. From there, you can decide how much support your child needs.
         </p>
       </div>
     </section>
@@ -69,7 +71,7 @@ const Pricing = () => (
               }`}
             >
               {plan.highlight && (
-                <span className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 block">Most popular</span>
+                <span className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 block">Most recommended starting point</span>
               )}
               <h3 className="text-2xl mb-1">{plan.name}</h3>
               <div className="flex items-baseline gap-1 mb-4">
@@ -89,6 +91,9 @@ const Pricing = () => (
             </div>
           ))}
         </div>
+        <p className="text-center text-sm text-muted-foreground mt-10">
+          You can begin with the free trial and decide afterwards. No commitment required.
+        </p>
       </div>
     </section>
   </Layout>
