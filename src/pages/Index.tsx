@@ -122,16 +122,16 @@ const Index = () => {
 
       {/* ── Why Children Struggle ── */}
       <section className="py-24 md:py-32 bg-blue-tint">
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="container mx-auto px-6 md:px-10 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
               You've probably experienced this before
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
               Children rarely fall behind in the topic they are learning today. They fall behind in a concept they missed long ago because Math, reading, and science are built step by step. Each new skill depends on the one before it. When a single step is missing, students don't just get one question wrong, they stop understanding entire topics. Ruby finds the exact point learning broke down and rebuilds your child's foundation step by step.
             </p>
           </div>
-          <div className="space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {reasons.map((r) => (
               <div
                 key={r.title}
