@@ -9,6 +9,7 @@ const navLinks = [
   { to: "/your-childs-report", label: "Your Child's Report" },
   { to: "/pricing", label: "Pricing" },
   { to: "/faq", label: "FAQ" },
+  { to: "/contact", label: "Contact" },
 ];
 
 const Navbar = () => {
