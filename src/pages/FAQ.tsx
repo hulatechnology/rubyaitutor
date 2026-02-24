@@ -89,32 +89,15 @@ const FAQ = () => (
     <TrustStrip />
 
     {/* Decision CTA block */}
-    <section className="py-8 md:py-10 bg-background text-center">
+    <section className="pt-6 pb-14 md:pb-18 bg-sage-light text-center">
       <div className="container mx-auto px-4 max-w-2xl">
-        <div className="bg-blue-tint border-2 border-border rounded-xl p-10 md:p-14 shadow-md">
-          {/* Micro trust row */}
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs text-foreground/60 mb-10 py-2">
-            {[
-              "Private and child-safe learning environment",
-              "No public profiles or messaging",
-              "Designed for home use",
-              "No long-term commitment",
-            ].map((t) => (
-              <span key={t} className="flex items-center gap-1.5">
-                <Check className="w-3 h-3 text-primary/60 shrink-0" strokeWidth={2.5} />
-                {t}
-              </span>
-            ))}
-          </div>
-
-          <h2 className="text-3xl md:text-4xl text-foreground mb-4">Still have questions?</h2>
-          <p className="text-foreground/65 leading-relaxed mb-9">
-            You don't need to decide anything yet.
-            <br />
-            Start the free learning check and see your child's results first.
-          </p>
-          <CTAButton className="px-12 py-5 text-lg shadow-lg" />
-        </div>
+        <h2 className="text-3xl mb-4">Still have questions?</h2>
+        <p className="text-foreground/65 leading-relaxed mb-8">
+          You don't need to decide anything yet.
+          <br />
+          Start the free learning check and see your child's results first.
+        </p>
+        <CTAButton />
       </div>
     </section>
   </Layout>
