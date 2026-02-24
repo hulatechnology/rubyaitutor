@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import supportImage from "@/assets/parent-support.jpg";
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
 import {
@@ -78,7 +79,8 @@ const Contact = () => {
       {/* ── Hero ── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-center max-w-5xl mx-auto">
+            <div>
               <h1 className="text-4xl md:text-5xl leading-tight mb-5">
                 We're here to help you and your child
               </h1>
@@ -101,6 +103,14 @@ const Contact = () => {
                 <Clock className="w-4 h-4" />
                 We reply the same day during weekdays.
               </p>
+            </div>
+            <div>
+              <img
+                src={supportImage}
+                alt="Friendly support helping a parent and child"
+                className="rounded-2xl shadow-lg w-full opacity-90"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -161,7 +171,7 @@ const Contact = () => {
 
       {/* ── You don't need to figure this out alone + Form ── */}
       <section className="py-14 md:py-20 bg-blue-tint">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
+        <div className="container mx-auto px-4 max-w-2xl text-center [&_form]:text-left">
           <p className="text-foreground leading-relaxed max-w-xl mx-auto mb-10">
             You don't need to figure this out alone. If your child is working hard but still struggling, contact us. If you are unsure whether they need extra help, contact us. If you received a report and don't know what to do next, contact us. <strong>We will tell you honestly whether Ruby is right for your child.</strong>
           </p>
