@@ -4,8 +4,7 @@ import reportImage from "@/assets/parent-report.jpg";
 import understandingLevel from "@/assets/learning-checkup-1.png";
 import rootCause from "@/assets/root-cause.png";
 import teachFirst from "@/assets/teach-first.png";
-import parentGuidance from "@/assets/parent-report.png";
-import expectedOutcome from "@/assets/learning-checkup-3.png";
+import parentGuidanceOutcome from "@/assets/parent-guidance-outcome.png";
 
 const YourChildsReport = () => (
   <Layout>
@@ -104,21 +103,12 @@ const YourChildsReport = () => (
         <p className="text-muted-foreground leading-relaxed mb-5">
           How you help at home and what improvement looks like. This section answers: what will change?
         </p>
-        <div className="space-y-5">
-          <div className="bg-card border border-border rounded-lg shadow-md overflow-hidden">
-            <img
-              src={parentGuidance}
-              alt="Parent Guidance section of the report"
-              className="w-full"
-            />
-          </div>
-          <div className="bg-card border border-border rounded-lg shadow-md overflow-hidden">
-            <img
-              src={expectedOutcome}
-              alt="Expected Outcome section of the report"
-              className="w-full"
-            />
-          </div>
+        <div className="bg-card border border-border rounded-lg shadow-md overflow-hidden">
+          <img
+            src={parentGuidanceOutcome}
+            alt="Parent Guidance and Expected Outcome section of the report"
+            className="w-full"
+          />
         </div>
       </div>
     </section>
