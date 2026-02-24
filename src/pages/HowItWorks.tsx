@@ -39,56 +39,73 @@ const steps = [
 
 const HowItWorks = () => (
   <Layout>
-    <section className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4 max-w-3xl text-center">
-        <h1 className="text-4xl md:text-5xl mb-8">How Ruby helps your child learn</h1>
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
-        </p>
-      </div>
-    </section>
-
-    <section className="py-14 md:py-20 bg-blue-tint">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="space-y-20 md:space-y-28">
-          {steps.map(({ icon: Icon, title, desc, image, imageAlt }, i) => {
-            const isEven = i % 2 === 0;
-            return (
-              <div
-                key={title}
-                className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-8 md:gap-12 items-center`}
-              >
-                {/* Text side */}
-                <div className="md:w-2/5 shrink-0">
-                  <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0">
-                      <span className="text-lg font-bold text-primary-foreground">{i + 1}</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl mb-2">{title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Screenshot side */}
-                <div className="md:w-3/5">
-                  <div className="bg-card rounded-2xl shadow-lg border border-border/50 overflow-hidden">
-                    <img
-                      src={image}
-                      alt={imageAlt}
-                      className="w-full h-auto block"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+    {/* Hero — two-column with chat preview */}
+    <section className="py-12 md:py-16 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+          {/* Left: text */}
+          <div className="md:w-2/5 shrink-0">
+            <h1 className="text-4xl md:text-5xl mb-4">How Ruby helps your child learn</h1>
+            <p className="text-sm text-muted-foreground mb-6">No tests, no pressure. Ruby guides your child step by step.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
+            </p>
+          </div>
+          {/* Right: large chat preview */}
+          <div className="md:w-3/5">
+            <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">Your child's first learning session</p>
+            <div className="bg-card rounded-2xl shadow-lg border border-border/50 overflow-hidden">
+              <img
+                src={rubyChatImg}
+                alt="Ruby tutoring chat showing a child's first learning session"
+                className="w-full h-auto block"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    {/* Steps — consistent left-text, right-image */}
+    <section className="py-14 md:py-20 bg-blue-tint">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="space-y-14 md:space-y-20">
+          {steps.map(({ icon: Icon, title, desc, image, imageAlt }, i) => (
+            <div
+              key={title}
+              className="flex flex-col md:flex-row gap-6 md:gap-10 items-center"
+            >
+              {/* Text — always left */}
+              <div className="md:w-2/5 shrink-0">
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0">
+                    <span className="text-sm font-bold text-primary-foreground">{i + 1}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl mb-2">{title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{desc}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Image — always right */}
+              <div className="md:w-3/5">
+                <div className="bg-card rounded-2xl shadow-lg border border-border/50 overflow-hidden">
+                  <img
+                    src={image}
+                    alt={imageAlt}
+                    className="w-full h-auto block"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Closing CTA */}
     <section className="py-16 md:py-22 bg-background text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-6">You don't have to guess anymore</h2>
