@@ -67,32 +67,34 @@ const faqs = [
 
 const FAQ = () => (
   <Layout>
-    {/* Hero */}
-    <section className="pt-16 md:pt-20 pb-8 md:pb-10 bg-background">
-      <div className="container mx-auto px-4 text-center max-w-3xl">
-        <h1 className="text-4xl md:text-5xl mb-4">Frequently Asked Questions</h1>
-        <p className="text-base text-muted-foreground mb-1">
-          Most parents read this right before starting the learning checkup.
-        </p>
-        <p className="text-sm text-muted-foreground/70">
-          Here are the things families usually want to know first.
-        </p>
+    {/* Hero — contained panel */}
+    <section className="pt-14 md:pt-18 pb-6 bg-background">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <div className="bg-blue-tint border border-border rounded-xl p-8 md:p-12 text-center shadow-sm">
+          <h1 className="text-4xl md:text-5xl mb-4">Frequently Asked Questions</h1>
+          <p className="text-base text-muted-foreground mb-1">
+            Most parents read this right before starting the learning checkup.
+          </p>
+          <p className="text-sm text-muted-foreground/70">
+            Here are the things families usually want to know first.
+          </p>
+        </div>
       </div>
     </section>
 
-    {/* Reassurance panel */}
-    <section className="pb-8 bg-background">
+    {/* Reassurance panel — elevated */}
+    <section className="pb-6 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
-        <div className="bg-muted/50 border border-border rounded-lg p-5">
-          <ul className="grid sm:grid-cols-2 gap-3 text-sm text-foreground">
+        <div className="bg-card border border-border rounded-lg p-6 md:p-8 shadow-sm">
+          <ul className="grid sm:grid-cols-2 gap-4 text-sm text-foreground">
             {[
               "Your child cannot fail the learning check",
               "Ruby adapts to your child's level",
               "Most children finish in about 10 minutes",
               "You see the results immediately",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2.5">
-                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+              <li key={item} className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>{item}</span>
               </li>
             ))}
@@ -102,18 +104,22 @@ const FAQ = () => (
     </section>
 
     {/* FAQ accordion */}
-    <section className="pb-10 bg-background">
+    <section className="pb-8 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
-        <Accordion type="single" collapsible className="space-y-3">
+        <Accordion type="single" collapsible className="space-y-2.5">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border rounded-xl px-6 shadow-sm">
+            <AccordionItem
+              key={i}
+              value={`faq-${i}`}
+              className="bg-card border border-border rounded-xl px-6 shadow-sm hover:bg-muted/30 transition-colors data-[state=open]:border-primary/30 data-[state=open]:bg-blue-tint data-[state=open]:shadow-md"
+            >
               <AccordionTrigger className="text-left text-base font-medium py-5 hover:no-underline">
                 <span className="flex items-center gap-3">
                   <faq.icon className="w-4 h-4 text-muted-foreground shrink-0" strokeWidth={1.5} />
                   {faq.q}
                 </span>
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+              <AccordionContent className="text-muted-foreground leading-relaxed pb-7 pt-1 px-1">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>
@@ -125,31 +131,38 @@ const FAQ = () => (
     {/* Trust Strip */}
     <TrustStrip />
 
-    {/* Micro trust indicators + CTA */}
-    <section className="py-14 md:py-18 bg-sage-light text-center">
-      <div className="container mx-auto px-4 max-w-2xl">
-        {/* Micro trust row */}
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground mb-10">
-          {[
-            "Private and child-safe learning environment",
-            "No public profiles or messaging",
-            "Designed for home use",
-            "No long-term commitment",
-          ].map((t) => (
-            <span key={t} className="flex items-center gap-1.5">
-              <span className="w-1 h-1 rounded-full bg-muted-foreground/40 shrink-0" />
-              {t}
-            </span>
-          ))}
-        </div>
+    {/* Divider */}
+    <div className="container mx-auto px-4 max-w-3xl">
+      <hr className="border-border" />
+    </div>
 
-        <h2 className="text-3xl mb-4">Still have questions?</h2>
-        <p className="text-muted-foreground leading-relaxed mb-8">
-          You don't need to decide anything yet.
-          <br />
-          Start the free learning check and see your child's results first.
-        </p>
-        <CTAButton />
+    {/* Decision CTA block */}
+    <section className="py-12 md:py-14 bg-background text-center">
+      <div className="container mx-auto px-4 max-w-2xl">
+        <div className="bg-sage-light border border-border rounded-xl p-8 md:p-12 shadow-sm">
+          {/* Micro trust row */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground mb-8">
+            {[
+              "Private and child-safe learning environment",
+              "No public profiles or messaging",
+              "Designed for home use",
+              "No long-term commitment",
+            ].map((t) => (
+              <span key={t} className="flex items-center gap-1.5">
+                <span className="w-1 h-1 rounded-full bg-muted-foreground/40 shrink-0" />
+                {t}
+              </span>
+            ))}
+          </div>
+
+          <h2 className="text-3xl mb-4">Still have questions?</h2>
+          <p className="text-muted-foreground leading-relaxed mb-8">
+            You don't need to decide anything yet.
+            <br />
+            Start the free learning check and see your child's results first.
+          </p>
+          <CTAButton className="px-10 py-5 text-lg shadow-md" />
+        </div>
       </div>
     </section>
   </Layout>
