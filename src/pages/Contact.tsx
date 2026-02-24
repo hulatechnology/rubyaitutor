@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
-import supportImage from "@/assets/parent-support.jpg";
+
 import {
   Users,
   Mail,
@@ -79,8 +79,7 @@ const Contact = () => {
       {/* ── Hero ── */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-center max-w-5xl mx-auto">
-            <div>
+          <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl leading-tight mb-5">
                 We're here to help you and your child
               </h1>
@@ -103,14 +102,6 @@ const Contact = () => {
                 <Clock className="w-4 h-4" />
                 We normally reply the same day during weekdays.
               </p>
-            </div>
-            <div>
-              <img
-                src={supportImage}
-                alt="Friendly support helping a parent and child"
-                className="rounded-2xl shadow-lg w-full opacity-90"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -172,8 +163,21 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ── Contact methods ── */}
+      {/* ── You don't need to figure this out alone ── */}
       <section className="py-14 md:py-20 bg-blue-tint">
+        <div className="container mx-auto px-4 max-w-3xl text-center mb-10">
+          <h2 className="text-3xl md:text-4xl mb-6">
+            You don't need to figure this out alone
+          </h2>
+          <div className="space-y-2 text-foreground leading-relaxed max-w-xl mx-auto">
+            <p>If your child is working hard but still struggling, contact us.</p>
+            <p>If you are unsure whether they need extra help, contact us.</p>
+            <p>If you received a report and don't know what to do next, contact us.</p>
+            <p className="pt-2"><strong>We will tell you honestly whether Ruby is right for your child.</strong></p>
+          </div>
+        </div>
+
+        {/* ── Contact methods ── */}
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl md:text-4xl text-center mb-10">
             Ways to reach us
@@ -311,29 +315,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ── You don't need to figure this out alone ── */}
-      <section className="pt-20 md:pt-28 pb-14 md:pb-20 bg-blue-tint">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="text-3xl md:text-4xl mb-8">
-            You don't need to figure this out alone
-          </h2>
-          <div className="space-y-5 text-foreground leading-relaxed text-left max-w-xl mx-auto">
-            <p>
-              If your child is working hard but still struggling, contact us.
-            </p>
-            <p>
-              If you are unsure whether they need extra help, contact us.
-            </p>
-            <p>
-              If you received a report and don't know what to do next, contact
-              us.
-            </p>
-          </div>
-          <p className="mt-8 text-foreground">
-            <strong>We will tell you honestly whether Ruby is right for your child.</strong>
-          </p>
-        </div>
-      </section>
 
       {/* ── Before you contact us ── */}
       <section className="py-10 md:py-14 bg-background">
