@@ -8,26 +8,31 @@ const reasons = [
     icon: Blocks,
     title: "Missing building blocks",
     desc: "If a child never fully understood fractions earlier on, later topics like algebra stop making sense.",
+    iconColor: "hsl(214 64% 34% / 0.7)",
   },
   {
     icon: ListChecks,
     title: "Memorising, not understanding",
     desc: "Your child may know the steps but not the reason. When questions change slightly, they feel stuck.",
+    iconColor: "hsl(215 58% 41% / 0.7)",
   },
   {
     icon: HandHelping,
     title: "They won't say they're confused",
     desc: "Children often stay quiet because they don't want to look wrong in front of others.",
+    iconColor: "hsl(150 25% 50% / 0.85)",
   },
   {
     icon: Clock,
     title: "The class moves on",
     desc: "Schools must keep pace. If a concept takes longer for one child, there is rarely time to revisit it.",
+    iconColor: "hsl(351 75% 48% / 0.55)",
   },
   {
     icon: TrendingUp,
     title: "Working hard, no progress",
     desc: "Without knowing what to fix, effort becomes frustration.",
+    iconColor: "hsl(215 57% 28% / 0.7)",
   },
 ];
 
@@ -89,7 +94,7 @@ const WhyChildrenStruggle = () => (
                 >
                   <div className="flex gap-4 items-start">
                     <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center shrink-0 mt-0.5">
-                      <Icon size={17} className="text-muted-foreground" strokeWidth={1.5} />
+                      <Icon size={17} style={{ color: r.iconColor }} strokeWidth={1.5} />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold mb-2">{r.title}</h3>
@@ -104,26 +109,21 @@ const WhyChildrenStruggle = () => (
       </div>
     </section>
 
-    {/* Recognition box — warmer, distinct */}
-    <section className="py-6 md:py-8 bg-blue-tint">
+    {/* Recognition — integrated, no box */}
+    <section className="pt-0 pb-8 md:pb-10 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
-        <div
-          className="rounded-xl px-8 py-8 md:px-10 md:py-9 border-2 border-border shadow-md"
-          style={{ backgroundColor: "hsl(30 30% 96%)" }}
-        >
-          <div className="flex gap-3 items-center mb-5">
-            <Home size={18} className="text-muted-foreground" />
-            <h3 className="text-xl">What parents usually notice at home</h3>
-          </div>
-          <ul className="space-y-4">
-            {parentNotices.map((notice, i) => (
-              <li key={i} className="flex gap-3 items-start text-muted-foreground leading-relaxed">
-                <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground shrink-0 mt-2.5" />
-                {notice}
-              </li>
-            ))}
-          </ul>
+        <div className="flex gap-3 items-center mb-4">
+          <Home size={18} className="text-muted-foreground" />
+          <h3 className="text-xl">What parents usually notice at home</h3>
         </div>
+        <ul className="space-y-3">
+          {parentNotices.map((notice, i) => (
+            <li key={i} className="flex gap-3 items-start text-muted-foreground leading-relaxed">
+              <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground shrink-0 mt-2.5" />
+              {notice}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
 
