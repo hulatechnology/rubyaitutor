@@ -56,19 +56,18 @@ const WhyChildrenStruggle = () => (
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center">
           <div className="md:w-1/2">
-            <div className="bg-muted/40 rounded-xl px-6 py-6 md:px-8 md:py-8">
+            <div>
               <h1 className="text-4xl md:text-5xl mb-4">It doesn't start in today's lesson</h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Children rarely fall behind in the topic they are learning now. They fall behind in something they were expected to already know.
               </p>
-
             </div>
           </div>
           <div className="md:w-1/2">
             <img
               src={parentHelpingImg}
               alt="A parent sitting beside their child at a home table, gently helping with homework while the child looks confused"
-              className="w-full max-w-sm mx-auto h-auto rounded-2xl"
+              className="w-full max-w-sm mx-auto h-auto"
             />
           </div>
         </div>
