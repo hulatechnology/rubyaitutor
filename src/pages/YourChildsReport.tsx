@@ -13,17 +13,14 @@ const YourChildsReport = () => (
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
           <div>
-            <p className="text-sm font-medium tracking-wide text-muted-foreground uppercase mb-3">
-              Sample Learning Diagnostic Report
-            </p>
             <h1 className="text-4xl md:text-5xl mb-6">See what your child actually understands</h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-2">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Ruby turns your child's answers into a clear explanation of their strengths, their gaps, and how to support them at home.
             </p>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+            <CTAButton />
+            <p className="text-sm text-muted-foreground leading-relaxed mt-4">
               The report is written in clear language and can be delivered in your preferred home language.
             </p>
-            <CTAButton />
           </div>
           <div>
             <img
@@ -39,7 +36,7 @@ const YourChildsReport = () => (
     {/* Introduction to the walkthrough */}
     <section className="py-6 md:py-8 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
-        <p className="text-xs font-medium tracking-widest text-muted-foreground uppercase mb-3">
+        <p className="text-xs font-medium tracking-widest text-foreground uppercase mb-3 text-center">
           Inside the report you receive
         </p>
         <p className="text-muted-foreground leading-relaxed">
