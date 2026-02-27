@@ -186,8 +186,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-up">
               <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
-                It's not a lack of effort.<br />
-                <span className="text-primary">It's a gap in understanding.</span>
+                It's not a lack of effort. <span className="text-primary">It's a gap in understanding.</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-lg">
                 Ruby finds the root cause of your child's mistakes and rebuilds their foundation step by step.
