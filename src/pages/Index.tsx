@@ -24,7 +24,7 @@ const reasons = [
   },
   {
     title: "Explains in a way they grasp",
-    desc: "Lessons adapt to your child's level and language so they finally understand the why, not just the answer.",
+    desc: "Lessons adapt to your child's level and home language so they finally understand the why, not just the answer.",
     icon: Lightbulb,
   },
   {
@@ -196,7 +196,10 @@ const Index = () => {
                 Ruby finds the root cause of mistakes and rebuilds understanding step by step
               </p>
               <CTAButton />
-              <p className="text-sm text-muted-foreground mt-4 flex items-center justify-start gap-2">
+              <p className="text-sm text-muted-foreground mt-4">
+                Lessons and explanations are available in your child's home language.
+              </p>
+              <p className="text-sm text-muted-foreground mt-2 flex items-center justify-start gap-2">
                 <ShieldCheck className="w-4 h-4" />
                 Private, child-safe learning environment
               </p>
