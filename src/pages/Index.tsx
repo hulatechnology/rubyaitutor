@@ -185,15 +185,14 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-up">
-              <p className="text-sm font-medium text-primary mb-4 tracking-wide uppercase">
-                For parents who care deeply
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-8">
-                Your child isn't struggling with effort.<br />
-                <span className="text-primary">They're struggling with understanding.</span>
+              <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
+                Your child isn't struggling with effort.
               </h1>
+              <h2 className="text-2xl md:text-3xl text-primary leading-snug mb-8">
+                They're struggling with understanding.
+              </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-lg">
-                Ruby finds the root cause of mistakes and rebuilds understanding step by step
+                Ruby finds the root cause of mistakes and rebuilds their foundation step by step.
               </p>
               <CTAButton />
               <p className="text-sm text-muted-foreground mt-4">
