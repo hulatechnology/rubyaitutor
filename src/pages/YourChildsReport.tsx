@@ -17,8 +17,11 @@ const YourChildsReport = () => (
               Sample Learning Diagnostic Report
             </p>
             <h1 className="text-4xl md:text-5xl mb-6">See what your child actually understands</h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-2">
               Ruby turns your child's answers into a clear explanation of their strengths, their gaps, and how to support them at home.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+              The report is written in clear language and can be delivered in your preferred home language.
             </p>
             <CTAButton />
           </div>
