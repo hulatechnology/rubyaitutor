@@ -93,7 +93,7 @@ const WhyChildrenStruggle = () => (
                   style={{ borderLeftColor: "hsl(351 75% 48% / 0.25)" }}
                 >
                   <div className="flex gap-4 items-start">
-                    <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5 border" style={{ borderColor: r.iconColor, backgroundColor: `${r.iconColor.replace(')', ' / 0.08)')}` }}>
                       <Icon size={17} style={{ color: r.iconColor }} strokeWidth={1.5} />
                     </div>
                     <div>
