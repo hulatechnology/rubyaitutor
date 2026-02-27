@@ -57,17 +57,6 @@ const WhyChildrenStruggle = () => (
                 Children rarely fall behind in the topic they are learning now. They fall behind in something they were expected to already know.
               </p>
 
-              <div className="mt-5 rounded-lg bg-cream px-5 py-4">
-                <p className="text-sm font-medium text-foreground mb-2">Parents often notice this before school does</p>
-                <ul className="space-y-1.5">
-                  {earlyNotices.map((n, i) => (
-                    <li key={i} className="flex gap-2.5 items-start text-sm text-muted-foreground leading-relaxed">
-                      <span className="w-1 h-1 rounded-full bg-muted-foreground shrink-0 mt-2" />
-                      {n}
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
           <div className="md:w-1/2">
