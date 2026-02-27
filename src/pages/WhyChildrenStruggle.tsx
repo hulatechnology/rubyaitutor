@@ -73,6 +73,7 @@ const WhyChildrenStruggle = () => (
     {/* Cause blocks — connected chain */}
     <section className="py-8 md:py-12 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
+        <h2 className="text-3xl md:text-4xl mb-8 text-center">Why Some Children Fall Behind</h2>
         <div className="relative">
           {reasons.map((r, i) => {
             const Icon = r.icon;
