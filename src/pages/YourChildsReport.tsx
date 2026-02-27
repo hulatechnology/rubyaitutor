@@ -26,7 +26,7 @@ const YourChildsReport = () => (
             <img
               src={reportImage}
               alt="Parent reviewing child's learning report"
-              className="rounded-xl shadow-lg w-full"
+              className="w-full"
             />
           </div>
         </div>

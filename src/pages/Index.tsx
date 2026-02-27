@@ -205,7 +205,7 @@ const Index = () => {
               <img
                 src={heroImage}
                 alt="Parent and child learning together"
-                className="rounded-2xl shadow-xl w-full"
+                className="w-full"
               />
             </div>
           </div>

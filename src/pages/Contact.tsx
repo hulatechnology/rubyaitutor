@@ -108,7 +108,7 @@ const Contact = () => {
               <img
                 src={supportImage}
                 alt="Friendly support helping a parent and child"
-                className="rounded-2xl shadow-lg w-full opacity-90"
+                className="w-full"
               />
             </div>
           </div>
