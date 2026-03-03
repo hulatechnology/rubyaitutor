@@ -1,10 +1,10 @@
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import reportImage from "@/assets/parent-report.jpg";
-import understandingLevel from "@/assets/learning-checkup-1.png";
-import rootCause from "@/assets/root-cause.png";
-import teachFirst from "@/assets/teach-first.png";
-import parentGuidanceOutcome from "@/assets/parent-guidance-outcome.png";
+import understandingLevel from "@/assets/understanding-level-replace.png";
+import rootCause from "@/assets/root-cause-replace.png";
+import teachFirst from "@/assets/ruby-teach-first-replace.png";
+import parentGuidanceOutcome from "@/assets/parent-guidance-replace.png";
 
 const YourChildsReport = () => (
   <Layout>
