@@ -5,9 +5,9 @@ import TrustStrip from "@/components/TrustStrip";
 import heroImage from "@/assets/hero-illustration.jpg";
 import rubyTeachingUI from "@/assets/ruby-teaching-interface.png";
 import rubyChat from "@/assets/ruby-tutoring-chat.png";
-import reportImg1 from "@/assets/learning-checkup-1.png";
-import reportImg2 from "@/assets/learning-checkup-2.png";
-import reportImg3 from "@/assets/learning-checkup-3.png";
+import reportImg1 from "@/assets/understanding-level-replace.png";
+import reportImg2 from "@/assets/root-cause-replace.png";
+import reportImg3 from "@/assets/parent-guidance-replace.png";
 import { Search, ClipboardList, Route, Sparkles, CheckCircle, Target, Lightbulb, TrendingUp, Clock, HelpCircle, GraduationCap, Shield, Users, ShieldCheck } from "lucide-react";
 import {
   Accordion,
@@ -159,7 +159,7 @@ const ReportCarousel = () => {
             key={i}
             src={slide.src}
             alt={slide.alt}
-            className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-700"
+            className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700"
             style={{ opacity: i === active ? 1 : 0 }}
           />
         ))}
