@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import { Search, ClipboardList, Route, Sparkles } from "lucide-react";
-import rubyTeachingImg from "@/assets/ruby-teaching-interface.png";
+import rubyTeachingImg from "@/assets/ruby-teach-first-replace.png";
 import rootCauseImg from "@/assets/root-cause.png";
 import teachFirstImg from "@/assets/teach-first.png";
 import rubyChatImg from "@/assets/ruby-tutoring-chat.png";
