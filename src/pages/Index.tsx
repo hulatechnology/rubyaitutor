@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
 import heroImage from "@/assets/hero-illustration.jpg";
-import rubyTeachingUI from "@/assets/ruby-teaching-interface.png";
+import rubyTeachingUI from "@/assets/ruby-teach-first-replace.png";
 import rubyChat from "@/assets/ruby-tutoring-chat.png";
 import reportImg1 from "@/assets/understanding-level-replace.png";
 import reportImg2 from "@/assets/root-cause-replace.png";
