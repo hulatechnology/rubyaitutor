@@ -9,6 +9,7 @@ const Footer = () => (
           <p className="text-sm text-primary-foreground/70 leading-relaxed max-w-xs">
             Helping parents understand why their child struggles — and what to do about it.
           </p>
+          <p className="text-xs text-primary-foreground/50 mt-1">A Hula Technology Product</p>
         </div>
         <div>
           <h4 className="text-sm font-semibold mb-4 text-primary-foreground">Explore</h4>
@@ -26,13 +27,13 @@ const Footer = () => (
             Have questions about your child's learning?<br />
             We're here to help.
           </p>
-          <a href="mailto:hello@rubylearning.com" className="text-sm text-primary-foreground hover:underline mt-2 inline-block">
-            hello@rubylearning.com
+          <a href="mailto:info@hulatechnology.com" className="text-sm text-primary-foreground hover:underline mt-2 inline-block">
+            info@hulatechnology.com
           </a>
         </div>
       </div>
       <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-xs text-primary-foreground/50">
-        © {new Date().getFullYear()} Ruby Learning. All rights reserved.
+        © {new Date().getFullYear()} Hula Technology. All rights reserved.
       </div>
     </div>
   </footer>
