@@ -185,9 +185,12 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-up">
-              <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-6">
-                Ruby finds the root cause of your child's mistakes and <span className="text-primary">rebuilds their foundation step by step.</span>
+              <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
+                When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
               </h1>
+              <p className="text-lg text-muted-foreground mb-6">
+                Our AI Tutor identifies the exact learning gap and guides your child to understand, not just memorize answers.
+              </p>
               <CTAButton />
               <p className="text-sm text-muted-foreground mt-4">
                 Lessons and explanations are available in your child's home language.
