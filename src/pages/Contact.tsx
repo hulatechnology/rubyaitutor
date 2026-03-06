@@ -176,6 +176,18 @@ const Contact = () => {
             You don't need to figure this out alone. If your child is working hard but still struggling, contact us. If you are unsure whether they need extra help, contact us. If you received a report and don't know what to do next, contact us. <strong>We will tell you honestly whether Ruby is right for your child.</strong>
           </p>
 
+          <p className="text-sm text-muted-foreground mb-6">
+            Need a faster response?{" "}
+            <a
+              href="https://wa.me/27652985458?text=Hi%F0%9F%91%8B%2C%20I%20would%20like%20to%20learn%20more%20about%20Ruby%20AI%20Tutor%20%F0%9F%A7%A0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-medium hover:underline"
+            >
+              Chat with us instantly on WhatsApp
+            </a>
+          </p>
+
           <p className="text-muted-foreground mb-10">
             Tell us a little about your child and what you're unsure about.
           </p>

@@ -145,8 +145,21 @@ const Pricing = () => (
           </ul>
         </div>
 
-        {/* Decision paragraph */}
+        {/* WhatsApp hint */}
         <p className="text-center text-sm text-muted-foreground mt-8 max-w-xl mx-auto leading-relaxed">
+          Questions before you start?{" "}
+          <a
+            href="https://wa.me/27652985458?text=Hi%F0%9F%91%8B%2C%20I%20would%20like%20to%20learn%20more%20about%20Ruby%20AI%20Tutor%20%F0%9F%A7%A0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-medium hover:underline"
+          >
+            Chat with us on WhatsApp.
+          </a>
+        </p>
+
+        {/* Decision paragraph */}
+        <p className="text-center text-sm text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
           Most families simply begin with the free learning checkup. After seeing the report, you can decide whether your child would benefit from ongoing support.
         </p>
       </div>
