@@ -43,7 +43,7 @@ const Navbar = () => {
             to="/your-childs-report"
             className="inline-flex items-center justify-center text-sm font-medium px-6 py-2.5 rounded-lg bg-cta text-cta-foreground hover:bg-cta-hover transition-colors"
           >
-            Start a Learning Checkup
+            Discover Their Learning Level
           </Link>
         </div>
 
@@ -73,7 +73,7 @@ const Navbar = () => {
             onClick={() => setOpen(false)}
             className="mt-4 w-full inline-flex items-center justify-center text-sm font-medium px-6 py-3 rounded-lg bg-cta text-cta-foreground hover:bg-cta-hover transition-colors"
           >
-            Start a Learning Checkup
+            Discover Their Learning Level
           </Link>
         </div>
       )}
