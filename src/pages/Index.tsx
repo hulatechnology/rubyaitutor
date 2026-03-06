@@ -191,7 +191,12 @@ const Index = () => {
               <p className="text-lg text-muted-foreground mb-6">
                 Our AI Tutor identifies the exact learning gap and guides your child to understand, not just memorize answers.
               </p>
-              <CTAButton />
+              <Link
+                to="/your-childs-report"
+                className="inline-flex items-center justify-center text-base font-medium px-8 py-4 rounded-lg bg-cta text-cta-foreground hover:bg-cta-hover transition-colors shadow-md"
+              >
+                Help My Child Understand
+              </Link>
               <p className="text-sm text-muted-foreground mt-4">
                 Lessons and explanations are available in your child's home language.
               </p>
