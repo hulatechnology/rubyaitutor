@@ -1,4 +1,4 @@
-const WHATSAPP_URL = "https://wa.me/27652985458?text=Hi%F0%9F%91%8B%2C%20I%20would%20like%20to%20learn%20more%20about%20Ruby%20AI%20Tutor%20%F0%9F%A7%A0";
+const WHATSAPP_URL = "https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20to%20learn%20more%20about%20Ruby%20AI%20Tutor";
 
 const WhatsAppButton = () => {
   return (
