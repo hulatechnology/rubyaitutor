@@ -179,7 +179,7 @@ const Contact = () => {
           <p className="text-sm text-muted-foreground mb-6">
             Need a faster response?{" "}
             <a
-              href="https://wa.me/27652985458?text=Hi%F0%9F%91%8B%2C%20I%20would%20like%20to%20learn%20more%20about%20Ruby%20AI%20Tutor%20%F0%9F%A7%A0"
+              href="https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20to%20learn%20more%20about%20Ruby%20AI%20Tutor"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary font-medium hover:underline"
