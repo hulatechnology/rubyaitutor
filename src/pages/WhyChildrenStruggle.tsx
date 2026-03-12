@@ -88,7 +88,8 @@ const WhyChildrenStruggle = () => (
                   <div className="absolute left-9 top-full w-px h-4 bg-border z-0" />
                 )}
                 <div
-                  className="relative z-10 bg-card rounded-xl px-8 py-7 border border-border shadow-md border-l-[3px] mb-4"
+                  className="relative z-10 bg-card rounded-xl px-8 py-7 border border-border border-l-[3px] mb-4"
+                  style={{ borderLeftColor: "hsl(351 75% 48% / 0.25)", boxShadow: "0 10px 30px rgba(37, 99, 235, 0.15)" }}
                   style={{ borderLeftColor: "hsl(351 75% 48% / 0.25)" }}
                 >
                   <div className="flex gap-4 items-start">
