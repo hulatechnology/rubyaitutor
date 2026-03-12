@@ -58,7 +58,7 @@ const HowItWorks = () => (
               <img
                 src={rubyChatImg}
                 alt="Ruby tutoring chat showing a child's first learning session"
-                className="w-full h-auto block"
+                className="w-full h-auto block object-contain"
               />
             </div>
           </div>
