@@ -350,7 +350,7 @@ const Index = () => {
               <img
                 src={rubyChat}
                 alt="Ruby chat interface showing step-by-step help with a maths question"
-                className="w-full"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
