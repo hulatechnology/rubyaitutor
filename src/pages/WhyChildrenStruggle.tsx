@@ -88,8 +88,8 @@ const WhyChildrenStruggle = () => (
                   <div className="absolute left-9 top-full w-px h-4 bg-border z-0" />
                 )}
                 <div
-                  className="relative z-10 bg-card rounded-xl px-8 py-7 border border-border border-l-[3px] mb-4"
-                  style={{ borderLeftColor: "hsl(351 75% 48% / 0.25)", boxShadow: "0 10px 30px rgba(37, 99, 235, 0.15)" }}
+                  className="relative z-10 bg-card rounded-xl px-8 py-7 border border-border border-l-[3px] mb-4 transition-shadow duration-300 hover:[box-shadow:0_18px_40px_rgba(37,99,235,0.18)]"
+                  style={{ borderLeftColor: "hsl(351 75% 48% / 0.25)", boxShadow: "0 12px 28px rgba(37, 99, 235, 0.12)" }}
                 >
                   <div className="flex gap-4 items-start">
                     <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5 border" style={{ borderColor: r.iconColor, backgroundColor: `${r.iconColor.replace(')', ' / 0.08)')}` }}>
