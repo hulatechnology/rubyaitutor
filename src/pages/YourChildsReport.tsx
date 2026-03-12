@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
-import reportImage from "@/assets/parent-report.jpg";
+import reportImage from "@/assets/skill_map.png";
 import understandingLevel from "@/assets/understanding-level-replace.png";
 import rootCause from "@/assets/root-cause-replace.png";
 import teachFirst from "@/assets/next-skill.png";
