@@ -64,11 +64,13 @@ const WhyChildrenStruggle = () => (
             </div>
           </div>
           <div className="md:w-1/2">
-            <img
-              src={parentHelpingImg}
-              alt="A parent sitting beside their child at a home table, gently helping with homework while the child looks confused"
-              className="w-full max-w-sm mx-auto h-auto"
-            />
+            <div className="w-full md:h-[460px] overflow-hidden rounded-lg">
+              <img
+                src={parentHelpingImg}
+                alt="A parent and child sitting together at a table, using a tablet for learning"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </div>
