@@ -4,8 +4,8 @@ import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
 import heroImage from "@/assets/hero-illustration.jpg";
-import rubyTeachingUI from "@/assets/ruby-teach-first-replace.png";
-import rubyChat from "@/assets/ruby-tutoring-chat.png";
+import rubyTeachingUI from "@/assets/dds.png";
+import rubyChat from "@/assets/new-textbox.png";
 import reportImg1 from "@/assets/understanding-level-replace.png";
 import reportImg2 from "@/assets/root-cause-replace.png";
 import reportImg3 from "@/assets/parent-guidance-replace.png";
@@ -286,8 +286,8 @@ const Index = () => {
               </div>
               <img
                 src={rubyTeachingUI}
-                alt="Ruby teaching interface showing a maths question with hints and feedback"
-                className="w-full"
+                alt="Ruby discovery activity showing a friendly welcome screen with learning check details"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
@@ -350,7 +350,7 @@ const Index = () => {
               <img
                 src={rubyChat}
                 alt="Ruby chat interface showing step-by-step help with a maths question"
-                className="w-full"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
