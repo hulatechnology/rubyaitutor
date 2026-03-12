@@ -94,7 +94,7 @@ const HowItWorks = () => (
                   <img
                     src={image}
                     alt={imageAlt}
-                    className="w-full h-auto block"
+                    className="w-full h-auto block object-contain"
                     loading="lazy"
                   />
                 </div>
