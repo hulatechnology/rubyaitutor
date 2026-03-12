@@ -90,7 +90,7 @@ const YourChildsReport = () => (
           <img
             src={teachFirst}
             alt="What Ruby Will Teach First section of the report"
-            className="w-full"
+            className="w-full h-auto object-contain"
           />
         </div>
       </div>
