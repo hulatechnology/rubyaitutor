@@ -4,7 +4,7 @@ import { Search, ClipboardList, Route, Sparkles } from "lucide-react";
 import rubyTeachingImg from "@/assets/dds-2.png";
 import rootCauseImg from "@/assets/gap.png";
 import teachFirstImg from "@/assets/teach-first.png";
-import rubyChatImg from "@/assets/ruby-tutoring-chat.png";
+import rubyChatImg from "@/assets/new-textbox-2.png";
 
 const steps = [
   {
