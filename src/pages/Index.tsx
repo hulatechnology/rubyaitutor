@@ -184,33 +184,40 @@ const Index = () => {
       {/* ── Hero ── */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="animate-fade-up">
-              <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
+          <div className="grid grid-cols-[1fr_0.7fr] md:grid-cols-[1.15fr_1fr] gap-4 md:gap-10 items-center">
+            <div className="relative animate-fade-up">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
                 When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
               </h1>
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-sm sm:text-lg text-muted-foreground mb-6 hidden sm:block">
                 Our AI Tutor identifies the exact learning gap and guides your child to understand, not just memorize answers.
               </p>
               <Link
                 to="/your-childs-report"
-                className="inline-flex items-center justify-center text-base font-medium px-8 py-4 rounded-lg bg-cta text-cta-foreground hover:bg-cta-hover transition-colors shadow-md"
+                className="inline-flex items-center justify-center text-sm sm:text-base font-medium px-5 sm:px-8 py-3 sm:py-4 rounded-lg bg-cta text-cta-foreground hover:bg-cta-hover transition-colors shadow-md"
               >
                 Help My Child Understand
               </Link>
-              <p className="text-sm text-muted-foreground mt-4">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-4">
                 Lessons and explanations are available in your child's home language.
               </p>
-              <p className="text-sm text-muted-foreground mt-2 flex items-center justify-start gap-2">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-2 flex items-center justify-start gap-2">
                 <ShieldCheck className="w-4 h-4" />
                 Private, child-safe learning environment
               </p>
+              {/* Soft fade toward image */}
+              <div
+                className="hidden md:block absolute top-0 right-0 w-16 h-full pointer-events-none"
+                style={{
+                  background: "linear-gradient(to right, transparent 0%, hsl(var(--background) / 0.6) 60%, hsl(var(--background)) 100%)",
+                }}
+              />
             </div>
-            <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-fade-up overflow-hidden rounded-lg" style={{ animationDelay: "0.2s" }}>
               <img
                 src={heroImage}
                 alt="Parent and child learning together"
-                className="w-full"
+                className="w-full h-full object-cover object-[center_right] md:h-[460px]"
               />
             </div>
           </div>
