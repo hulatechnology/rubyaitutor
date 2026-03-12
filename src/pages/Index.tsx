@@ -286,8 +286,8 @@ const Index = () => {
               </div>
               <img
                 src={rubyTeachingUI}
-                alt="Ruby teaching interface showing a maths question with hints and feedback"
-                className="w-full"
+                alt="Ruby discovery activity showing a friendly welcome screen with learning check details"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
