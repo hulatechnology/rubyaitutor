@@ -3,7 +3,7 @@ import CTAButton from "@/components/CTAButton";
 import reportImage from "@/assets/parent-report.jpg";
 import understandingLevel from "@/assets/understanding-level-replace.png";
 import rootCause from "@/assets/root-cause-replace.png";
-import teachFirst from "@/assets/ruby-teach-first-replace.png";
+import teachFirst from "@/assets/next-skill.png";
 import parentGuidanceOutcome from "@/assets/parent-guidance-replace.png";
 
 const YourChildsReport = () => (
