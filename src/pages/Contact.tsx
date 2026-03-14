@@ -298,7 +298,7 @@ const Contact = () => {
           <div className="flex flex-wrap justify-center gap-6">
             <Link
               to="/faq"
-              className="inline-flex items-center gap-2 text-sm font-medium bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-extrabold bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
             >
               Frequently Asked Questions
               <ArrowRight className="w-4 h-4" />
