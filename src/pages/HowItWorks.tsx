@@ -67,9 +67,9 @@ const HowItWorks = () => (
     </section>
 
     {/* Steps — consistent left-text, right-image */}
-    <section className="py-14 md:py-20 bg-blue-tint">
+    <section className="py-8 md:py-20 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="space-y-14 md:space-y-20">
+        <div className="space-y-8 md:space-y-20">
           {steps.map(({ icon: Icon, title, desc, image, imageAlt }, i) => (
             <div
               key={title}
