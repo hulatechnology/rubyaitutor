@@ -255,7 +255,7 @@ const Index = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
-              How Ruby helps your child learn
+              How Ruby helps <span className="text-primary">your child learn</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
