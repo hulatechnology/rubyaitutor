@@ -425,7 +425,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl mb-6">
             You don't have to guess anymore
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-12">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8 md:mb-12">
             In less than 10 questions you'll see exactly where your child is struggling and how to help them move forward.
           </p>
           <CTAButton />
