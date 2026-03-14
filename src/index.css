@@ -177,6 +177,7 @@
 
 @layer utilities {
   .heading-display {
-    font-family: 'Merriweather', serif;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
   }
 }
