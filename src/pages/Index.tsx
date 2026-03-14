@@ -189,7 +189,7 @@ const Index = () => {
               <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.2] sm:leading-tight mb-3 md:mb-4">
                 When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
               </h1>
-              <p className="text-base sm:text-lg text-muted-foreground mb-6 hidden sm:block">
+              <p className="text-base sm:text-lg text-muted-foreground mb-6">
                 Identify the learning gap and help your child understand, not memorize, in their home language
               </p>
               <Link
