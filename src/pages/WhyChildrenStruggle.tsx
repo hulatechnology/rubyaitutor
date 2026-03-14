@@ -109,7 +109,7 @@ const WhyChildrenStruggle = () => (
     </section>
 
     {/* Recognition — integrated, no box */}
-    <section className="pt-0 pb-8 md:pb-10 bg-blue-tint">
+    <section className="pt-0 pb-6 md:pb-10 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="flex gap-3 items-center mb-4">
           <Home size={18} className="text-muted-foreground" />
