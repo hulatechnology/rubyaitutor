@@ -41,10 +41,10 @@ const Navbar = () => {
         <div className="hidden lg:block">
           <Link
             to="/your-childs-report"
-            className="inline-flex items-center justify-center text-sm font-extrabold px-6 py-2.5 rounded-lg text-cta-foreground hover:opacity-90 transition-all"
+            className="inline-flex items-center justify-center text-sm font-extrabold px-5 py-2.5 rounded-full text-cta-foreground hover:opacity-90 transition-all"
             style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
           >
-            Discover Their Learning Level
+            Try now!
           </Link>
         </div>
 
