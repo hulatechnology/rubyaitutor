@@ -41,7 +41,7 @@ const FAQ = () => (
     </section>
 
     {/* Reassurance panel */}
-    <section className="pb-5 bg-background">
+    <section className="pb-5">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="bg-card border border-border rounded-lg p-7 md:p-9 shadow-sm">
           <ul className="grid sm:grid-cols-2 gap-5 text-sm text-foreground font-medium">
