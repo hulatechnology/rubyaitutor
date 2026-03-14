@@ -115,7 +115,7 @@
     content: '';
     position: fixed;
     inset: 0;
-    background: hsl(var(--background) / 0.82);
+    background: hsl(var(--background) / 0.55);
     pointer-events: none;
     z-index: 0;
   }
