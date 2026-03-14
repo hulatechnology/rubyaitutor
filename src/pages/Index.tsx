@@ -257,7 +257,7 @@ const Index = () => {
       </section>
 
       {/* ── How Ruby Works ── */}
-      <section className="py-14 md:py-20 bg-background">
+      <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
