@@ -305,7 +305,7 @@ const Contact = () => {
             </Link>
             <Link
               to="/your-childs-report"
-              className="inline-flex items-center gap-2 text-sm font-medium bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-extrabold bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
             >
               Your Child's Report
               <ArrowRight className="w-4 h-4" />
