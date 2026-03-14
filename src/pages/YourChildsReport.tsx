@@ -63,7 +63,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* 2. Root Cause */}
-    <section className="py-8 md:py-10 bg-blue-tint">
+    <section className="py-5 md:py-10 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-2xl mb-2">Root Cause</h2>
         <p className="text-muted-foreground leading-relaxed mb-5">
