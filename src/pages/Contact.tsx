@@ -77,7 +77,7 @@ const Contact = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-center max-w-5xl mx-auto">
             <div>
@@ -137,7 +137,7 @@ const Contact = () => {
       </section>
 
       {/* ── What parents contact us about ── */}
-      <section className="py-14 md:py-20 bg-background">
+      <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl mb-4">
@@ -290,7 +290,7 @@ const Contact = () => {
       </section>
 
       {/* ── Before you contact us ── */}
-      <section className="py-6 md:py-8 bg-background">
+      <section className="py-6 md:py-8">
         <div className="container mx-auto px-4 max-w-2xl text-center">
           <p className="text-sm text-muted-foreground mb-3">
             If you prefer, you can also read more first:
@@ -318,7 +318,7 @@ const Contact = () => {
       <TrustStrip />
 
       {/* ── Final reassurance CTA ── */}
-      <section className="pt-6 pb-20 md:pb-28 bg-background text-center">
+      <section className="pt-6 pb-20 md:pb-28 text-center">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-2xl md:text-3xl mb-4">
             You can start with a free learning checkup whenever you're ready

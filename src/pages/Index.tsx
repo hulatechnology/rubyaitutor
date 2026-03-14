@@ -182,7 +182,7 @@ const Index = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-[1fr_0.7fr] md:grid-cols-[1.15fr_1fr] gap-4 md:gap-10 items-center">
             <div className="relative animate-fade-up">
@@ -257,7 +257,7 @@ const Index = () => {
       </section>
 
       {/* ── How Ruby Works ── */}
-      <section className="py-14 md:py-20 bg-background">
+      <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
@@ -333,7 +333,7 @@ const Index = () => {
       </section>
 
       {/* ── Built to Keep Children Engaged ── */}
-      <section className="py-14 md:py-20 bg-background">
+      <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
@@ -426,7 +426,7 @@ const Index = () => {
       <TrustStrip />
 
       {/* ── Final CTA ── */}
-      <section className="py-18 md:py-24 bg-background">
+      <section className="py-18 md:py-24">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl mb-6">
             You don't have to guess anymore

@@ -52,7 +52,7 @@ const parentNotices = [
 const WhyChildrenStruggle = () => (
   <Layout>
     {/* Hero — compact */}
-    <section className="py-8 md:py-12 bg-background">
+    <section className="py-8 md:py-12">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center">
           <div className="md:w-1/2">
@@ -129,7 +129,7 @@ const WhyChildrenStruggle = () => (
     </section>
 
     {/* CTA — tighter, prominent */}
-    <section className="py-10 md:py-14 bg-background text-center">
+    <section className="py-10 md:py-14 text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-4">You don't have to guess anymore</h2>
         <p className="text-muted-foreground leading-relaxed mb-8">

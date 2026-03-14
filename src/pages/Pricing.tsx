@@ -62,7 +62,7 @@ const steps = [
 const Pricing = () => (
   <Layout>
     {/* Hero with steps */}
-    <section className="pt-16 md:pt-20 pb-10 md:pb-12 bg-background">
+    <section className="pt-16 md:pt-20 pb-10 md:pb-12">
       <div className="container mx-auto px-4 text-center max-w-3xl">
         <h1 className="text-4xl md:text-5xl mb-10">Choose the right support for your child</h1>
 
@@ -90,7 +90,7 @@ const Pricing = () => (
     </section>
 
     {/* Pricing cards */}
-    <section className="pb-16 bg-background">
+    <section className="pb-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {plans.map((plan) => (

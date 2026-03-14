@@ -40,7 +40,7 @@ const steps = [
 const HowItWorks = () => (
   <Layout>
     {/* Hero — two-column with chat preview */}
-    <section className="py-12 md:py-16 bg-background">
+    <section className="py-12 md:py-16">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           {/* Left: text */}
@@ -106,7 +106,7 @@ const HowItWorks = () => (
     </section>
 
     {/* Closing CTA */}
-    <section className="py-16 md:py-22 bg-background text-center">
+    <section className="py-16 md:py-22 text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-6">You don't have to guess anymore</h2>
         <p className="text-muted-foreground leading-relaxed mb-10">In less than 10 questions you'll see exactly where your child is struggling and how to help them move forward.</p>

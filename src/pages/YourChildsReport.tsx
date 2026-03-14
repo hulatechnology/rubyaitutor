@@ -9,7 +9,7 @@ import parentGuidanceOutcome from "@/assets/parent-guidance-replace.png";
 const YourChildsReport = () => (
   <Layout>
     {/* Hero */}
-    <section className="py-8 md:py-12 bg-background">
+    <section className="py-8 md:py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
           <div>
@@ -46,7 +46,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* 1. Understanding Level */}
-    <section className="py-8 md:py-10 bg-background">
+    <section className="py-8 md:py-10">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-2xl mb-2">Understanding Level</h2>
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -80,7 +80,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* 3. Learning Plan */}
-    <section className="py-8 md:py-10 bg-background">
+    <section className="py-8 md:py-10">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-2xl mb-2">Learning Plan</h2>
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -132,7 +132,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* CTA */}
-    <section className="py-8 md:py-12 bg-background text-center">
+    <section className="py-8 md:py-12 text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-6">You don't have to guess anymore</h2>
         <p className="text-muted-foreground leading-relaxed mb-8">

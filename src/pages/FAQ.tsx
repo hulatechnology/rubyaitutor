@@ -26,7 +26,7 @@ const faqs = [
 const FAQ = () => (
   <Layout>
     {/* Hero */}
-    <section className="pt-14 md:pt-18 pb-5 bg-background">
+    <section className="pt-14 md:pt-18 pb-5">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="bg-blue-tint border border-border rounded-xl p-8 md:p-12 text-center shadow-sm">
           <h1 className="text-4xl md:text-5xl mb-4">Frequently Asked Questions</h1>
@@ -41,7 +41,7 @@ const FAQ = () => (
     </section>
 
     {/* Reassurance panel */}
-    <section className="pb-5 bg-background">
+    <section className="pb-5">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="bg-card border border-border rounded-lg p-7 md:p-9 shadow-sm">
           <ul className="grid sm:grid-cols-2 gap-5 text-sm text-foreground font-medium">
@@ -62,7 +62,7 @@ const FAQ = () => (
     </section>
 
     {/* FAQ accordion */}
-    <section className="pb-6 bg-background">
+    <section className="pb-6">
       <div className="container mx-auto px-4 max-w-3xl">
         <Accordion type="single" collapsible className="space-y-2">
           {faqs.map((faq, i) => (
@@ -90,7 +90,7 @@ const FAQ = () => (
     <TrustStrip />
 
     {/* Decision CTA block */}
-    <section className="pt-6 pb-14 md:pb-18 bg-background text-center">
+    <section className="pt-6 pb-14 md:pb-18 text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-4">Still have questions?</h2>
         <p className="text-foreground/65 leading-relaxed mb-8">
