@@ -185,7 +185,7 @@ const Index = () => {
       <section className="py-10 md:py-28">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:grid md:grid-cols-[1fr_1.1fr] gap-4 md:gap-4 items-center">
-            <div className="relative animate-fade-up">
+            <div className="relative animate-fade-up text-center md:text-left">
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
                 When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
               </h1>
@@ -198,19 +198,19 @@ const Index = () => {
               >
                 Help My Child Understand
               </Link>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-4">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-3 md:mt-4">
                 Explanations are available in your child's home language.
               </p>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-2 flex items-center justify-start gap-2">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1.5 md:mt-2 flex items-center justify-center md:justify-start gap-2">
                 <ShieldCheck className="w-4 h-4" />
                 Private, child-safe learning environment
               </p>
             </div>
-            <div className="animate-fade-up flex items-center justify-center w-[95%] mx-auto md:w-full" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-fade-up flex items-center justify-center w-[95%] mx-auto md:w-full mt-2 md:mt-0" style={{ animationDelay: "0.2s" }}>
               <img
                 src={heroImage}
                 alt="Parent and child learning together"
-                className="w-full md:max-w-[700px] h-auto object-contain"
+                className="w-full max-w-[520px] md:max-w-[700px] h-auto object-contain"
                 style={{ filter: "drop-shadow(0 25px 60px rgba(0,0,0,0.08))" }}
               />
             </div>
