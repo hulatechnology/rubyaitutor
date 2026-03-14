@@ -34,7 +34,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* Introduction to the walkthrough */}
-    <section className="py-6 md:py-8 bg-blue-tint">
+    <section className="py-4 md:py-8 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <p className="text-xs font-medium tracking-widest text-foreground uppercase mb-3 text-center">
           Inside the report you receive
