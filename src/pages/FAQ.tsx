@@ -26,7 +26,7 @@ const faqs = [
 const FAQ = () => (
   <Layout>
     {/* Hero */}
-    <section className="pt-14 md:pt-18 pb-5 bg-background">
+    <section className="pt-14 md:pt-18 pb-5">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="bg-blue-tint border border-border rounded-xl p-8 md:p-12 text-center shadow-sm">
           <h1 className="text-4xl md:text-5xl mb-4">Frequently Asked Questions</h1>
