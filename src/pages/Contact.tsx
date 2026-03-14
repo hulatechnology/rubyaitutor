@@ -318,7 +318,7 @@ const Contact = () => {
       <TrustStrip />
 
       {/* ── Final reassurance CTA ── */}
-      <section className="pt-6 pb-20 md:pb-28 bg-background text-center">
+      <section className="pt-6 pb-20 md:pb-28 text-center">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-2xl md:text-3xl mb-4">
             You can start with a free learning checkup whenever you're ready

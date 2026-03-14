@@ -129,7 +129,7 @@ const WhyChildrenStruggle = () => (
     </section>
 
     {/* CTA — tighter, prominent */}
-    <section className="py-10 md:py-14 bg-background text-center">
+    <section className="py-10 md:py-14 text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-4">You don't have to guess anymore</h2>
         <p className="text-muted-foreground leading-relaxed mb-8">

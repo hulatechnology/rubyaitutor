@@ -90,7 +90,7 @@ const FAQ = () => (
     <TrustStrip />
 
     {/* Decision CTA block */}
-    <section className="pt-6 pb-14 md:pb-18 bg-background text-center">
+    <section className="pt-6 pb-14 md:pb-18 text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-4">Still have questions?</h2>
         <p className="text-foreground/65 leading-relaxed mb-8">

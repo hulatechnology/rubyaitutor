@@ -90,7 +90,7 @@ const Pricing = () => (
     </section>
 
     {/* Pricing cards */}
-    <section className="pb-16 bg-background">
+    <section className="pb-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {plans.map((plan) => (
