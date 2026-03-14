@@ -301,7 +301,7 @@ const Index = () => {
       </section>
 
       {/* ── The Learning Report ── */}
-      <section className="py-14 md:py-20 bg-sage-light">
+      <section className="py-8 md:py-20 bg-sage-light">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
             <div>
