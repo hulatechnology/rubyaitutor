@@ -36,9 +36,10 @@
 
     --radius: 0.5rem;
 
-    --cta: 226 61% 26%;
-    --cta-hover: 226 61% 20%;
+    --cta: 348 80% 40%;
+    --cta-hover: 348 80% 34%;
     --cta-foreground: 0 0% 100%;
+    --cta-end: 350 70% 55%;
 
     --brand-deep: 226 61% 20%;
     --brand-highlight: 226 61% 26%;
