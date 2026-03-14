@@ -213,11 +213,12 @@ const Index = () => {
                 }}
               />
             </div>
-            <div className="animate-fade-up overflow-hidden rounded-lg" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-fade-up flex items-center justify-center" style={{ animationDelay: "0.2s" }}>
               <img
                 src={heroImage}
                 alt="Parent and child learning together"
-                className="w-full h-full object-cover object-[center_right] md:h-[460px]"
+                className="w-[85%] sm:w-full md:max-w-[560px] h-auto object-contain"
+                style={{ filter: "drop-shadow(0 25px 60px rgba(0,0,0,0.08))" }}
               />
             </div>
           </div>
