@@ -290,7 +290,7 @@ const Contact = () => {
       </section>
 
       {/* ── Before you contact us ── */}
-      <section className="py-6 md:py-8 bg-background">
+      <section className="py-6 md:py-8">
         <div className="container mx-auto px-4 max-w-2xl text-center">
           <p className="text-sm text-muted-foreground mb-3">
             If you prefer, you can also read more first:
