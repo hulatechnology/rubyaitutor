@@ -182,7 +182,7 @@ const Index = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-[1fr_0.7fr] md:grid-cols-[1.15fr_1fr] gap-4 md:gap-10 items-center">
             <div className="relative animate-fade-up">
