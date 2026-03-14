@@ -267,8 +267,8 @@ const Index = () => {
               Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
             </p>
           </div>
-          <div className="grid md:grid-cols-5 gap-10 items-start">
-            <div className="md:col-span-2 space-y-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
               {steps.map(({ icon: Icon, title, desc }, i) => (
                 <div key={title} className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0">
@@ -283,19 +283,21 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            {/* UI Preview Panel — primary focal point */}
-            <div className="md:col-span-3 rounded-2xl border border-border shadow-xl overflow-hidden bg-card">
-              <div className="bg-muted/50 px-4 py-2.5 flex items-center gap-2 border-b border-border">
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                <span className="text-xs text-muted-foreground ml-2">Diagnostic Placement Check</span>
+            {/* UI Preview Panel — sized to match text height */}
+            <div className="flex items-center justify-center">
+              <div className="w-[75%] rounded-2xl border border-border shadow-xl overflow-hidden bg-card">
+                <div className="bg-muted/50 px-4 py-2.5 flex items-center gap-2 border-b border-border">
+                  <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+                  <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+                  <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
+                  <span className="text-xs text-muted-foreground ml-2">Diagnostic Placement Check</span>
+                </div>
+                <img
+                  src={rubyTeachingUI}
+                  alt="Ruby discovery activity showing a friendly welcome screen with learning check details"
+                  className="w-full h-auto object-contain"
+                />
               </div>
-              <img
-                src={rubyTeachingUI}
-                alt="Ruby discovery activity showing a friendly welcome screen with learning check details"
-                className="w-full h-auto object-contain"
-              />
             </div>
           </div>
           <div className="text-center mt-16">
