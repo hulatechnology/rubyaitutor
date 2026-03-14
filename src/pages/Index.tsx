@@ -244,7 +244,7 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-16">
+          <div className="text-center mt-8 md:mt-16">
             <CTAButton />
           </div>
         </div>
