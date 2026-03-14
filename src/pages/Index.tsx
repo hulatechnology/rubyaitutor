@@ -199,11 +199,7 @@ const Index = () => {
                 Help My Child Understand
               </Link>
               <p className="text-[0.9rem] sm:text-sm text-muted-foreground mt-3 md:mt-4">
-                Explanations are available in your child's home language.
-              </p>
-              <p className="text-[0.9rem] sm:text-sm text-muted-foreground mt-1.5 md:mt-2 flex items-center justify-center md:justify-start gap-2">
-                <ShieldCheck className="w-4 h-4" />
-                Private, child-safe learning environment
+                Identify the learning gap and help your child understand, not memorize, in their home language
               </p>
             </div>
             <div className="animate-fade-up flex items-center justify-center w-[95%] mx-auto md:w-full mt-2 md:mt-0" style={{ animationDelay: "0.2s" }}>
