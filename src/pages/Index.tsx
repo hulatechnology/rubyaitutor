@@ -184,7 +184,7 @@ const Index = () => {
       {/* ── Hero ── */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-[1fr_0.7fr] md:grid-cols-[1fr_1fr] gap-4 md:gap-6 items-center">
+          <div className="grid grid-cols-[1fr_0.8fr] md:grid-cols-[1fr_1.1fr] gap-3 md:gap-4 items-center">
             <div className="relative animate-fade-up">
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
                 When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
@@ -210,7 +210,7 @@ const Index = () => {
               <img
                 src={heroImage}
                 alt="Parent and child learning together"
-                className="w-[90%] sm:w-full md:max-w-[620px] h-auto object-contain"
+                className="w-full md:max-w-[700px] h-auto object-contain"
                 style={{ filter: "drop-shadow(0 25px 60px rgba(0,0,0,0.08))" }}
               />
             </div>

@@ -54,8 +54,8 @@ const WhyChildrenStruggle = () => (
     {/* Hero — compact */}
     <section className="py-8 md:py-12">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center">
-          <div className="md:w-1/2">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
+          <div className="md:w-[46%]">
             <div>
               <h1 className="text-4xl md:text-5xl mb-4">It doesn't start in today's lesson</h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -63,11 +63,11 @@ const WhyChildrenStruggle = () => (
               </p>
             </div>
           </div>
-          <div className="md:w-1/2 flex items-center justify-center">
+          <div className="md:w-[54%] flex items-center justify-center">
             <img
               src={heroBlob}
               alt="A father and child high-fiving while learning together at a laptop"
-              className="w-[90%] sm:w-full md:max-w-[560px] h-auto object-contain"
+              className="w-full md:max-w-[680px] h-auto object-contain"
             />
           </div>
         </div>
