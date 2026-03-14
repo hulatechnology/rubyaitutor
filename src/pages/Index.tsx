@@ -182,9 +182,9 @@ const Index = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="py-20 md:py-28">
+      <section className="py-10 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:grid md:grid-cols-[1fr_1.1fr] gap-8 md:gap-4 items-center">
+          <div className="flex flex-col md:grid md:grid-cols-[1fr_1.1fr] gap-4 md:gap-4 items-center">
             <div className="relative animate-fade-up">
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
                 When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
@@ -206,7 +206,7 @@ const Index = () => {
                 Private, child-safe learning environment
               </p>
             </div>
-            <div className="animate-fade-up flex items-center justify-center w-[85%] mx-auto md:w-full" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-fade-up flex items-center justify-center w-[95%] mx-auto md:w-full" style={{ animationDelay: "0.2s" }}>
               <img
                 src={heroImage}
                 alt="Parent and child learning together"
