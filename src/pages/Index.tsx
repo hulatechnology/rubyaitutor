@@ -186,10 +186,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:grid md:grid-cols-[1fr_1.1fr] gap-4 md:gap-4 items-center">
             <div className="relative animate-fade-up text-center md:text-left">
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
+              <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.2] sm:leading-tight mb-3 md:mb-4">
                 When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
               </h1>
-              <p className="text-sm sm:text-lg text-muted-foreground mb-6 hidden sm:block">
+              <p className="text-base sm:text-lg text-muted-foreground mb-6 hidden sm:block">
                 Our AI Tutor identifies the exact learning gap and guides your child to understand, not just memorize answers.
               </p>
               <Link
@@ -198,10 +198,10 @@ const Index = () => {
               >
                 Help My Child Understand
               </Link>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-3 md:mt-4">
+              <p className="text-[0.9rem] sm:text-sm text-muted-foreground mt-3 md:mt-4">
                 Explanations are available in your child's home language.
               </p>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1.5 md:mt-2 flex items-center justify-center md:justify-start gap-2">
+              <p className="text-[0.9rem] sm:text-sm text-muted-foreground mt-1.5 md:mt-2 flex items-center justify-center md:justify-start gap-2">
                 <ShieldCheck className="w-4 h-4" />
                 Private, child-safe learning environment
               </p>
