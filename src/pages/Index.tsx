@@ -219,7 +219,7 @@ const Index = () => {
       </section>
 
       {/* ── Why Children Struggle ── */}
-      <section className="py-14 md:py-20 bg-blue-tint">
+      <section className="py-8 md:py-20 bg-blue-tint">
         <div className="container mx-auto px-6 md:px-10 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
