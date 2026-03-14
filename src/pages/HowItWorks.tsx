@@ -5,6 +5,7 @@ import rubyTeachingImg from "@/assets/dds-2.png";
 import rootCauseImg from "@/assets/gap.png";
 import teachFirstImg from "@/assets/teach-first.png";
 import rubyChatImg from "@/assets/new-textbox-2.png";
+import heroChatImg from "@/assets/ruby-chat-preview.png";
 
 const steps = [
   {
