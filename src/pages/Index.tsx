@@ -5,7 +5,7 @@ import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
 import heroImage from "@/assets/hero-illustration.jpg";
 import rubyTeachingUI from "@/assets/dds.png";
-import rubyChat from "@/assets/new-textbox.png";
+import rubyChat from "@/assets/ruby-engagement-chat.png";
 import reportImg1 from "@/assets/understanding-level-replace.png";
 import reportImg2 from "@/assets/root-cause-replace.png";
 import reportImg3 from "@/assets/parent-guidance-replace.png";
