@@ -9,7 +9,7 @@ import rubyChat from "@/assets/ruby-engagement-chat.png";
 import reportImg1 from "@/assets/understanding-level-replace.png";
 import reportImg2 from "@/assets/root-cause-replace.png";
 import reportImg3 from "@/assets/parent-guidance-replace.png";
-import { Search, ClipboardList, Route, Sparkles, CheckCircle, Target, Lightbulb, TrendingUp, Clock, HelpCircle, GraduationCap, Shield, Users, ShieldCheck } from "lucide-react";
+import { Search, ClipboardList, Route, Sparkles, CheckCircle, Target, Lightbulb, TrendingUp, Clock, HelpCircle, GraduationCap, Shield, Users } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
