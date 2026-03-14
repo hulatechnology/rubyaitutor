@@ -86,18 +86,6 @@ const Pricing = () => (
           </p>
         </div>
 
-        {/* Why families are joining */}
-        <div className="max-w-2xl mx-auto mt-16">
-          <h2 className="text-2xl md:text-3xl text-center mb-8">Why families are joining Ruby</h2>
-          <ul className="space-y-3 max-w-lg mx-auto">
-            {whyReasons.map((r) => (
-              <li key={r} className="flex items-start gap-3 text-sm">
-                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span className="text-foreground">{r}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
 
         {/* Closing line */}
         <div className="max-w-2xl mx-auto mt-12 text-center">
