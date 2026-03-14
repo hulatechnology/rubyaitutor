@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import supportImage from "@/assets/parent-support.jpg";
+
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
 import {
@@ -79,39 +79,30 @@ const Contact = () => {
       {/* ── Hero ── */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-center max-w-5xl mx-auto">
-            <div>
-              <h1 className="text-4xl md:text-5xl leading-tight mb-5">
-                We're here to help <span className="text-primary">you and your child</span>
-              </h1>
-              <p className="text-base text-foreground/80 font-medium leading-relaxed mb-4 max-w-lg">
-                Many parents contact us before they start. You're not expected to know what your child needs yet.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
-                If you're unsure about your child's learning, need help
-                understanding a report, or have questions before starting, you
-                can reach us directly. A real person will respond.
-              </p>
-              <a
-                href="mailto:support@rubylearning.com"
-                className="inline-flex items-center justify-center text-lg font-extrabold px-8 py-4 rounded-lg text-cta-foreground hover:opacity-90 transition-all shadow-md gap-2"
-                style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
-              >
-                <Mail className="w-5 h-5" />
-                Email Support
-              </a>
-              <p className="text-sm text-foreground/60 mt-4 flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                We reply the same day during weekdays.
-              </p>
-            </div>
-            <div>
-              <img
-                src={supportImage}
-                alt="Friendly support helping a parent and child"
-                className="w-full"
-              />
-            </div>
+          <div className="max-w-2xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl leading-tight mb-5">
+              We're here to help <span className="text-primary">you and your child</span>
+            </h1>
+            <p className="text-base text-foreground/80 font-medium leading-relaxed mb-4">
+              Many parents contact us before they start. You're not expected to know what your child needs yet.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+              If you're unsure about your child's learning, need help
+              understanding a report, or have questions before starting, you
+              can reach us directly. A real person will respond.
+            </p>
+            <a
+              href="mailto:support@rubylearning.com"
+              className="inline-flex items-center justify-center text-lg font-extrabold px-8 py-4 rounded-lg text-cta-foreground hover:opacity-90 transition-all shadow-md gap-2"
+              style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
+            >
+              <Mail className="w-5 h-5" />
+              Email Support
+            </a>
+            <p className="text-sm text-foreground/60 mt-4 flex items-center justify-center gap-2">
+              <Clock className="w-4 h-4" />
+              We reply the same day during weekdays.
+            </p>
           </div>
         </div>
       </section>
