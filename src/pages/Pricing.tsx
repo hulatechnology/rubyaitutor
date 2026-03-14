@@ -1,167 +1,100 @@
 import Layout from "@/components/Layout";
-import CTAButton from "@/components/CTAButton";
 import { Check } from "lucide-react";
 
-const plans = [
-  {
-    name: "Learning Checkup",
-    price: "Free",
-    desc: "A quick learning assessment to understand your child's level and identify where understanding first broke down.",
-    features: [
-      "One learning check",
-      "Clear summary of learning gaps",
-      "Simple next-step guidance",
-      "Takes about 10 minutes",
-    ],
-    highlight: false,
-    label: "Start here",
-    emphasizeCTA: true,
-  },
-  {
-    name: "Full Learning Diagnosis",
-    price: "R149",
-    period: "/month",
-    desc: "A detailed diagnosis across subjects showing exactly what your child missed and how to rebuild their foundation.",
-    features: [
-      "All core subjects available",
-      "Detailed learning gap report",
-      "Personalised learning path",
-      "Progress tracking dashboard",
-      "Foundation-level breakdown",
-      "Diagnoses in 11 Languages",
-      "Access to Video Learning",
-      "Available 24/7",
-    ],
-    highlight: true,
-    label: null,
-    emphasizeCTA: false,
-  },
-  {
-    name: "Ongoing Guided Support",
-    price: "R199",
-    period: "/month",
-    desc: "Continuous guided learning that helps your child rebuild understanding and stay confident as schoolwork progresses.",
-    features: [
-      "Everything in Full Learning Diagnosis",
-      "Daily guided practice sessions",
-      "Parent progress updates",
-      "Priority support",
-    ],
-    highlight: false,
-    label: "After the diagnosis",
-    emphasizeCTA: false,
-  },
+const betaFeatures = [
+  "Early access to Ruby AI Tutor",
+  "See exactly where your child's learning gaps are",
+  "Guided support that builds real understanding",
+  "Help shape the future of the platform",
+  "Founding family pricing at launch",
 ];
 
-const steps = [
-  { num: 1, text: "Start the learning checkup (takes about 10 minutes)" },
-  { num: 2, text: "See exactly where your child is struggling" },
-  { num: 3, text: "Ruby guides the next steps" },
+const whyReasons = [
+  "Most tutoring costs R800 – R2000 per month",
+  "Parents often cannot see why their child is struggling",
+  "Ruby identifies the exact concept your child missed",
+  "Your child receives step by step guidance instead of answers",
 ];
 
 const Pricing = () => (
   <Layout>
-    {/* Hero with steps */}
+    {/* Hero */}
     <section className="pt-16 md:pt-20 pb-10 md:pb-12">
       <div className="container mx-auto px-4 text-center max-w-3xl">
-        <h1 className="text-4xl md:text-5xl mb-10">Choose the right support for your child</h1>
-
-        {/* 3-step process */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-8">
-          {steps.map((step, i) => (
-            <div key={step.num} className="flex items-center gap-3 md:gap-4">
-              <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full border-2 border-primary text-primary text-sm font-semibold flex items-center justify-center shrink-0">
-                  {step.num}
-                </span>
-                <span className="text-sm text-foreground leading-snug text-left max-w-[200px]">{step.text}</span>
-              </div>
-              {i < steps.length - 1 && (
-                <span className="hidden md:block text-muted-foreground/40 text-lg">→</span>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <p className="text-sm text-muted-foreground">
-          No commitment needed. You'll see the results before deciding on ongoing support.
+        <h1 className="text-4xl md:text-5xl mb-6">
+          Parents spend over R1000 per month on tutoring.
+        </h1>
+        <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+          Most tutoring focuses on repeating homework or memorising answers. Ruby identifies the exact learning gap and guides your child step by step so they truly understand the work.
+        </p>
+        <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-medium mb-6">
+          Support that costs less and helps your child learn more effectively is coming soon.
+        </p>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          On average, South African parents spend R1000+ per month on tutoring. Ruby is being built to provide personalised learning support at a fraction of that cost.
         </p>
       </div>
     </section>
 
-    {/* Pricing cards */}
+    {/* Beta card */}
     <section className="pb-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`rounded-xl p-8 border-2 transition-shadow flex flex-col ${
-                plan.highlight
-                  ? "border-primary bg-blue-tint shadow-lg"
-                  : "border-border bg-card"
-              }`}
-            >
-              {plan.label && (
-                <span className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 block">{plan.label}</span>
-              )}
-              {plan.highlight && (
-                <span className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 block">Most recommended starting point</span>
-              )}
-              <h3 className="text-2xl mb-1">{plan.name}</h3>
-              <div className="flex items-baseline gap-1 mb-4">
-                <span className="text-3xl font-bold text-foreground">{plan.price}</span>
-                {plan.period && <span className="text-sm text-muted-foreground">{plan.period}</span>}
-              </div>
-              <p className="text-sm text-muted-foreground mb-8 leading-relaxed">{plan.desc}</p>
-              <ul className="space-y-3 mb-10 flex-1">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm">
-                    <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span className="text-foreground">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <CTAButton className={`w-full text-center ${plan.emphasizeCTA ? "px-10 py-5 text-lg shadow-lg" : ""}`} />
-            </div>
-          ))}
+        <div className="max-w-xl mx-auto rounded-xl p-8 border-2 border-primary bg-blue-tint shadow-lg text-center">
+          <h2 className="text-2xl md:text-3xl mb-3">Join the Ruby Beta</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+            Ruby is currently in beta as we prepare for launch.
+            <br /><br />
+            Families who join the waiting list will receive early access to the platform, the opportunity to help shape the product, and priority access when subscriptions open.
+            <br /><br />
+            Beta families will also receive a special founding price when Ruby launches.
+          </p>
+
+          <ul className="space-y-3 mb-10 text-left max-w-sm mx-auto">
+            {betaFeatures.map((f) => (
+              <li key={f} className="flex items-start gap-3 text-sm">
+                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <span className="text-foreground">{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20to%20join%20the%20Ruby%20AI%20Tutor%20beta%20waiting%20list"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center text-lg font-extrabold px-10 py-5 rounded-lg text-cta-foreground transition-all shadow-lg hover:opacity-90"
+            style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
+          >
+            Join the Beta Waiting List
+          </a>
+
+          <p className="text-xs text-muted-foreground mt-4">
+            No commitment required. You will be notified when beta access opens.
+          </p>
         </div>
 
-        {/* Reassurance block */}
-        <div className="max-w-2xl mx-auto mt-12 bg-muted/50 border border-border rounded-lg p-6">
-          <ul className="space-y-3 text-sm text-foreground">
-            <li className="flex items-start gap-3">
-              <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-              <span>Ruby works at your child's level, not their grade</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-              <span>Your child cannot fail the checkup</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-              <span>You will see the learning gaps clearly explained</span>
-            </li>
+        {/* Why families are joining */}
+        <div className="max-w-2xl mx-auto mt-16">
+          <h2 className="text-2xl md:text-3xl text-center mb-8">Why families are joining Ruby</h2>
+          <ul className="space-y-3 max-w-lg mx-auto">
+            {whyReasons.map((r) => (
+              <li key={r} className="flex items-start gap-3 text-sm">
+                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <span className="text-foreground">{r}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* WhatsApp hint */}
-        <p className="text-center text-sm text-muted-foreground mt-8 max-w-xl mx-auto leading-relaxed">
-          Questions before you start?{" "}
-          <a
-            href="https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20to%20learn%20more%20about%20Ruby%20AI%20Tutor"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary font-medium hover:underline"
-          >
-            Chat with us on WhatsApp.
-          </a>
-        </p>
-
-        {/* Decision paragraph */}
-        <p className="text-center text-sm text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
-          Most families simply begin with the free learning checkup. After seeing the report, you can decide whether your child would benefit from ongoing support.
-        </p>
+        {/* Closing line */}
+        <div className="max-w-2xl mx-auto mt-12 text-center">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Many families start with the learning checkup to understand where their child's learning gaps began.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed mt-2 font-medium">
+            Ruby will open to beta families first. Join the waiting list to secure early access.
+          </p>
+        </div>
       </div>
     </section>
   </Layout>
