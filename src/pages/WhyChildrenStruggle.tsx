@@ -52,7 +52,7 @@ const parentNotices = [
 const WhyChildrenStruggle = () => (
   <Layout>
     {/* Hero — compact */}
-    <section className="py-8 md:py-12">
+    <section className="py-6 md:py-12">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
           <div className="md:w-[46%]">
