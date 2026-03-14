@@ -97,7 +97,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* 4. Parent Guidance & Expected Outcome */}
-    <section className="py-8 md:py-10 bg-blue-tint">
+    <section className="py-5 md:py-10 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-2xl mb-2">Parent Guidance & Expected Outcome</h2>
         <p className="text-muted-foreground leading-relaxed mb-5">
