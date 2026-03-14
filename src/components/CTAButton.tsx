@@ -6,7 +6,7 @@ const CTAButton = ({ className = "" }: { className?: string }) => (
     className={`inline-flex items-center justify-center text-lg font-extrabold px-8 py-4 rounded-lg text-cta-foreground transition-all shadow-md hover:opacity-90 ${className}`}
     style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
   >
-    Let's Now!
+    Try Now!
   </Link>
 );
 
