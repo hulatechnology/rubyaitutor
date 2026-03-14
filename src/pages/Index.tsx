@@ -199,7 +199,7 @@ const Index = () => {
                 Help My Child Understand
               </Link>
               <p className="text-xs sm:text-sm text-muted-foreground mt-4">
-                Lessons and explanations are available in your child's home language.
+                Explanations are available in your child's home language.
               </p>
               <p className="text-xs sm:text-sm text-muted-foreground mt-2 flex items-center justify-start gap-2">
                 <ShieldCheck className="w-4 h-4" />
