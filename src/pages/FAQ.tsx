@@ -62,7 +62,7 @@ const FAQ = () => (
     </section>
 
     {/* FAQ accordion */}
-    <section className="pb-6 bg-background">
+    <section className="pb-6">
       <div className="container mx-auto px-4 max-w-3xl">
         <Accordion type="single" collapsible className="space-y-2">
           {faqs.map((faq, i) => (
