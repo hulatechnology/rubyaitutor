@@ -194,7 +194,7 @@ const Index = () => {
               </p>
               <Link
                 to="/your-childs-report"
-                className="inline-flex items-center justify-center text-sm sm:text-base font-medium px-5 sm:px-8 py-3 sm:py-4 rounded-lg bg-cta text-cta-foreground hover:bg-cta-hover transition-colors shadow-md"
+                className="inline-flex items-center justify-center text-base sm:text-lg font-extrabold px-5 sm:px-8 py-3 sm:py-4 rounded-lg bg-cta text-cta-foreground hover:bg-cta-hover transition-colors shadow-md"
               >
                 Help My Child Understand
               </Link>

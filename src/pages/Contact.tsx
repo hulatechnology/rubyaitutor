@@ -94,7 +94,7 @@ const Contact = () => {
               </p>
               <a
                 href="mailto:support@rubylearning.com"
-                className="inline-flex items-center justify-center text-base font-medium px-8 py-4 rounded-lg text-cta-foreground hover:opacity-90 transition-all shadow-md gap-2"
+                className="inline-flex items-center justify-center text-lg font-extrabold px-8 py-4 rounded-lg text-cta-foreground hover:opacity-90 transition-all shadow-md gap-2"
                 style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
               >
                 <Mail className="w-5 h-5" />
@@ -275,7 +275,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center text-base font-medium px-8 py-4 rounded-lg text-cta-foreground hover:opacity-90 transition-all shadow-md gap-2"
+                className="w-full inline-flex items-center justify-center text-lg font-extrabold px-8 py-4 rounded-lg text-cta-foreground hover:opacity-90 transition-all shadow-md gap-2"
                 style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
               >
                 <MessageCircle className="w-5 h-5" />
@@ -298,14 +298,14 @@ const Contact = () => {
           <div className="flex flex-wrap justify-center gap-6">
             <Link
               to="/faq"
-              className="inline-flex items-center gap-2 text-sm font-medium bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-extrabold bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
             >
               Frequently Asked Questions
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/your-childs-report"
-              className="inline-flex items-center gap-2 text-sm font-medium bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-extrabold bg-card border border-border rounded-lg px-5 py-3 text-primary hover:bg-blue-tint transition-colors"
             >
               Your Child's Report
               <ArrowRight className="w-4 h-4" />
