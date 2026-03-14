@@ -63,14 +63,12 @@ const WhyChildrenStruggle = () => (
               </p>
             </div>
           </div>
-          <div className="md:w-1/2">
-            <div className="w-full md:h-[460px] overflow-hidden rounded-lg">
-              <img
-                src={parentHelpingImg}
-                alt="A parent and child sitting together at a table, using a tablet for learning"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
+          <div className="md:w-1/2 flex items-center justify-center">
+            <img
+              src={heroBlob}
+              alt="A father and child high-fiving while learning together at a laptop"
+              className="w-[90%] sm:w-full md:max-w-[560px] h-auto object-contain"
+            />
           </div>
         </div>
       </div>
