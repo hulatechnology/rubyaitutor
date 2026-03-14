@@ -62,7 +62,7 @@ const steps = [
 const Pricing = () => (
   <Layout>
     {/* Hero with steps */}
-    <section className="pt-16 md:pt-20 pb-10 md:pb-12 bg-background">
+    <section className="pt-16 md:pt-20 pb-10 md:pb-12">
       <div className="container mx-auto px-4 text-center max-w-3xl">
         <h1 className="text-4xl md:text-5xl mb-10">Choose the right support for your child</h1>
 
