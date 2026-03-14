@@ -196,7 +196,7 @@ const Index = () => {
                 to="/pricing"
                 className="inline-block"
               >
-                <CTAButton>Start Free Learning Check</CTAButton>
+                <CTAButton />
               </Link>
             </div>
             <div className="animate-fade-up flex items-center justify-center w-[95%] mx-auto md:w-full mt-2 md:mt-0" style={{ animationDelay: "0.2s" }}>
