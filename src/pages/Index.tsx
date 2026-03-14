@@ -190,17 +190,14 @@ const Index = () => {
                 When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground mb-6 hidden sm:block">
-                Our AI Tutor identifies the exact learning gap and guides your child to understand, not just memorize answers.
-              </p>
-              <Link
-                to="/your-childs-report"
-                className="inline-flex items-center justify-center text-base sm:text-lg font-extrabold px-5 sm:px-8 py-3 sm:py-4 rounded-lg bg-cta text-cta-foreground hover:bg-cta-hover transition-colors shadow-md"
-              >
-                Help My Child Understand
-              </Link>
-              <p className="text-[0.9rem] sm:text-sm text-muted-foreground mt-3 md:mt-4">
                 Identify the learning gap and help your child understand, not memorize, in their home language
               </p>
+              <Link
+                to="/pricing"
+                className="inline-block"
+              >
+                <CTAButton />
+              </Link>
             </div>
             <div className="animate-fade-up flex items-center justify-center w-[95%] mx-auto md:w-full mt-2 md:mt-0" style={{ animationDelay: "0.2s" }}>
               <img
