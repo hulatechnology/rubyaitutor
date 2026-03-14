@@ -45,9 +45,9 @@
     --brand-highlight: 348 80% 40%;
     --brand-panel: 348 80% 36%;
 
-    --blue-tint: 226 60% 97%;
+    --blue-tint: 226 60% 97% / 0.7;
     --sage: 150 25% 65%;
-    --sage-light: 226 40% 96%;
+    --sage-light: 226 40% 96% / 0.7;
     --coral: 351 75% 48%;
     --coral-light: 226 60% 97%;
     --warm-gray: 226 10% 55%;
