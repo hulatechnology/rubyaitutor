@@ -15,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 30% 20%;
 
-    --primary: 226 61% 26%;
+    --primary: 348 80% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 226 61% 22%;
+    --secondary: 348 80% 34%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 226 20% 95%;
     --muted-foreground: 226 10% 45%;
 
-    --accent: 226 61% 30%;
+    --accent: 348 80% 44%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 351 75% 48%;
@@ -32,7 +32,7 @@
 
     --border: 226 15% 90%;
     --input: 226 15% 90%;
-    --ring: 226 61% 26%;
+    --ring: 348 80% 40%;
 
     --radius: 0.5rem;
 
@@ -41,9 +41,9 @@
     --cta-foreground: 0 0% 100%;
     --cta-end: 350 70% 55%;
 
-    --brand-deep: 226 61% 20%;
-    --brand-highlight: 226 61% 26%;
-    --brand-panel: 226 61% 22%;
+    --brand-deep: 348 80% 34%;
+    --brand-highlight: 348 80% 40%;
+    --brand-panel: 348 80% 36%;
 
     --blue-tint: 226 60% 97%;
     --sage: 150 25% 65%;
@@ -60,7 +60,7 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 226 61% 26%;
+    --sidebar-ring: 348 80% 40%;
   }
 
   .dark {
@@ -70,26 +70,26 @@
     --card-foreground: 210 20% 90%;
     --popover: 215 20% 8%;
     --popover-foreground: 210 20% 90%;
-    --primary: 226 61% 40%;
+    --primary: 348 75% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 226 50% 25%;
+    --secondary: 348 70% 38%;
     --secondary-foreground: 210 20% 90%;
     --muted: 226 15% 16%;
     --muted-foreground: 226 10% 55%;
-    --accent: 226 50% 35%;
+    --accent: 348 70% 45%;
     --accent-foreground: 210 20% 90%;
     --destructive: 351 60% 40%;
     --destructive-foreground: 0 0% 100%;
     --border: 226 15% 18%;
     --input: 226 15% 18%;
-    --ring: 226 61% 40%;
+    --ring: 348 75% 50%;
     --cta: 348 80% 40%;
     --cta-hover: 348 80% 34%;
     --cta-foreground: 0 0% 100%;
     --cta-end: 350 70% 55%;
-    --brand-deep: 226 61% 20%;
-    --brand-highlight: 226 61% 26%;
-    --brand-panel: 226 50% 25%;
+    --brand-deep: 348 80% 34%;
+    --brand-highlight: 348 80% 40%;
+    --brand-panel: 348 70% 38%;
     --blue-tint: 226 30% 14%;
     --coral-light: 226 30% 14%;
     --sage-light: 226 25% 14%;
