@@ -29,7 +29,7 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm font-medium transition-colors hover:text-cta ${
+              className={`text-base font-extrabold transition-colors hover:text-cta ${
                 location.pathname === link.to ? "text-cta" : "text-foreground"
               }`}
             >
