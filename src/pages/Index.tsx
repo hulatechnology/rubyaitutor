@@ -420,7 +420,7 @@ const Index = () => {
       <TrustStrip />
 
       {/* ── Final CTA ── */}
-      <section className="py-18 md:py-24">
+      <section className="py-10 md:py-24">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl mb-6">
             You don't have to guess anymore
