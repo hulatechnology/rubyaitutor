@@ -80,7 +80,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* 3. Learning Plan */}
-    <section className="py-8 md:py-10">
+    <section className="py-5 md:py-10">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-2xl mb-2">Learning Plan</h2>
         <p className="text-muted-foreground leading-relaxed mb-5">
