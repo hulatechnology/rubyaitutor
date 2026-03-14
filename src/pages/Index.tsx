@@ -253,7 +253,7 @@ const Index = () => {
       {/* ── How Ruby Works ── */}
       <section className="py-8 md:py-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
               How Ruby helps your child learn
             </h2>
