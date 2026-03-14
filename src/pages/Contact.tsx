@@ -94,7 +94,7 @@ const Contact = () => {
               </p>
               <a
                 href="mailto:support@rubylearning.com"
-                className="inline-flex items-center justify-center text-base font-medium px-8 py-4 rounded-lg text-cta-foreground hover:opacity-90 transition-all shadow-md gap-2"
+                className="inline-flex items-center justify-center text-lg font-extrabold px-8 py-4 rounded-lg text-cta-foreground hover:opacity-90 transition-all shadow-md gap-2"
                 style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
               >
                 <Mail className="w-5 h-5" />
