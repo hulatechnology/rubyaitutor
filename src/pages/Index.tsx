@@ -391,7 +391,7 @@ const Index = () => {
       {/* ── FAQ Reassurance ── */}
       <section className="py-8 md:py-20 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl text-center mb-14">
+          <h2 className="text-3xl md:text-4xl text-center mb-8 md:mb-14">
             Common questions from parents
           </h2>
           <Accordion type="single" collapsible className="space-y-4">
