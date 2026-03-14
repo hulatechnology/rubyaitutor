@@ -29,7 +29,7 @@ const FAQ = () => (
     <section className="pt-14 md:pt-18 pb-5">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="bg-blue-tint border border-border rounded-xl p-8 md:p-12 text-center shadow-sm">
-          <h1 className="text-4xl md:text-5xl mb-4">Frequently Asked Questions</h1>
+          <h1 className="text-4xl md:text-5xl mb-4">Frequently Asked <span className="text-primary">Questions</span></h1>
           <p className="text-base text-foreground/70 mb-1">
             Most parents read this right before starting the learning checkup.
           </p>

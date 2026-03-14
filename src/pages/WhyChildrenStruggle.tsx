@@ -57,7 +57,7 @@ const WhyChildrenStruggle = () => (
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
           <div className="md:w-[46%]">
             <div>
-              <h1 className="text-4xl md:text-5xl mb-4">It doesn't start in today's lesson</h1>
+              <h1 className="text-4xl md:text-5xl mb-4">It doesn't start in <span className="text-primary">today's lesson</span></h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Children rarely fall behind in the topic they are learning now. They fall behind in something they were expected to already know.
               </p>
