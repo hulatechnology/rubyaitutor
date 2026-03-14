@@ -205,13 +205,6 @@ const Index = () => {
                 <ShieldCheck className="w-4 h-4" />
                 Private, child-safe learning environment
               </p>
-              {/* Soft fade toward image */}
-              <div
-                className="hidden md:block absolute top-0 right-0 w-16 h-full pointer-events-none"
-                style={{
-                  background: "linear-gradient(to right, transparent 0%, hsl(var(--background) / 0.6) 60%, hsl(var(--background)) 100%)",
-                }}
-              />
             </div>
             <div className="animate-fade-up flex items-center justify-center" style={{ animationDelay: "0.2s" }}>
               <img
