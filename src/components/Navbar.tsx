@@ -62,7 +62,7 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               onClick={() => setOpen(false)}
-              className={`block py-3 text-sm font-medium transition-colors ${
+              className={`block py-3 text-lg font-extrabold transition-colors ${
                 location.pathname === link.to ? "text-cta" : "text-foreground"
               }`}
             >
