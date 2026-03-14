@@ -54,7 +54,7 @@ const WhyChildrenStruggle = () => (
     {/* Hero — compact */}
     <section className="py-8 md:py-12">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
           <div className="md:w-1/2">
             <div>
               <h1 className="text-4xl md:text-5xl mb-4">It doesn't start in today's lesson</h1>
