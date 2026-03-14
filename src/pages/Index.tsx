@@ -210,7 +210,7 @@ const Index = () => {
               <img
                 src={heroImage}
                 alt="Parent and child learning together"
-                className="w-[90%] sm:w-full md:max-w-[620px] h-auto object-contain"
+                className="w-full md:max-w-[700px] h-auto object-contain"
                 style={{ filter: "drop-shadow(0 25px 60px rgba(0,0,0,0.08))" }}
               />
             </div>

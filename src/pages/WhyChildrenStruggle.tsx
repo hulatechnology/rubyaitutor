@@ -63,11 +63,11 @@ const WhyChildrenStruggle = () => (
               </p>
             </div>
           </div>
-          <div className="md:w-1/2 flex items-center justify-center">
+          <div className="md:w-[54%] flex items-center justify-center">
             <img
               src={heroBlob}
               alt="A father and child high-fiving while learning together at a laptop"
-              className="w-[90%] sm:w-full md:max-w-[560px] h-auto object-contain"
+              className="w-full md:max-w-[680px] h-auto object-contain"
             />
           </div>
         </div>
