@@ -9,7 +9,7 @@ import parentGuidanceOutcome from "@/assets/parent-guidance-replace.png";
 const YourChildsReport = () => (
   <Layout>
     {/* Hero */}
-    <section className="py-8 md:py-12">
+    <section className="py-6 md:py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
           <div>
