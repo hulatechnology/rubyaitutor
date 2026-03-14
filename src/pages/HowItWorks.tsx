@@ -54,14 +54,12 @@ const HowItWorks = () => (
           </div>
           {/* Right: large chat preview */}
           <div className="md:w-3/5">
-            <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">Your child's first learning session</p>
-            <div className="bg-card rounded-2xl shadow-lg border border-border/50 overflow-hidden">
-              <img
-                src={rubyChatImg}
-                alt="Ruby tutoring chat showing a child's first learning session"
-                className="w-full h-auto block object-contain"
-              />
-            </div>
+            <img
+              src={heroChatImg}
+              alt="Ruby tutoring chat showing a child's first learning session"
+              className="w-full h-auto block object-contain"
+              style={{ filter: "drop-shadow(0 12px 28px rgba(26, 46, 108, 0.12))" }}
+            />
           </div>
         </div>
       </div>
