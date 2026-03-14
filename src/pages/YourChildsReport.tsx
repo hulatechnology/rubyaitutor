@@ -13,7 +13,7 @@ const YourChildsReport = () => (
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
           <div>
-            <h1 className="text-4xl md:text-5xl mb-6">See what your child actually understands</h1>
+            <h1 className="text-4xl md:text-5xl mb-6">See what your child <span className="text-primary">actually understands</span></h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Ruby turns your child's answers into a clear explanation of their strengths, their gaps, and how to support them at home.
             </p>

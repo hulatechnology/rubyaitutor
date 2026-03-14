@@ -45,7 +45,7 @@ const HowItWorks = () => (
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           {/* Left: text */}
           <div className="md:w-2/5 shrink-0">
-            <h1 className="text-4xl md:text-5xl mb-4">How Ruby helps your child learn</h1>
+            <h1 className="text-4xl md:text-5xl mb-4">How Ruby helps <span className="text-primary">your child learn</span></h1>
             <p className="text-sm text-muted-foreground mb-6">No tests, no pressure. Ruby guides your child step by step.</p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.

@@ -82,7 +82,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-center max-w-5xl mx-auto">
             <div>
               <h1 className="text-4xl md:text-5xl leading-tight mb-5">
-                We're here to help you and your child
+                We're here to help <span className="text-primary">you and your child</span>
               </h1>
               <p className="text-base text-foreground/80 font-medium leading-relaxed mb-4 max-w-lg">
                 Many parents contact us before they start. You're not expected to know what your child needs yet.

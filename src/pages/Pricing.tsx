@@ -22,7 +22,7 @@ const Pricing = () => (
     <section className="pt-16 md:pt-20 pb-10 md:pb-12">
       <div className="container mx-auto px-4 text-center max-w-3xl">
         <h1 className="text-4xl md:text-5xl mb-6">
-          Parents spend over R1000 per month on tutoring.
+          Parents spend over <span className="text-primary">R1000 per month on tutoring.</span>
         </h1>
         <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
           Most tutoring focuses on repeating homework or memorising answers. Ruby identifies the exact learning gap and guides your child step by step so they truly understand the work.
