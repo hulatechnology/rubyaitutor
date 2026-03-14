@@ -52,7 +52,7 @@ const parentNotices = [
 const WhyChildrenStruggle = () => (
   <Layout>
     {/* Hero — compact */}
-    <section className="py-8 md:py-12">
+    <section className="py-6 md:py-12">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
           <div className="md:w-[46%]">
@@ -75,7 +75,7 @@ const WhyChildrenStruggle = () => (
     </section>
 
     {/* Cause blocks — connected chain */}
-    <section className="py-8 md:py-12 bg-blue-tint">
+    <section className="py-6 md:py-12 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-3xl md:text-4xl mb-8 text-center">Why Some Children Fall Behind</h2>
         <div className="relative">
@@ -109,7 +109,7 @@ const WhyChildrenStruggle = () => (
     </section>
 
     {/* Recognition — integrated, no box */}
-    <section className="pt-0 pb-8 md:pb-10 bg-blue-tint">
+    <section className="pt-0 pb-6 md:pb-10 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="flex gap-3 items-center mb-4">
           <Home size={18} className="text-muted-foreground" />
@@ -127,7 +127,7 @@ const WhyChildrenStruggle = () => (
     </section>
 
     {/* CTA — tighter, prominent */}
-    <section className="py-10 md:py-14 text-center">
+    <section className="py-8 md:py-14 text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-4">You don't have to guess anymore</h2>
         <p className="text-muted-foreground leading-relaxed mb-8">

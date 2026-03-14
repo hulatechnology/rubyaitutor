@@ -182,9 +182,9 @@ const Index = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="py-20 md:py-28">
+      <section className="py-10 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:grid md:grid-cols-[1fr_1.1fr] gap-8 md:gap-4 items-center">
+          <div className="flex flex-col md:grid md:grid-cols-[1fr_1.1fr] gap-4 md:gap-4 items-center">
             <div className="relative animate-fade-up">
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-tight mb-4">
                 When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
@@ -206,7 +206,7 @@ const Index = () => {
                 Private, child-safe learning environment
               </p>
             </div>
-            <div className="animate-fade-up flex items-center justify-center w-[85%] mx-auto md:w-full" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-fade-up flex items-center justify-center w-[95%] mx-auto md:w-full" style={{ animationDelay: "0.2s" }}>
               <img
                 src={heroImage}
                 alt="Parent and child learning together"
@@ -219,9 +219,9 @@ const Index = () => {
       </section>
 
       {/* ── Why Children Struggle ── */}
-      <section className="py-14 md:py-20 bg-blue-tint">
+      <section className="py-8 md:py-20 bg-blue-tint">
         <div className="container mx-auto px-6 md:px-10 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
               You've probably experienced this before
             </h2>
@@ -244,16 +244,16 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-16">
+          <div className="text-center mt-8 md:mt-16">
             <CTAButton />
           </div>
         </div>
       </section>
 
       {/* ── How Ruby Works ── */}
-      <section className="py-14 md:py-20">
+      <section className="py-8 md:py-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
               How Ruby helps your child learn
             </h2>
@@ -294,14 +294,14 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="text-center mt-16">
+          <div className="text-center mt-8 md:mt-16">
             <CTAButton />
           </div>
         </div>
       </section>
 
       {/* ── The Learning Report ── */}
-      <section className="py-14 md:py-20 bg-sage-light">
+      <section className="py-8 md:py-20 bg-sage-light">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
             <div>
@@ -327,9 +327,9 @@ const Index = () => {
       </section>
 
       {/* ── Built to Keep Children Engaged ── */}
-      <section className="py-14 md:py-20">
+      <section className="py-8 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-4xl mb-6">
               Built to keep children engaged
             </h2>
@@ -382,16 +382,16 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-8 md:mt-16">
             <CTAButton />
           </div>
         </div>
       </section>
 
       {/* ── FAQ Reassurance ── */}
-      <section className="py-14 md:py-20 bg-blue-tint">
+      <section className="py-8 md:py-20 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl text-center mb-14">
+          <h2 className="text-3xl md:text-4xl text-center mb-8 md:mb-14">
             Common questions from parents
           </h2>
           <Accordion type="single" collapsible className="space-y-4">
@@ -420,12 +420,12 @@ const Index = () => {
       <TrustStrip />
 
       {/* ── Final CTA ── */}
-      <section className="py-18 md:py-24">
+      <section className="py-10 md:py-24">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl mb-6">
             You don't have to guess anymore
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-12">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8 md:mb-12">
             In less than 10 questions you'll see exactly where your child is struggling and how to help them move forward.
           </p>
           <CTAButton />

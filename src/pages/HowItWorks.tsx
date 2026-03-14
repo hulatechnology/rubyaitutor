@@ -40,7 +40,7 @@ const steps = [
 const HowItWorks = () => (
   <Layout>
     {/* Hero — two-column with chat preview */}
-    <section className="py-12 md:py-16">
+    <section className="py-8 md:py-16">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           {/* Left: text */}
@@ -67,9 +67,9 @@ const HowItWorks = () => (
     </section>
 
     {/* Steps — consistent left-text, right-image */}
-    <section className="py-14 md:py-20 bg-blue-tint">
+    <section className="py-8 md:py-20 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="space-y-14 md:space-y-20">
+        <div className="space-y-8 md:space-y-20">
           {steps.map(({ icon: Icon, title, desc, image, imageAlt }, i) => (
             <div
               key={title}
@@ -106,7 +106,7 @@ const HowItWorks = () => (
     </section>
 
     {/* Closing CTA */}
-    <section className="py-16 md:py-22 text-center">
+    <section className="py-8 md:py-22 text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-6">You don't have to guess anymore</h2>
         <p className="text-muted-foreground leading-relaxed mb-10">In less than 10 questions you'll see exactly where your child is struggling and how to help them move forward.</p>

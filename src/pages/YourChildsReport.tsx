@@ -9,7 +9,7 @@ import parentGuidanceOutcome from "@/assets/parent-guidance-replace.png";
 const YourChildsReport = () => (
   <Layout>
     {/* Hero */}
-    <section className="py-8 md:py-12">
+    <section className="py-6 md:py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
           <div>
@@ -34,7 +34,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* Introduction to the walkthrough */}
-    <section className="py-6 md:py-8 bg-blue-tint">
+    <section className="py-4 md:py-8 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <p className="text-xs font-medium tracking-widest text-foreground uppercase mb-3 text-center">
           Inside the report you receive
@@ -46,7 +46,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* 1. Understanding Level */}
-    <section className="py-8 md:py-10">
+    <section className="py-5 md:py-10">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-2xl mb-2">Understanding Level</h2>
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -63,7 +63,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* 2. Root Cause */}
-    <section className="py-8 md:py-10 bg-blue-tint">
+    <section className="py-5 md:py-10 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-2xl mb-2">Root Cause</h2>
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -80,7 +80,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* 3. Learning Plan */}
-    <section className="py-8 md:py-10">
+    <section className="py-5 md:py-10">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-2xl mb-2">Learning Plan</h2>
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -97,7 +97,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* 4. Parent Guidance & Expected Outcome */}
-    <section className="py-8 md:py-10 bg-blue-tint">
+    <section className="py-5 md:py-10 bg-blue-tint">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-2xl mb-2">Parent Guidance & Expected Outcome</h2>
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -132,7 +132,7 @@ const YourChildsReport = () => (
     </section>
 
     {/* CTA */}
-    <section className="py-8 md:py-12 text-center">
+    <section className="py-6 md:py-12 text-center">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl mb-6">You don't have to guess anymore</h2>
         <p className="text-muted-foreground leading-relaxed mb-8">
