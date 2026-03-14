@@ -40,7 +40,7 @@ const steps = [
 const HowItWorks = () => (
   <Layout>
     {/* Hero — two-column with chat preview */}
-    <section className="py-12 md:py-16 bg-background">
+    <section className="py-12 md:py-16">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           {/* Left: text */}
