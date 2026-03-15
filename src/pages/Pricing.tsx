@@ -72,7 +72,7 @@ const Pricing = () => (
           </ul>
 
           <a
-            href="https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20to%20join%20the%20Ruby%20AI%20Tutor%20beta%20waiting%20list"
+            href="https://forms.gle/Aq7Mf43c2jnZHdrh6"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center text-lg font-extrabold px-10 py-5 rounded-lg text-cta-foreground transition-all shadow-lg hover:opacity-90"
