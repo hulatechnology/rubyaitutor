@@ -3,7 +3,7 @@ import CTAButton from "@/components/CTAButton";
 import reportImage from "@/assets/skill_map.png";
 import understandingLevel from "@/assets/understanding-level-replace.png";
 import rootCause from "@/assets/root-cause-replace.png";
-import teachFirst from "@/assets/next-skill.png";
+import teachFirst from "@/assets/learning-plan.png";
 import parentGuidanceOutcome from "@/assets/parent-guidance-replace.png";
 
 const YourChildsReport = () => (
