@@ -86,13 +86,11 @@ const YourChildsReport = () => (
         <p className="text-muted-foreground leading-relaxed mb-5">
           This becomes your child's personalised learning path. It answers: what happens next?
         </p>
-        <div className="bg-card border border-border rounded-lg shadow-md overflow-hidden">
-          <img
-            src={teachFirst}
-            alt="What Ruby Will Teach First section of the report"
-            className="w-full h-auto object-contain"
-          />
-        </div>
+        <img
+          src={teachFirst}
+          alt="What Ruby Will Teach First section of the report"
+          className="w-full h-auto object-contain"
+        />
       </div>
     </section>
 

@@ -89,14 +89,12 @@ const HowItWorks = () => (
 
               {/* Image — always right */}
               <div className="md:w-3/5">
-                <div className="bg-card rounded-2xl shadow-lg border border-border/50 overflow-hidden">
-                  <img
-                    src={image}
-                    alt={imageAlt}
-                    className="w-full h-auto block object-contain"
-                    loading="lazy"
-                  />
-                </div>
+                <img
+                  src={image}
+                  alt={imageAlt}
+                  className="w-full h-auto block object-contain"
+                  loading="lazy"
+                />
               </div>
             </div>
           ))}
