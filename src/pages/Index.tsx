@@ -203,7 +203,7 @@ const Index = () => {
               <img
                 src={heroImage}
                 alt="Ruby superhero learning characters — math and reading heroes"
-                className="w-full max-w-[600px] md:max-w-[720px] h-auto object-contain"
+                className="w-full max-w-[720px] md:max-w-[864px] h-auto object-contain"
               />
             </div>
           </div>
