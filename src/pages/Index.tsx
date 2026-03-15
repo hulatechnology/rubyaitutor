@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import TrustStrip from "@/components/TrustStrip";
-import heroImage from "@/assets/hero-blob.png";
+import heroImage from "@/assets/ruby-heroes.png";
 import rubyTeachingUI from "@/assets/dds.png";
 import rubyChat from "@/assets/ruby-engagement-chat.png";
 import reportImg1 from "@/assets/understanding-level-replace.png";
@@ -182,9 +182,9 @@ const Index = () => {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="py-10 md:py-28">
+      <section className="py-8 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:grid md:grid-cols-[1fr_1.1fr] gap-4 md:gap-4 items-center">
+          <div className="flex flex-col md:grid md:grid-cols-[1fr_1.15fr] gap-2 md:gap-6 items-center">
             <div className="relative animate-fade-up text-center md:text-left">
               <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.2] sm:leading-tight mb-3 md:mb-4">
                 When your child gets stuck, <span className="text-primary">Ruby shows them why.</span>
@@ -199,12 +199,11 @@ const Index = () => {
                 <CTAButton />
               </Link>
             </div>
-            <div className="animate-fade-up flex items-center justify-center w-[95%] mx-auto md:w-full mt-2 md:mt-0" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-fade-up flex items-center justify-center w-full px-4 md:px-0 mt-4 md:mt-0 order-last" style={{ animationDelay: "0.2s" }}>
               <img
                 src={heroImage}
-                alt="Parent and child learning together"
-                className="w-full max-w-[520px] md:max-w-[700px] h-auto object-contain"
-                style={{ filter: "drop-shadow(0 25px 60px rgba(0,0,0,0.08))" }}
+                alt="Ruby superhero learning characters — math and reading heroes"
+                className="w-full max-w-[600px] md:max-w-[720px] h-auto object-contain"
               />
             </div>
           </div>
