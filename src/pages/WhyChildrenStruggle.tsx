@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
 import { Blocks, ListChecks, HandHelping, Clock, TrendingUp, Home } from "lucide-react";
-import heroBlob from "@/assets/why-struggle-hero-blob.png";
+
 
 const reasons = [
   {
