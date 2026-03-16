@@ -192,12 +192,11 @@ const Index = () => {
               <p className="text-base sm:text-lg text-muted-foreground mb-6 hidden sm:block">
                 Identify the learning gap and help your child understand, not memorize, in their home language
               </p>
-              <Link
-                to="/pricing"
+              <p
                 className="inline-block"
               >
                 <CTAButton />
-              </Link>
+              </p>
             </div>
             <div className="animate-fade-up flex items-center justify-center w-full px-4 md:px-0 mt-4 md:mt-0 order-last" style={{ animationDelay: "0.2s" }}>
               <img
