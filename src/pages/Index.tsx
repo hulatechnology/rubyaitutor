@@ -279,7 +279,7 @@ const Index = () => {
                 </div>
                 <img
                   src={rubyTeachingUI}
-                  alt="Ruby discovery activity showing a friendly welcome screen with learning check details"
+                  alt="Ruby Discovery Activity showing a friendly welcome screen"
                   className="w-full h-auto object-contain"
                 />
               </div>
