@@ -152,7 +152,7 @@ const ReportCarousel = () => {
         <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
         <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
         <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-        <span className="text-xs text-muted-foreground ml-2">Learning Checkup Report</span>
+        <span className="text-xs text-muted-foreground ml-2">Discovery Report</span>
       </div>
       <div className="relative aspect-[4/3]">
         {reportSlides.map((slide, i) => (
