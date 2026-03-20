@@ -46,7 +46,7 @@ const FAQ = () => (
         <div className="bg-card border border-border rounded-lg p-7 md:p-9 shadow-sm">
           <ul className="grid sm:grid-cols-2 gap-5 text-sm text-foreground font-medium">
             {[
-              "Your child cannot fail the learning check",
+              "Your child cannot fail the Discovery Activity",
               "Ruby adapts to your child's level",
               "Most children finish in about 10 minutes",
               "You see the results immediately",
