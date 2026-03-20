@@ -43,7 +43,7 @@ const reasons = [
 const steps = [
   {
     icon: Search,
-    title: "A short learning check",
+    title: "A short Discovery Activity",
     desc: "Ruby asks simple questions to understand how your child is thinking. No scores, no pressure.",
   },
   {
