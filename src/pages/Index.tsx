@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     q: "How much time does this take?",
-    a: "The learning check takes only a few minutes. After that, your child can use Ruby in short sessions that fit around normal school and their homework. Most families use it for brief regular practice rather than long study periods. The aim is steady progress, not extra pressure.",
+    a: "The Discovery Activity takes only a few minutes. After that, your child can use Ruby in short sessions that fit around normal school and their homework. Most families use it for brief regular practice rather than long study periods. The aim is steady progress, not extra pressure.",
     icon: Clock,
   },
   {
