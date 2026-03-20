@@ -73,7 +73,7 @@ const reportFeatures = [
 
 const faqs = [
   {
-    q: "Is the learning check stressful?",
+    q: "Is the Discovery Activity stressful?",
     a: "No. It isn't a test and there are no scores or time pressure. It's a gentle question and answer activity. Ruby asks simple questions and adjusts based on your child's responses. The goal is to understand how they think, not to catch them out. Many children actually relax during the activity because they can answer privately without worrying about classmates.",
     icon: Clock,
   },
