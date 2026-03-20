@@ -249,7 +249,7 @@ const Index = () => {
               How Ruby helps <span className="text-primary">your child learn</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
+              Your child starts with a gentle Discovery Activity. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
