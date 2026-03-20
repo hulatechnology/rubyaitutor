@@ -31,7 +31,7 @@ const FAQ = () => (
         <div className="bg-blue-tint border border-border rounded-xl p-8 md:p-12 text-center shadow-sm">
           <h1 className="text-4xl md:text-5xl mb-4">Frequently Asked <span className="text-primary">Questions</span></h1>
           <p className="text-base text-foreground/70 mb-1">
-            Most parents read this right before starting the learning checkup.
+            Most parents read this right before starting the Discovery Activity.
           </p>
           <p className="text-sm text-foreground/55">
             Here are the things families usually want to know first.
