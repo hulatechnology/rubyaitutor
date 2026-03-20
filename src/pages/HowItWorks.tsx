@@ -10,10 +10,10 @@ import heroChatImg from "@/assets/ruby-chat-preview.png";
 const steps = [
   {
     icon: Search,
-    title: "A short learning check",
+    title: "A short Discovery Activity",
     desc: "Ruby asks simple questions to understand how your child is thinking. No scores, no pressure.",
     image: rubyTeachingImg,
-    imageAlt: "Ruby learning check interface showing a maths question with submit button",
+    imageAlt: "Ruby Discovery Activity interface showing a maths question with submit button",
   },
   {
     icon: ClipboardList,
