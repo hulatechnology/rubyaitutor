@@ -43,7 +43,7 @@ const reasons = [
 const steps = [
   {
     icon: Search,
-    title: "A short learning check",
+    title: "A short Discovery Activity",
     desc: "Ruby asks simple questions to understand how your child is thinking. No scores, no pressure.",
   },
   {
@@ -73,13 +73,13 @@ const reportFeatures = [
 
 const faqs = [
   {
-    q: "Is the learning check stressful?",
+    q: "Is the Discovery Activity stressful?",
     a: "No. It isn't a test and there are no scores or time pressure. It's a gentle question and answer activity. Ruby asks simple questions and adjusts based on your child's responses. The goal is to understand how they think, not to catch them out. Many children actually relax during the activity because they can answer privately without worrying about classmates.",
     icon: Clock,
   },
   {
     q: "Is Ruby a tutor, an app, or something else?",
-    a: "Ruby is best understood as a learning diagnosis and guidance system. It first works out what your child understands and what they missed, then teaches those specific concepts step by step. So instead of replacing a teacher or giving random help, Ruby identifies the cause of difficulty and guides learning from that point. It combines the attention of a private tutor with a structured learning plan that adapts to your child.",
+    a: "Ruby is best understood as a learning discovery and guidance system. It first works out what your child understands and what they missed, then teaches those specific concepts step by step. So instead of replacing a teacher or giving random help, Ruby identifies the cause of difficulty and guides learning from that point. It combines the attention of a private tutor with a structured learning plan that adapts to your child.",
     icon: HelpCircle,
   },
   {
@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     q: "How much time does this take?",
-    a: "The learning check takes only a few minutes. After that, your child can use Ruby in short sessions that fit around normal school and their homework. Most families use it for brief regular practice rather than long study periods. The aim is steady progress, not extra pressure.",
+    a: "The Discovery Activity takes only a few minutes. After that, your child can use Ruby in short sessions that fit around normal school and their homework. Most families use it for brief regular practice rather than long study periods. The aim is steady progress, not extra pressure.",
     icon: Clock,
   },
   {
@@ -152,7 +152,7 @@ const ReportCarousel = () => {
         <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
         <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
         <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-        <span className="text-xs text-muted-foreground ml-2">Learning Checkup Report</span>
+        <span className="text-xs text-muted-foreground ml-2">Discovery Report</span>
       </div>
       <div className="relative aspect-[4/3]">
         {reportSlides.map((slide, i) => (
@@ -249,7 +249,7 @@ const Index = () => {
               How Ruby helps <span className="text-primary">your child learn</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
+              Your child starts with a gentle Discovery Activity. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -275,11 +275,11 @@ const Index = () => {
                   <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
                   <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
                   <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                  <span className="text-xs text-muted-foreground ml-2">Diagnostic Placement Check</span>
+                  <span className="text-xs text-muted-foreground ml-2">Discovery Activity</span>
                 </div>
                 <img
                   src={rubyTeachingUI}
-                  alt="Ruby discovery activity showing a friendly welcome screen with learning check details"
+                  alt="Ruby Discovery Activity showing a friendly welcome screen"
                   className="w-full h-auto object-contain"
                 />
               </div>

@@ -10,11 +10,11 @@ import {
 } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "Is the learning check stressful?", a: "No. It isn't a test and there are no scores or time pressure. It's a gentle question and answer activity. Ruby asks simple questions and adjusts based on your child's responses. The goal is to understand how they think, not to catch them out. Many children actually relax during the activity because they can answer privately without worrying about classmates.", icon: Clock },
+  { q: "Is the Discovery Activity stressful?", a: "No. It isn't a test and there are no scores or time pressure. It's a gentle question and answer activity. Ruby asks simple questions and adjusts based on your child's responses. The goal is to understand how they think, not to catch them out. Many children actually relax during the activity because they can answer privately without worrying about classmates.", icon: Clock },
   { q: "Should I still use this if my child gets good marks?", a: "Yes. Good marks don't always mean full understanding. Some children cope by memorising methods. When the work becomes more complex, confidence suddenly drops. Ruby helps strengthen foundations early so future topics remain manageable. For strong students, it often improves confidence and prepares them for harder work ahead.", icon: Shield },
-  { q: "How much time does this take?", a: "The learning check takes only a few minutes. After that, your child can use Ruby in short sessions that fit around normal school and their homework. Most families use it for brief regular practice rather than long study periods. The aim is steady progress, not extra pressure.", icon: Clock },
+  { q: "How much time does this take?", a: "The Discovery Activity takes only a few minutes. After that, your child can use Ruby in short sessions that fit around normal school and their homework. Most families use it for brief regular practice rather than long study periods. The aim is steady progress, not extra pressure.", icon: Clock },
   { q: "What will the results show me?", a: "You receive a clear learning report, not just a score. It will explain: what your child understands confidently, what concepts they missed, where learning first broke down, and what Ruby will teach next. You will finally know why your child has been getting stuck and how improvement will happen.", icon: FileText },
-  { q: "Is Ruby a tutor, an app, or something else?", a: "Ruby is best understood as a learning diagnosis and guidance system. It first works out what your child understands and what they missed, then teaches those specific concepts step by step. So instead of replacing a teacher or giving random help, Ruby identifies the cause of difficulty and guides learning from that point. It combines the attention of a private tutor with a structured learning plan that adapts to your child.", icon: HelpCircle },
+  { q: "Is Ruby a tutor, an app, or something else?", a: "Ruby is best understood as a learning discovery and guidance system. It first works out what your child understands and what they missed, then teaches those specific concepts step by step. So instead of replacing a teacher or giving random help, Ruby identifies the cause of difficulty and guides learning from that point. It combines the attention of a private tutor with a structured learning plan that adapts to your child.", icon: HelpCircle },
   { q: "Is this like hiring a tutor?", a: "Not quite. A tutor usually helps with current homework or explains today's lesson. Ruby focuses on why the lesson is difficult in the first place. Often the problem comes from an earlier concept your child was expected to already know. By finding and rebuilding those missing foundations, your child can follow school lessons more easily and improve their academic performance.", icon: Users },
   { q: "What makes Ruby different from extra classes?", a: "Extra classes repeat the topic. Ruby identifies the cause. If your child struggles with algebra, extra lessons often teach more algebra. But the real issue may be fractions or number sense learned years earlier. Ruby traces mistakes back to the earlier concept and teaches that first. Instead of more work, your child gets the right work in the right order.", icon: GraduationCap },
   { q: "How involved do I need to be as a parent?", a: "Very little. Your child can use Ruby independently. You don't need to teach the lessons or supervise every session. You can simply check the report and follow their progress.", icon: Users },
@@ -31,7 +31,7 @@ const FAQ = () => (
         <div className="bg-blue-tint border border-border rounded-xl p-8 md:p-12 text-center shadow-sm">
           <h1 className="text-4xl md:text-5xl mb-4">Frequently Asked <span className="text-primary">Questions</span></h1>
           <p className="text-base text-foreground/70 mb-1">
-            Most parents read this right before starting the learning checkup.
+            Most parents read this right before starting the Discovery Activity.
           </p>
           <p className="text-sm text-foreground/55">
             Here are the things families usually want to know first.
@@ -46,7 +46,7 @@ const FAQ = () => (
         <div className="bg-card border border-border rounded-lg p-7 md:p-9 shadow-sm">
           <ul className="grid sm:grid-cols-2 gap-5 text-sm text-foreground font-medium">
             {[
-              "Your child cannot fail the learning check",
+              "Your child cannot fail the Discovery Activity",
               "Ruby adapts to your child's level",
               "Most children finish in about 10 minutes",
               "You see the results immediately",
@@ -96,7 +96,7 @@ const FAQ = () => (
         <p className="text-foreground/65 leading-relaxed mb-8">
           You don't need to decide anything yet.
           <br />
-          Start the free learning check and see your child's results first.
+          Start the free Discovery Activity and see your child's results first.
         </p>
         <CTAButton />
       </div>

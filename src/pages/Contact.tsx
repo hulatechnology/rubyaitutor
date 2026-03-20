@@ -39,7 +39,7 @@ const helpCards = [
   {
     icon: BookOpen,
     title: "Getting started",
-    desc: "Not sure where to begin? We'll help you decide whether to start with the checkup or guided support.",
+    desc: "Not sure where to begin? We'll help you decide whether to start with the Discovery Activity or guided support.",
   },
   {
     icon: Users,
@@ -312,7 +312,7 @@ const Contact = () => {
       <section className="pt-6 pb-20 md:pb-28 text-center">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-2xl md:text-3xl mb-4">
-            You can start with a free learning checkup whenever you're ready
+            You can start with a free Discovery Activity whenever you're ready
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8">
             You'll see your child's results first. Then you can decide what to do next, with or without us.
