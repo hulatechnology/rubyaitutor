@@ -55,7 +55,7 @@ const YourChildsReport = () => (
         <div className="bg-card border border-border rounded-lg shadow-md overflow-hidden">
           <img
             src={understandingLevel}
-            alt="Understanding Level section of the learning diagnostic report"
+            alt="Understanding Level section of the Discovery Report"
             className="w-full"
           />
         </div>
