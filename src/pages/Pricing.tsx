@@ -90,7 +90,7 @@ const Pricing = () => (
         {/* Closing line */}
         <div className="max-w-2xl mx-auto mt-12 text-center">
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Many families start with the learning checkup to understand where their child's learning gaps began.
+            Many families start with the Discovery Activity to understand where their child's learning gaps began.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed mt-2 font-medium">
             Ruby will open to beta families first. Join the waiting list to secure early access.

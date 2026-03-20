@@ -49,7 +49,7 @@ const HowItWorks = () => (
             <h1 className="text-4xl md:text-5xl mb-4">How Ruby helps <span className="text-primary">your child learn</span></h1>
             <p className="text-sm text-muted-foreground mb-6">No tests, no pressure. Ruby guides your child step by step.</p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Your child starts with a gentle learning check. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
+              Your child starts with a gentle Discovery Activity. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
             </p>
           </div>
           {/* Right: large chat preview */}

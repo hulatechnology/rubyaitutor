@@ -275,7 +275,7 @@ const Index = () => {
                   <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
                   <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
                   <div className="w-3 h-3 rounded-full bg-muted-foreground/20" />
-                  <span className="text-xs text-muted-foreground ml-2">Diagnostic Placement Check</span>
+                  <span className="text-xs text-muted-foreground ml-2">Discovery Activity</span>
                 </div>
                 <img
                   src={rubyTeachingUI}

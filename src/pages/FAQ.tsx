@@ -96,7 +96,7 @@ const FAQ = () => (
         <p className="text-foreground/65 leading-relaxed mb-8">
           You don't need to decide anything yet.
           <br />
-          Start the free learning check and see your child's results first.
+          Start the free Discovery Activity and see your child's results first.
         </p>
         <CTAButton />
       </div>

@@ -72,7 +72,7 @@ const YourChildsReport = () => (
         <div className="bg-card border border-border rounded-lg shadow-md overflow-hidden">
           <img
             src={rootCause}
-            alt="Root Cause section of the learning diagnostic report"
+            alt="Root Cause section of the Discovery Report"
             className="w-full"
           />
         </div>
