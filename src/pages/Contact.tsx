@@ -39,7 +39,7 @@ const helpCards = [
   {
     icon: BookOpen,
     title: "Getting started",
-    desc: "Not sure where to begin? We'll help you decide whether to start with the checkup or guided support.",
+    desc: "Not sure where to begin? We'll help you decide whether to start with the Discovery Activity or guided support.",
   },
   {
     icon: Users,
