@@ -20,7 +20,7 @@ const steps = [
     title: "Missing concepts are discovered",
     desc: "Ruby identifies the exact ideas your child didn't fully grasp, even from earlier grades.",
     image: rootCauseImg,
-    imageAlt: "Diagnostic report showing root cause analysis of learning gaps",
+    imageAlt: "Discovery Report showing root cause analysis of learning gaps",
   },
   {
     icon: Route,
