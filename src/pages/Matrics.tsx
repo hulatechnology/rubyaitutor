@@ -91,10 +91,6 @@ const Matrics = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", school: "", email: "" });
-
-  const [selected, setSelected] = useState<string[]>([]);
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", school: "", email: "" });
   const [activeTab, setActiveTab] = useState("english");
 
   const toggleSubject = (id: string) => {
