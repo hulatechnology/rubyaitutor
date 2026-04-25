@@ -29,7 +29,7 @@ const subjects = [
 const previewImages = [
   { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
   { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
-  { src: previewStudyPlan, label: "Your 14-Day Study Plan", locked: true },
+  { src: previewStudyPlan, label: "Your 2026 Prep Paper 📝", locked: true },
 ];
 
 const previewTabs = [
@@ -216,13 +216,6 @@ const Matrics = () => {
                       </>
                     )}
                   </div>
-                  {!img.locked && (
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent p-4">
-                      <p className="text-white text-sm md:text-base font-extrabold">
-                        {img.label}
-                      </p>
-                    </div>
-                  )}
                   {img.locked && (
                     <div className="absolute top-3 left-3 bg-background/90 backdrop-blur-sm rounded-full px-3 py-1 border border-border">
                       <p className="text-foreground text-xs font-extrabold">
