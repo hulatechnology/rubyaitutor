@@ -182,6 +182,7 @@ const ReportCarousel = () => {
 const Index = () => {
   return (
     <Layout>
+      <PromoBanner />
       {/* ── Hero ── */}
       <section className="py-8 md:py-20">
         <div className="container mx-auto px-4">
