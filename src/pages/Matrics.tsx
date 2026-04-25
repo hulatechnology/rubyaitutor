@@ -208,7 +208,7 @@ const Matrics = () => {
             <div className="bg-card rounded-2xl p-6 md:p-10 border border-border shadow-md max-w-2xl mx-auto animate-fade-up">
               <h3 className="text-2xl mb-2 text-center">Almost there</h3>
               <p className="text-muted-foreground text-center mb-6">
-                Tell us where to send your study pack.
+                Download the study pack here.
               </p>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
