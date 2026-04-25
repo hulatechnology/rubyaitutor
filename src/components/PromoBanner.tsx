@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
-import { Sparkles } from "lucide-react";
 
 const PromoBanner = () => (
-  <div
-    className="w-full text-cta-foreground"
-    style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
-  >
+  <div className="w-full text-white" style={{ backgroundColor: "#0339f8" }}>
     <div className="container mx-auto px-4 py-2 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4 text-center">
       <p className="text-sm md:text-base font-extrabold flex items-center gap-2">
-        <Sparkles className="w-4 h-4" />
-        Matrics! Get your free 2026 June Exams Study Guide here!
+        <span aria-hidden="true">🚀</span>
+        Matrics! Get your free 2026 June Exams Study Guide here! <span aria-hidden="true">👉</span>
       </p>
       <Link
         to="/matrics"
