@@ -260,44 +260,6 @@ const Matrics = () => {
         </div>
       </section>
 
-      {/* Download */}
-      <section id="download-section" className="py-12 md:py-20">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl mb-4">
-            Your <span className="text-primary">Study Pack</span>
-          </h2>
-          {submitted ? (
-            <p className="text-lg text-muted-foreground mb-8">
-              Thanks {form.name.split(" ")[0]}! Your pack for{" "}
-              <span className="font-extrabold text-foreground">
-                {selected.map((id) => subjects.find((s) => s.id === id)?.name).join(", ")}
-              </span>{" "}
-              is ready.
-            </p>
-          ) : (
-            <p className="text-lg text-muted-foreground mb-8">
-              Select your subjects and complete the form above to unlock your download.
-            </p>
-          )}
-          <button
-            disabled={!submitted}
-            onClick={() => alert("Download starting...")}
-            className={`inline-flex items-center justify-center gap-2 text-lg font-extrabold px-8 py-4 rounded-full transition-all ${
-              submitted
-                ? "text-cta-foreground shadow-md hover:opacity-90 cursor-pointer"
-                : "bg-muted text-muted-foreground cursor-not-allowed"
-            }`}
-            style={
-              submitted
-                ? { background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }
-                : undefined
-            }
-          >
-            <Download className="w-5 h-5" /> Download Study Pack
-          </button>
-        </div>
-      </section>
-
       {/* Conversion */}
       <section className="py-12 md:py-20 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-4xl">
