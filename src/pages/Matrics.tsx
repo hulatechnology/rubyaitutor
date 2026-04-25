@@ -29,7 +29,13 @@ const subjects = [
 const previewImages = [
   { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
   { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
-  { src: previewStudyPlan, label: "Your 14-Day Study Plan" },
+  { src: previewStudyPlan, label: "Your 14-Day Study Plan", locked: true },
+];
+
+const previewTabs = [
+  { id: "math", name: "Mathematics" },
+  { id: "science", name: "Physical Science" },
+  { id: "english", name: "English" },
 ];
 
 const packShows = [
@@ -85,11 +91,16 @@ const Matrics = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", school: "", email: "" });
+  const [activeTab, setActiveTab] = useState("english");
 
   const toggleSubject = (id: string) => {
     setSelected((prev) =>
       prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
     );
+  };
+
+  const scrollToSubjects = () => {
+    document.getElementById("subjects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const formComplete = !!(form.name && form.school && form.email);
@@ -129,42 +140,104 @@ const Matrics = () => {
         </div>
       </section>
 
-      {/* Visual Preview Section */}
+      {/* Visual Preview Section - Tabbed */}
       <section className="pb-12 md:pb-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="text-3xl md:text-4xl mb-3">
-              Preview what <span className="text-primary">you'll get</span>
+              Preview your <span className="text-primary">subject</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Real pages from the study pack. Built from past exam patterns.
+              See real pages from the study pack before you download.
             </p>
             <p className="text-sm text-muted-foreground mt-2">
               Based on real NSC exam patterns and past papers
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {previewImages.map((img) => (
-              <div
-                key={img.label}
-                className="group relative overflow-hidden rounded-2xl border border-border shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card"
-              >
-                <div className="overflow-hidden">
-                  <img
-                    src={img.src}
-                    alt={img.label}
-                    loading="lazy"
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent p-4">
-                  <p className="text-white text-sm md:text-base font-extrabold">
-                    {img.label}
-                  </p>
-                </div>
-              </div>
-            ))}
+
+          {/* Tabs */}
+          <div
+            role="tablist"
+            aria-label="Subject preview tabs"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-1 mb-8 sm:mb-10 sm:bg-card sm:border sm:border-border sm:rounded-full sm:p-1.5 sm:max-w-xl sm:mx-auto"
+          >
+            {previewTabs.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  role="tab"
+                  aria-selected={isActive}
+                  type="button"
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex-1 px-5 py-2.5 rounded-full text-sm md:text-base font-extrabold transition-all duration-300 ${
+                    isActive
+                      ? "bg-primary text-primary-foreground shadow-md"
+                      : "bg-card sm:bg-transparent border border-border sm:border-0 text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {tab.name}
+                </button>
+              );
+            })}
           </div>
+
+          {/* Preview images */}
+          <div key={activeTab} className="animate-fade-in">
+            <div className="grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 grid-flow-col md:grid-flow-row auto-cols-[85%] md:auto-cols-auto">
+              {previewImages.map((img) => (
+                <div
+                  key={img.label}
+                  className="group relative overflow-hidden rounded-2xl border border-border shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card snap-center"
+                >
+                  <div className="overflow-hidden relative">
+                    <img
+                      src={img.src}
+                      alt={img.label}
+                      loading="lazy"
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {img.locked && (
+                      <>
+                        <div className="absolute inset-0 backdrop-blur-[2px] bg-gradient-to-t from-background via-background/70 to-transparent" />
+                        <div className="absolute inset-0 flex flex-col items-center justify-end pb-6 px-4 text-center">
+                          <p className="text-foreground text-base md:text-lg font-extrabold mb-3">
+                            Unlock the full study pack
+                          </p>
+                          <button
+                            type="button"
+                            onClick={scrollToSubjects}
+                            className="inline-flex items-center gap-2 text-sm font-extrabold px-5 py-2.5 rounded-full text-cta-foreground hover:opacity-90 transition-opacity shadow-md"
+                            style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
+                          >
+                            Get Free Study Pack
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  {!img.locked && (
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent p-4">
+                      <p className="text-white text-sm md:text-base font-extrabold">
+                        {img.label}
+                      </p>
+                    </div>
+                  )}
+                  {img.locked && (
+                    <div className="absolute top-3 left-3 bg-background/90 backdrop-blur-sm rounded-full px-3 py-1 border border-border">
+                      <p className="text-foreground text-xs font-extrabold">
+                        {img.label}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-muted-foreground mt-6">
+            Full study pack available after you select your subjects
+          </p>
         </div>
       </section>
 
