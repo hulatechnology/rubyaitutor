@@ -62,9 +62,7 @@ const Matrics = () => {
     e.preventDefault();
     if (form.name && form.school && form.email) {
       setSubmitted(true);
-      setTimeout(() => {
-        document.getElementById("download-section")?.scrollIntoView({ behavior: "smooth" });
-      }, 200);
+      alert("Download starting...");
     }
   };
 
@@ -208,7 +206,7 @@ const Matrics = () => {
             <div className="bg-card rounded-2xl p-6 md:p-10 border border-border shadow-md max-w-2xl mx-auto animate-fade-up">
               <h3 className="text-2xl mb-2 text-center">Almost there</h3>
               <p className="text-muted-foreground text-center mb-6">
-                Tell us where to send your study pack.
+                Download the study pack here.
               </p>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -249,49 +247,16 @@ const Matrics = () => {
                   className="w-full inline-flex items-center justify-center gap-2 text-lg font-extrabold px-6 py-4 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90"
                   style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
                 >
-                  <Sparkles className="w-5 h-5" /> Unlock My Study Pack
+                  <Download className="w-5 h-5" /> Unlock My Study Pack
                 </button>
+                {submitted && (
+                  <p className="text-center text-sm text-muted-foreground pt-2">
+                    Thanks {form.name.split(" ")[0]}! Your download has started.
+                  </p>
+                )}
               </form>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Download */}
-      <section id="download-section" className="py-12 md:py-20">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl mb-4">
-            Your <span className="text-primary">Study Pack</span>
-          </h2>
-          {submitted ? (
-            <p className="text-lg text-muted-foreground mb-8">
-              Thanks {form.name.split(" ")[0]}! Your pack for{" "}
-              <span className="font-extrabold text-foreground">
-                {selected.map((id) => subjects.find((s) => s.id === id)?.name).join(", ")}
-              </span>{" "}
-              is ready.
-            </p>
-          ) : (
-            <p className="text-lg text-muted-foreground mb-8">
-              Select your subjects and complete the form above to unlock your download.
-            </p>
-          )}
-          <button
-            disabled={!submitted}
-            onClick={() => alert("Download starting...")}
-            className={`inline-flex items-center justify-center gap-2 text-lg font-extrabold px-8 py-4 rounded-full transition-all ${
-              submitted
-                ? "text-cta-foreground shadow-md hover:opacity-90 cursor-pointer"
-                : "bg-muted text-muted-foreground cursor-not-allowed"
-            }`}
-            style={
-              submitted
-                ? { background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }
-                : undefined
-            }
-          >
-            <Download className="w-5 h-5" /> Download Study Pack
-          </button>
         </div>
       </section>
 
