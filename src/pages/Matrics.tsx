@@ -29,7 +29,13 @@ const subjects = [
 const previewImages = [
   { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
   { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
-  { src: previewStudyPlan, label: "Your 14-Day Study Plan" },
+  { src: previewStudyPlan, label: "Your 14-Day Study Plan", locked: true },
+];
+
+const previewTabs = [
+  { id: "math", name: "Mathematics" },
+  { id: "science", name: "Physical Science" },
+  { id: "english", name: "English" },
 ];
 
 const packShows = [
