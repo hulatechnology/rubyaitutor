@@ -87,13 +87,6 @@ const Matrics = () => {
           <p className="text-base text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.15s" }}>
             Free 2026 Study Pack built from real past papers. Focus on what actually gets marks.
           </p>
-          <button
-            onClick={() => scrollTo("subjects")}
-            className="inline-flex items-center justify-center text-lg font-extrabold px-8 py-4 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90 animate-fade-up"
-            style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))", animationDelay: "0.2s" }}
-          >
-            Get Free Study Pack
-          </button>
         </div>
       </section>
 
