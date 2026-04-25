@@ -197,7 +197,7 @@ const Matrics = () => {
           {/* Preview images */}
           <div key={activeTab} className="animate-fade-in">
             <div className="grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 grid-flow-col md:grid-flow-row auto-cols-[85%] md:auto-cols-auto">
-              {previewImages.map((img) => (
+              {(previewImagesBySubject[activeTab] ?? defaultPreviewImages).map((img) => (
                 <div
                   key={img.label}
                   className="group relative overflow-hidden rounded-2xl border border-border shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card snap-center"
