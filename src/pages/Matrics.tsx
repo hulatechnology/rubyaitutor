@@ -142,7 +142,7 @@ const Matrics = () => {
 
       {/* Visual Preview Section - Tabbed */}
       <section className="pb-12 md:pb-16">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 max-w-[1600px]">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="text-3xl md:text-4xl mb-3">
               Preview your <span className="text-primary">subject</span>
