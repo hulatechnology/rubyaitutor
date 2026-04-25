@@ -62,9 +62,7 @@ const Matrics = () => {
     e.preventDefault();
     if (form.name && form.school && form.email) {
       setSubmitted(true);
-      setTimeout(() => {
-        document.getElementById("download-section")?.scrollIntoView({ behavior: "smooth" });
-      }, 200);
+      alert("Download starting...");
     }
   };
 
