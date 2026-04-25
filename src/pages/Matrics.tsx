@@ -247,8 +247,13 @@ const Matrics = () => {
                   className="w-full inline-flex items-center justify-center gap-2 text-lg font-extrabold px-6 py-4 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90"
                   style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
                 >
-                  <Sparkles className="w-5 h-5" /> Unlock My Study Pack
+                  <Download className="w-5 h-5" /> Unlock My Study Pack
                 </button>
+                {submitted && (
+                  <p className="text-center text-sm text-muted-foreground pt-2">
+                    Thanks {form.name.split(" ")[0]}! Your download has started.
+                  </p>
+                )}
               </form>
             </div>
           </div>
