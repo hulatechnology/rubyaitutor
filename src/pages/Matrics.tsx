@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import preview5Skills from "@/assets/matrics-5skills.png";
 import previewMistakes from "@/assets/matrics-mistakes.png";
-import previewStudyPlan from "@/assets/matrics-studyplan.png";
+import previewStudyPlan from "@/assets/matrics-prep-paper.png";
 
 const subjects = [
   { id: "math", name: "Mathematics", icon: Calculator },
@@ -199,7 +199,7 @@ const Matrics = () => {
                     />
                     {img.locked && (
                       <>
-                        <div className="absolute inset-0 backdrop-blur-[2px] bg-gradient-to-t from-background via-background/70 to-transparent" />
+                        <div className="absolute inset-0 backdrop-blur-[4px] bg-gradient-to-t from-background/85 via-background/30 to-background/10" />
                         <div className="absolute inset-0 flex flex-col items-center justify-end pb-6 px-4 text-center">
                           <p className="text-foreground text-base md:text-lg font-extrabold mb-3">
                             Unlock the full study pack
