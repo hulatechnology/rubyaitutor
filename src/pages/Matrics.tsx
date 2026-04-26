@@ -143,6 +143,64 @@ const Matrics = () => {
         </div>
       </section>
 
+      {/* What you'll get - moved up below hero */}
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-3xl md:text-4xl mb-4">
+              What <span className="text-primary">you'll get</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">Free resources plus an AI version to go further.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {packCards.map((card) => (
+              <div
+                key={card.title}
+                className="bg-card rounded-2xl p-7 border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                  <card.icon className="w-6 h-6 text-primary" strokeWidth={1.8} />
+                </div>
+                <h3 className="text-xl mb-1">{card.title}</h3>
+                <p className="text-base font-extrabold text-primary mb-4">{card.tagline}</p>
+                <ul className="space-y-2.5">
+                  {card.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-1" />
+                      <span className="text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {/* AI Version card */}
+            <div className="rounded-2xl p-7 border-2 border-primary bg-primary/5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+              <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center mb-5">
+                <Sparkles className="w-6 h-6" strokeWidth={1.8} />
+              </div>
+              <h3 className="text-xl mb-1">AI Version</h3>
+              <p className="text-base font-extrabold text-primary mb-4">Improve faster with AI</p>
+              <ul className="space-y-2.5 mb-6">
+                {upgradeBenefits.map((b) => (
+                  <li key={b.text} className="flex items-start gap-2 text-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-1" />
+                    <span className="text-base">{b.text}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://ai-tutor-olive-zeta.vercel.app/"
+                className="mt-auto inline-flex items-center justify-center gap-2 text-sm font-extrabold px-5 py-3 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90"
+                style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
+              >
+                <Sparkles className="w-4 h-4" /> Try it here
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Visual Preview Section - Tabbed */}
       <section className="pb-12 md:pb-16">
         <div className="container mx-auto px-4 max-w-[1600px]">
@@ -231,72 +289,18 @@ const Matrics = () => {
         </div>
       </section>
 
-      {/* What you'll get */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-3xl md:text-4xl mb-4">
-              What <span className="text-primary">you'll get</span>
-            </h2>
-            <p className="text-lg text-muted-foreground">Free resources plus an AI version to go further.</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {packCards.map((card) => (
-              <div
-                key={card.title}
-                className="bg-card rounded-2xl p-7 border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                  <card.icon className="w-6 h-6 text-primary" strokeWidth={1.8} />
-                </div>
-                <h3 className="text-xl mb-1">{card.title}</h3>
-                <p className="text-base font-extrabold text-primary mb-4">{card.tagline}</p>
-                <ul className="space-y-2.5">
-                  {card.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-muted-foreground">
-                      <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-1" />
-                      <span className="text-base">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-
-            {/* AI Version card */}
-            <div className="rounded-2xl p-7 border-2 border-primary bg-primary/5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
-              <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center mb-5">
-                <Sparkles className="w-6 h-6" strokeWidth={1.8} />
-              </div>
-              <h3 className="text-xl mb-1">AI Version</h3>
-              <p className="text-base font-extrabold text-primary mb-4">Improve faster with AI</p>
-              <ul className="space-y-2.5 mb-6">
-                {upgradeBenefits.map((b) => (
-                  <li key={b.text} className="flex items-start gap-2 text-foreground">
-                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-1" />
-                    <span className="text-base">{b.text}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="https://ai-tutor-olive-zeta.vercel.app/"
-                className="mt-auto inline-flex items-center justify-center gap-2 text-sm font-extrabold px-5 py-3 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90"
-                style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
-              >
-                <Sparkles className="w-4 h-4" /> Improve My Marks with AI
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Subject Selection */}
+      {/* Subject Selection + Form */}
       <section id="subjects" className="py-12 md:py-20 bg-blue-tint">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl mb-3">
-              Choose your <span className="text-primary">subjects</span>
-            </h2>
-            <p className="text-lg text-muted-foreground">Pick what you're writing in June</p>
+            <button
+              type="button"
+              onClick={() => document.getElementById("subject-picker")?.scrollIntoView({ behavior: "smooth" })}
+              className="inline-flex items-center justify-center gap-2 text-base font-extrabold px-7 py-3.5 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90"
+              style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
+            >
+              <Download className="w-5 h-5" /> Download your study pack
+            </button>
           </div>
 
           {/* Step indicator */}
@@ -304,7 +308,7 @@ const Matrics = () => {
             {[
               { n: 1, label: "Choose subjects" },
               { n: 2, label: "Enter details" },
-              { n: 3, label: "Download" },
+              { n: 3, label: "Go!" },
             ].map((step, idx) => {
               const active = stepActive(step.n);
               return (
@@ -335,36 +339,34 @@ const Matrics = () => {
             })}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5 mb-12">
-            {subjects.map((s) => {
-              const isSel = selected.includes(s.id);
-              return (
-                <button
-                  key={s.id}
-                  type="button"
-                  onClick={() => toggleSubject(s.id)}
-                  className={`group rounded-2xl p-7 border-2 text-left transition-all duration-300 hover:-translate-y-1 ${
-                    isSel
-                      ? "border-primary bg-primary/10 shadow-lg ring-2 ring-primary/30"
-                      : "border-border bg-card hover:border-primary/40 shadow-sm"
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors ${
-                      isSel ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary"
-                    }`}>
-                      <s.icon className="w-6 h-6" strokeWidth={1.8} />
-                    </div>
-                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
-                      isSel ? "border-primary bg-primary" : "border-border"
-                    }`}>
-                      {isSel && <CheckCircle className="w-5 h-5 text-primary-foreground" />}
-                    </div>
-                  </div>
-                  <h3 className="text-xl">{s.name}</h3>
-                </button>
-              );
-            })}
+          {/* Subject picker - simple checkboxes, no cards */}
+          <div id="subject-picker" className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-md mb-6">
+            <h3 className="text-xl mb-1 text-center">Select your subjects</h3>
+            <p className="text-sm text-muted-foreground text-center mb-5">Pick what you're writing in June</p>
+            <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-3">
+              {subjects.map((s) => {
+                const isSel = selected.includes(s.id);
+                return (
+                  <label
+                    key={s.id}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-all ${
+                      isSel
+                        ? "border-primary bg-primary/10"
+                        : "border-border bg-background hover:border-primary/40"
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={isSel}
+                      onChange={() => toggleSubject(s.id)}
+                      className="w-4 h-4 accent-primary"
+                    />
+                    <s.icon className="w-5 h-5 text-primary" strokeWidth={1.8} />
+                    <span className="text-base font-extrabold">{s.name}</span>
+                  </label>
+                );
+              })}
+            </div>
           </div>
 
           {/* Progressive Form */}
@@ -415,12 +417,6 @@ const Matrics = () => {
                   />
                 </div>
 
-                {formComplete && !submitted && (
-                  <p className="text-center text-sm font-extrabold text-primary pt-1 animate-fade-up">
-                    Your study pack is ready
-                  </p>
-                )}
-
                 <button
                   type="submit"
                   disabled={!formComplete}
@@ -435,8 +431,7 @@ const Matrics = () => {
                       : undefined
                   }
                 >
-                  <Download className="w-5 h-5" />
-                  {formComplete ? "Download Now" : "Unlock My Study Pack"}
+                  Go!
                 </button>
                 {submitted && (
                   <p className="text-center text-sm text-muted-foreground pt-2">
