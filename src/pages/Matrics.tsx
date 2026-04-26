@@ -95,7 +95,6 @@ const Matrics = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", school: "", email: "" });
-  const [activeTab, setActiveTab] = useState("english");
   const [heroApi, setHeroApi] = useState<CarouselApi | null>(null);
 
   useEffect(() => {
