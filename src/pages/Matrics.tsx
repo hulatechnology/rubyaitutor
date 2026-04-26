@@ -361,10 +361,9 @@ const Matrics = () => {
             })}
           </div>
 
-          {/* Subject picker - simple checkboxes, no cards */}
-          <div id="subject-picker" className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-md mb-6">
-            <h3 className="text-xl mb-1 text-center">Select your subjects</h3>
-            <p className="text-sm text-muted-foreground text-center mb-5">Pick what you're writing in June</p>
+          {/* Subject picker - no card wrapper */}
+          <div id="subject-picker" className="mb-8">
+            <h3 className="text-xl mb-5 text-center">Select your subjects</h3>
             <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-3">
               {subjects.map((s) => {
                 const isSel = selected.includes(s.id);
@@ -374,7 +373,7 @@ const Matrics = () => {
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-all ${
                       isSel
                         ? "border-primary bg-primary/10"
-                        : "border-border bg-background hover:border-primary/40"
+                        : "border-border bg-card hover:border-primary/40"
                     }`}
                   >
                     <input
