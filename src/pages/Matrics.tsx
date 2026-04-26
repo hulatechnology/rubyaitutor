@@ -143,6 +143,64 @@ const Matrics = () => {
         </div>
       </section>
 
+      {/* What you'll get - moved up below hero */}
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-3xl md:text-4xl mb-4">
+              What <span className="text-primary">you'll get</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">Free resources plus an AI version to go further.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {packCards.map((card) => (
+              <div
+                key={card.title}
+                className="bg-card rounded-2xl p-7 border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                  <card.icon className="w-6 h-6 text-primary" strokeWidth={1.8} />
+                </div>
+                <h3 className="text-xl mb-1">{card.title}</h3>
+                <p className="text-base font-extrabold text-primary mb-4">{card.tagline}</p>
+                <ul className="space-y-2.5">
+                  {card.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-1" />
+                      <span className="text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {/* AI Version card */}
+            <div className="rounded-2xl p-7 border-2 border-primary bg-primary/5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+              <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center mb-5">
+                <Sparkles className="w-6 h-6" strokeWidth={1.8} />
+              </div>
+              <h3 className="text-xl mb-1">AI Version</h3>
+              <p className="text-base font-extrabold text-primary mb-4">Improve faster with AI</p>
+              <ul className="space-y-2.5 mb-6">
+                {upgradeBenefits.map((b) => (
+                  <li key={b.text} className="flex items-start gap-2 text-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-1" />
+                    <span className="text-base">{b.text}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://ai-tutor-olive-zeta.vercel.app/"
+                className="mt-auto inline-flex items-center justify-center gap-2 text-sm font-extrabold px-5 py-3 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90"
+                style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
+              >
+                <Sparkles className="w-4 h-4" /> Try it here
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Visual Preview Section - Tabbed */}
       <section className="pb-12 md:pb-16">
         <div className="container mx-auto px-4 max-w-[1600px]">
