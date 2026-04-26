@@ -14,7 +14,7 @@ import {
   Zap,
   Target,
   TrendingUp,
-  X,
+  
 } from "lucide-react";
 import preview5Skills from "@/assets/matrics-5skills.png";
 import previewMistakes from "@/assets/matrics-mistakes.png";
@@ -50,12 +50,6 @@ const previewTabs = [
   { id: "english", name: "English" },
 ];
 
-const packShows = [
-  "How the paper is structured (so nothing surprises you)",
-  "The 5 skills that actually get you marks",
-  "The question types that repeat every year",
-  "The exact mistakes that cost marks (even if you know the work)",
-];
 
 const packCards = [
   {
