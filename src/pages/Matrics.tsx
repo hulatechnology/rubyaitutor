@@ -326,7 +326,7 @@ const Matrics = () => {
           </div>
 
           {/* Step indicator */}
-          <div className="flex items-center justify-center gap-2 sm:gap-4 mb-10 flex-wrap">
+          <div className="flex items-center justify-center gap-2 sm:gap-4 mb-8 flex-wrap">
             {[
               { n: 1, label: "Choose subjects" },
               { n: 2, label: "Enter details" },
