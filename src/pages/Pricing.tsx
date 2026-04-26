@@ -1,13 +1,5 @@
 import Layout from "@/components/Layout";
 import { Check } from "lucide-react";
-import { useState } from "react";
-
-const whyReasons = [
-  "Most tutoring costs R800 – R2000 per month",
-  "Parents often cannot see why their child is struggling",
-  "Ruby identifies the exact concept your child missed",
-  "Your child receives step by step guidance instead of answers",
-];
 
 type Plan = {
   id: string;
@@ -89,8 +81,6 @@ const plans: Plan[] = [
 ];
 
 const Pricing = () => {
-  const [voucher, setVoucher] = useState("");
-
   return (
     <Layout>
       {/* Hero */}
@@ -114,19 +104,6 @@ const Pricing = () => {
       {/* Plans */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          {/* Why families are joining */}
-          <div className="max-w-2xl mx-auto mb-12">
-            <h2 className="text-2xl md:text-3xl text-center mb-8">Why families are joining Ruby</h2>
-            <ul className="space-y-3 max-w-lg mx-auto">
-              {whyReasons.map((r) => (
-                <li key={r} className="flex items-start gap-3 text-sm">
-                  <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                  <span className="text-foreground">{r}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Plan selection header */}
           <div className="max-w-3xl mx-auto text-center mb-8">
             <p className="text-xs md:text-sm font-extrabold tracking-wider text-primary mb-3">
@@ -136,31 +113,6 @@ const Pricing = () => {
             <p className="text-base text-muted-foreground">
               Personalised tutoring that adapts to your child's pace — in any SA home language.
             </p>
-
-            {/* Voucher */}
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="mt-6 flex flex-col sm:flex-row items-stretch justify-center gap-2 max-w-md mx-auto"
-            >
-              <input
-                type="text"
-                value={voucher}
-                onChange={(e) => setVoucher(e.target.value)}
-                placeholder="Have a voucher code?"
-                className="flex-1 px-4 py-2.5 rounded-full border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
-              />
-              <button
-                type="submit"
-                disabled={!voucher.trim()}
-                className={`px-6 py-2.5 rounded-full text-sm font-extrabold transition-colors ${
-                  voucher.trim()
-                    ? "bg-primary text-primary-foreground hover:opacity-90"
-                    : "bg-muted text-muted-foreground cursor-not-allowed"
-                }`}
-              >
-                Apply
-              </button>
-            </form>
           </div>
 
           {/* Plan cards */}
