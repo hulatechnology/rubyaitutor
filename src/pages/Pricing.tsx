@@ -93,9 +93,6 @@ const Pricing = () => {
             Most tutoring focuses on repeating homework or memorising answers. Ruby identifies the exact learning gap and guides your child step by step so they truly understand the work.
           </p>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-medium mb-6">
-            Support that costs less and helps your child learn more effectively is coming soon.
-          </p>
-          <p className="text-sm text-muted-foreground leading-relaxed">
             On average, South African parents spend R1000+ per month on tutoring. Ruby is being built to provide personalised learning support at a fraction of that cost.
           </p>
         </div>
