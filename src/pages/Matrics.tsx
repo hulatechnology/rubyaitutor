@@ -312,7 +312,7 @@ const Matrics = () => {
       </section>
 
       {/* Subject Selection + Form */}
-      <section id="subjects" className="py-12 md:py-20 bg-blue-tint">
+      <section id="subjects" className="py-10 md:py-14 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-8">
             <button
