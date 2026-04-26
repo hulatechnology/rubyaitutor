@@ -113,6 +113,15 @@ const Matrics = () => {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", school: "", email: "" });
   const [activeTab, setActiveTab] = useState("english");
+  const [heroApi, setHeroApi] = useState<CarouselApi | null>(null);
+
+  useEffect(() => {
+    if (!heroApi) return;
+    const id = setInterval(() => {
+      heroApi.scrollNext();
+    }, 3500);
+    return () => clearInterval(id);
+  }, [heroApi]);
 
   const toggleSubject = (id: string) => {
     setSelected((prev) =>
@@ -144,25 +153,56 @@ const Matrics = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-extrabold mb-6 animate-fade-up">
-            <Sparkles className="w-4 h-4" /> Free 2026 Study Pack
+      <section className="pt-8 pb-10 md:pt-12 md:pb-14">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            {/* Left: copy */}
+            <div className="text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-extrabold mb-5 animate-fade-up">
+                <Sparkles className="w-4 h-4" /> Free 2026 Study Pack
+              </div>
+              <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.15] mb-5 animate-fade-up">
+                Stop guessing what's in your <span className="text-primary">June exam.</span>
+              </h1>
+              <p className="text-lg md:text-xl text-foreground/80 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+                Most students lose marks on patterns they never noticed.
+              </p>
+            </div>
+
+            {/* Right: image carousel */}
+            <div className="animate-fade-up" style={{ animationDelay: "0.15s" }}>
+              <Carousel
+                opts={{ loop: true, align: "center" }}
+                setApi={setHeroApi}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {heroCarouselImages.map((img) => (
+                    <CarouselItem key={img.label}>
+                      <div className="overflow-hidden rounded-2xl border border-border shadow-md bg-card">
+                        <img
+                          src={img.src}
+                          alt={img.label}
+                          loading="lazy"
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-2" />
+                <CarouselNext className="right-2" />
+              </Carousel>
+            </div>
           </div>
-          <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.15] mb-5 animate-fade-up">
-            Stop guessing what's in your <span className="text-primary">June exam.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-foreground/80 mb-3 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Most students lose marks on patterns they never noticed.
-          </p>
         </div>
       </section>
 
       {/* What you'll get - moved up below hero */}
-      <section className="py-12 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-3xl md:text-4xl mb-4">
+          <div className="text-center mb-8 md:mb-10">
+            <h2 className="text-3xl md:text-4xl mb-3">
               What <span className="text-primary">you'll get</span>
             </h2>
             <p className="text-lg text-muted-foreground">Free resources plus an AI version to go further.</p>
