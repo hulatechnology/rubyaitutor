@@ -397,9 +397,6 @@ const Matrics = () => {
             }`}
           >
             <div className="bg-card rounded-2xl p-6 md:p-10 border border-border shadow-md max-w-2xl mx-auto animate-fade-up">
-              <h3 className="text-2xl mb-2 text-center">
-                Almost there. Where should we send your study pack?
-              </h3>
               <p className="text-muted-foreground text-center mb-6">
                 Fill in your details below to unlock your free download.
               </p>
