@@ -1,5 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import {
   CheckCircle,
   Sparkles,
@@ -14,13 +22,20 @@ import {
   Zap,
   Target,
   TrendingUp,
-  
 } from "lucide-react";
 import preview5Skills from "@/assets/matrics-5skills.png";
 import previewMistakes from "@/assets/matrics-mistakes.png";
 import previewStudyPlan from "@/assets/matrics-prep-paper.png";
 import scienceSkills from "@/assets/matrics-science-5skills.png";
 import scienceMethods from "@/assets/matrics-science-methods.png";
+
+const heroCarouselImages = [
+  { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
+  { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
+  { src: scienceSkills, label: "Physical Science: 5 High-Mark Skills" },
+  { src: scienceMethods, label: "How to Solve Each Question Type" },
+  { src: previewStudyPlan, label: "Your 2026 Prep Paper" },
+];
 
 const subjects = [
   { id: "math", name: "Mathematics", icon: Calculator },
@@ -33,23 +48,6 @@ const defaultPreviewImages = [
   { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
   { src: previewStudyPlan, label: "Your 2026 Prep Paper 📝", locked: true },
 ];
-
-const previewImagesBySubject: Record<string, typeof defaultPreviewImages> = {
-  math: defaultPreviewImages,
-  english: defaultPreviewImages,
-  science: [
-    { src: scienceSkills, label: "5 Skills That Give You the Most Marks" },
-    { src: scienceMethods, label: "How to Solve Each Question Type" },
-    { src: previewStudyPlan, label: "Your 2026 Prep Paper 📝", locked: true },
-  ],
-};
-
-const previewTabs = [
-  { id: "math", name: "Mathematics" },
-  { id: "science", name: "Physical Science" },
-  { id: "english", name: "English" },
-];
-
 
 const packCards = [
   {
@@ -97,7 +95,15 @@ const Matrics = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", school: "", email: "" });
-  const [activeTab, setActiveTab] = useState("english");
+  const [heroApi, setHeroApi] = useState<CarouselApi | null>(null);
+
+  useEffect(() => {
+    if (!heroApi) return;
+    const id = setInterval(() => {
+      heroApi.scrollNext();
+    }, 3500);
+    return () => clearInterval(id);
+  }, [heroApi]);
 
   const toggleSubject = (id: string) => {
     setSelected((prev) =>
@@ -129,25 +135,56 @@ const Matrics = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-extrabold mb-6 animate-fade-up">
-            <Sparkles className="w-4 h-4" /> Free 2026 Study Pack
+      <section className="pt-8 pb-10 md:pt-12 md:pb-14">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            {/* Left: copy */}
+            <div className="text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-extrabold mb-5 animate-fade-up">
+                <Sparkles className="w-4 h-4" /> Free 2026 Study Pack
+              </div>
+              <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.15] mb-5 animate-fade-up">
+                Stop guessing what's in your <span className="text-primary">June exam.</span>
+              </h1>
+              <p className="text-lg md:text-xl text-foreground/80 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+                Most students lose marks on patterns they never noticed.
+              </p>
+            </div>
+
+            {/* Right: image carousel */}
+            <div className="animate-fade-up" style={{ animationDelay: "0.15s" }}>
+              <Carousel
+                opts={{ loop: true, align: "center" }}
+                setApi={setHeroApi}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {heroCarouselImages.map((img) => (
+                    <CarouselItem key={img.label}>
+                      <div className="overflow-hidden rounded-2xl border border-border shadow-md bg-card">
+                        <img
+                          src={img.src}
+                          alt={img.label}
+                          loading="lazy"
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-2" />
+                <CarouselNext className="right-2" />
+              </Carousel>
+            </div>
           </div>
-          <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.15] mb-5 animate-fade-up">
-            Stop guessing what's in your <span className="text-primary">June exam.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-foreground/80 mb-3 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Most students lose marks on patterns they never noticed.
-          </p>
         </div>
       </section>
 
       {/* What you'll get - moved up below hero */}
-      <section className="py-12 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-3xl md:text-4xl mb-4">
+          <div className="text-center mb-8 md:mb-10">
+            <h2 className="text-3xl md:text-4xl mb-3">
               What <span className="text-primary">you'll get</span>
             </h2>
             <p className="text-lg text-muted-foreground">Free resources plus an AI version to go further.</p>
@@ -201,96 +238,63 @@ const Matrics = () => {
         </div>
       </section>
 
-      {/* Visual Preview Section - Tabbed */}
-      <section className="pb-12 md:pb-16">
-        <div className="container mx-auto px-4 max-w-[1600px]">
+      {/* Visual Preview Section */}
+      <section className="pb-10 md:pb-14">
+        <div className="container mx-auto px-4 max-w-[1400px]">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="text-3xl md:text-4xl mb-3">
               Preview your <span className="text-primary">subject</span>
             </h2>
           </div>
 
-          {/* Tabs */}
-          <div
-            role="tablist"
-            aria-label="Subject preview tabs"
-            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-1 mb-8 sm:mb-10 sm:bg-card sm:border sm:border-border sm:rounded-full sm:p-1.5 sm:max-w-xl sm:mx-auto"
-          >
-            {previewTabs.map((tab) => {
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  role="tab"
-                  aria-selected={isActive}
-                  type="button"
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex-1 px-5 py-2.5 rounded-full text-sm md:text-base font-extrabold transition-all duration-300 ${
-                    isActive
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "bg-card sm:bg-transparent border border-border sm:border-0 text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {tab.name}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Preview images */}
-          <div key={activeTab} className="animate-fade-in">
-            <div className="grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 grid-flow-col md:grid-flow-row auto-cols-[85%] md:auto-cols-auto">
-              {(previewImagesBySubject[activeTab] ?? defaultPreviewImages).map((img) => (
-                <div
-                  key={img.label}
-                  className="group relative overflow-hidden rounded-2xl border border-border shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card snap-center"
-                >
-                  <div className="overflow-hidden relative">
-                    <img
-                      src={img.src}
-                      alt={img.label}
-                      loading="lazy"
-                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    {img.locked && (
-                      <>
-                        <div className="absolute inset-0 backdrop-blur-[4px] bg-gradient-to-t from-background/85 via-background/30 to-background/10" />
-                        <div className="absolute inset-0 flex flex-col items-center justify-end pb-6 px-4 text-center">
-                          <p className="text-foreground text-base md:text-lg font-extrabold mb-3">
-                            Unlock the full study pack
-                          </p>
-                          <button
-                            type="button"
-                            onClick={scrollToSubjects}
-                            className="inline-flex items-center gap-2 text-sm font-extrabold px-5 py-2.5 rounded-full text-cta-foreground hover:opacity-90 transition-opacity shadow-md"
-                            style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
-                          >
-                            Get Free Study Pack
-                          </button>
-                        </div>
-                      </>
-                    )}
-                  </div>
+          {/* Preview images grid (no subject selection) */}
+          <div className="grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 grid-flow-col md:grid-flow-row auto-cols-[85%] md:auto-cols-auto">
+            {defaultPreviewImages.map((img) => (
+              <div
+                key={img.label}
+                className="group relative overflow-hidden rounded-2xl border border-border shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card snap-center"
+              >
+                <div className="overflow-hidden relative">
+                  <img
+                    src={img.src}
+                    alt={img.label}
+                    loading="lazy"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                   {img.locked && (
-                    <div className="absolute top-3 left-3 bg-background/90 backdrop-blur-sm rounded-full px-3 py-1 border border-border">
-                      <p className="text-foreground text-xs font-extrabold">
-                        {img.label}
-                      </p>
-                    </div>
+                    <>
+                      <div className="absolute inset-0 backdrop-blur-[4px] bg-gradient-to-t from-background/85 via-background/30 to-background/10" />
+                      <div className="absolute inset-0 flex flex-col items-center justify-end pb-6 px-4 text-center">
+                        <p className="text-foreground text-base md:text-lg font-extrabold mb-3">
+                          Unlock the full study pack
+                        </p>
+                        <button
+                          type="button"
+                          onClick={scrollToSubjects}
+                          className="inline-flex items-center gap-2 text-sm font-extrabold px-5 py-2.5 rounded-full text-cta-foreground hover:opacity-90 transition-opacity shadow-md"
+                          style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
+                        >
+                          Get Free Study Pack
+                        </button>
+                      </div>
+                    </>
                   )}
                 </div>
-              ))}
-            </div>
+                {img.locked && (
+                  <div className="absolute top-3 left-3 bg-background/90 backdrop-blur-sm rounded-full px-3 py-1 border border-border">
+                    <p className="text-foreground text-xs font-extrabold">
+                      {img.label}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
-
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            Full study pack available after you select your subjects
-          </p>
         </div>
       </section>
 
       {/* Subject Selection + Form */}
-      <section id="subjects" className="py-12 md:py-20 bg-blue-tint">
+      <section id="subjects" className="py-10 md:py-14 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-8">
             <button
@@ -304,7 +308,7 @@ const Matrics = () => {
           </div>
 
           {/* Step indicator */}
-          <div className="flex items-center justify-center gap-2 sm:gap-4 mb-10 flex-wrap">
+          <div className="flex items-center justify-center gap-2 sm:gap-4 mb-8 flex-wrap">
             {[
               { n: 1, label: "Choose subjects" },
               { n: 2, label: "Enter details" },
@@ -339,10 +343,9 @@ const Matrics = () => {
             })}
           </div>
 
-          {/* Subject picker - simple checkboxes, no cards */}
-          <div id="subject-picker" className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-md mb-6">
-            <h3 className="text-xl mb-1 text-center">Select your subjects</h3>
-            <p className="text-sm text-muted-foreground text-center mb-5">Pick what you're writing in June</p>
+          {/* Subject picker - no card wrapper */}
+          <div id="subject-picker" className="mb-8">
+            <h3 className="text-xl mb-5 text-center">Select your subjects</h3>
             <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-3">
               {subjects.map((s) => {
                 const isSel = selected.includes(s.id);
@@ -352,7 +355,7 @@ const Matrics = () => {
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-all ${
                       isSel
                         ? "border-primary bg-primary/10"
-                        : "border-border bg-background hover:border-primary/40"
+                        : "border-border bg-card hover:border-primary/40"
                     }`}
                   >
                     <input
@@ -376,9 +379,6 @@ const Matrics = () => {
             }`}
           >
             <div className="bg-card rounded-2xl p-6 md:p-10 border border-border shadow-md max-w-2xl mx-auto animate-fade-up">
-              <h3 className="text-2xl mb-2 text-center">
-                Almost there. Where should we send your study pack?
-              </h3>
               <p className="text-muted-foreground text-center mb-6">
                 Fill in your details below to unlock your free download.
               </p>
