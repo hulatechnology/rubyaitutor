@@ -49,23 +49,6 @@ const defaultPreviewImages = [
   { src: previewStudyPlan, label: "Your 2026 Prep Paper 📝", locked: true },
 ];
 
-const previewImagesBySubject: Record<string, typeof defaultPreviewImages> = {
-  math: defaultPreviewImages,
-  english: defaultPreviewImages,
-  science: [
-    { src: scienceSkills, label: "5 Skills That Give You the Most Marks" },
-    { src: scienceMethods, label: "How to Solve Each Question Type" },
-    { src: previewStudyPlan, label: "Your 2026 Prep Paper 📝", locked: true },
-  ],
-};
-
-const previewTabs = [
-  { id: "math", name: "Mathematics" },
-  { id: "science", name: "Physical Science" },
-  { id: "english", name: "English" },
-];
-
-
 const packCards = [
   {
     title: "Study Guide",
