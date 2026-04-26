@@ -1,5 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import {
   CheckCircle,
   Sparkles,
@@ -14,13 +22,20 @@ import {
   Zap,
   Target,
   TrendingUp,
-  
 } from "lucide-react";
 import preview5Skills from "@/assets/matrics-5skills.png";
 import previewMistakes from "@/assets/matrics-mistakes.png";
 import previewStudyPlan from "@/assets/matrics-prep-paper.png";
 import scienceSkills from "@/assets/matrics-science-5skills.png";
 import scienceMethods from "@/assets/matrics-science-methods.png";
+
+const heroCarouselImages = [
+  { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
+  { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
+  { src: scienceSkills, label: "Physical Science: 5 High-Mark Skills" },
+  { src: scienceMethods, label: "How to Solve Each Question Type" },
+  { src: previewStudyPlan, label: "Your 2026 Prep Paper" },
+];
 
 const subjects = [
   { id: "math", name: "Mathematics", icon: Calculator },
