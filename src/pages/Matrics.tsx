@@ -14,7 +14,7 @@ import {
   Zap,
   Target,
   TrendingUp,
-  X,
+  
 } from "lucide-react";
 import preview5Skills from "@/assets/matrics-5skills.png";
 import previewMistakes from "@/assets/matrics-mistakes.png";
@@ -50,12 +50,6 @@ const previewTabs = [
   { id: "english", name: "English" },
 ];
 
-const packShows = [
-  "How the paper is structured (so nothing surprises you)",
-  "The 5 skills that actually get you marks",
-  "The question types that repeat every year",
-  "The exact mistakes that cost marks (even if you know the work)",
-];
 
 const packCards = [
   {
@@ -146,9 +140,6 @@ const Matrics = () => {
           <p className="text-lg md:text-xl text-foreground/80 mb-3 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Most students lose marks on patterns they never noticed.
           </p>
-          <p className="text-base text-muted-foreground animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Built using real past papers (2021–2025)
-          </p>
         </div>
       </section>
 
@@ -159,12 +150,6 @@ const Matrics = () => {
             <h2 className="text-3xl md:text-4xl mb-3">
               Preview your <span className="text-primary">subject</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              See real pages from the study pack before you download.
-            </p>
-            <p className="text-sm text-muted-foreground mt-2">
-              Based on real NSC exam patterns and past papers
-            </p>
           </div>
 
           {/* Tabs */}
@@ -246,37 +231,16 @@ const Matrics = () => {
         </div>
       </section>
 
-      {/* What this pack does */}
-      <section className="py-8 md:py-16 bg-blue-tint">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl mb-4">
-            Most students study everything.
-          </h2>
-          <p className="text-2xl md:text-3xl font-extrabold text-primary mb-10">
-            Top students study what repeats.
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground mb-8">This pack shows you:</p>
-          <div className="grid sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
-            {packShows.map((item) => (
-              <div key={item} className="flex items-start gap-3 bg-card rounded-xl p-4 border border-border shadow-sm">
-                <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-foreground">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* What you'll get */}
       <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-14">
             <h2 className="text-3xl md:text-4xl mb-4">
               What <span className="text-primary">you'll get</span>
             </h2>
-            <p className="text-lg text-muted-foreground">Three resources. One focused goal: more marks.</p>
+            <p className="text-lg text-muted-foreground">Free resources plus an AI version to go further.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {packCards.map((card) => (
               <div
                 key={card.title}
@@ -297,6 +261,30 @@ const Matrics = () => {
                 </ul>
               </div>
             ))}
+
+            {/* AI Version card */}
+            <div className="rounded-2xl p-7 border-2 border-primary bg-primary/5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+              <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center mb-5">
+                <Sparkles className="w-6 h-6" strokeWidth={1.8} />
+              </div>
+              <h3 className="text-xl mb-1">AI Version</h3>
+              <p className="text-base font-extrabold text-primary mb-4">Improve faster with AI</p>
+              <ul className="space-y-2.5 mb-6">
+                {upgradeBenefits.map((b) => (
+                  <li key={b.text} className="flex items-start gap-2 text-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-1" />
+                    <span className="text-base">{b.text}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://ai-tutor-olive-zeta.vercel.app/"
+                className="mt-auto inline-flex items-center justify-center gap-2 text-sm font-extrabold px-5 py-3 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90"
+                style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
+              >
+                <Sparkles className="w-4 h-4" /> Improve My Marks with AI
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -461,56 +449,6 @@ const Matrics = () => {
         </div>
       </section>
 
-      {/* Conversion */}
-      <section className="py-12 md:py-20 bg-blue-tint">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-card rounded-3xl p-8 md:p-14 border border-border shadow-md text-center">
-            <h2 className="text-3xl md:text-4xl mb-4">
-              Turn this into <span className="text-primary">actual marks</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-2">
-              This free pack shows you what to study.
-            </p>
-            <p className="text-lg text-foreground mb-10">
-              The full version helps you improve faster with AI.
-            </p>
-
-            {/* Comparison */}
-            <div className="grid sm:grid-cols-2 gap-5 text-left max-w-3xl mx-auto mb-10">
-              <div className="rounded-2xl p-6 border border-border bg-background/60">
-                <h3 className="text-lg mb-4 font-extrabold">Free</h3>
-                <ul className="space-y-3">
-                  {["Static PDFs", "You figure it out"].map((t) => (
-                    <li key={t} className="flex items-start gap-2 text-muted-foreground">
-                      <X className="w-5 h-5 shrink-0 mt-0.5 opacity-70" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-2xl p-6 border-2 border-primary bg-primary/5 shadow-sm">
-                <h3 className="text-lg mb-4 font-extrabold text-primary">AI Version</h3>
-                <ul className="space-y-3">
-                  {upgradeBenefits.map((b) => (
-                    <li key={b.text} className="flex items-start gap-2 text-foreground">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>{b.text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <a
-              href="https://ai-tutor-olive-zeta.vercel.app/"
-              className="inline-flex items-center justify-center gap-2 text-lg font-extrabold px-8 py-4 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
-            >
-              <Sparkles className="w-5 h-5" /> Improve My Marks with AI
-            </a>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };
