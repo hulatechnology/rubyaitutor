@@ -9,7 +9,7 @@ const PromoBanner = () => (
       </p>
       <Link
         to="/matrics"
-        className="text-sm md:text-base font-extrabold underline underline-offset-4 hover:opacity-80 transition-opacity"
+        className="text-sm md:text-base font-extrabold underline underline-offset-4 text-yellow-300 hover:opacity-80 transition-opacity"
       >
         Get it now
       </Link>
