@@ -4,8 +4,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
   type CarouselApi,
 } from "@/components/ui/carousel";
 import {
@@ -14,7 +12,6 @@ import {
   FileText,
   ClipboardCheck,
   BookOpen,
-  Download,
   Calculator,
   Atom,
   Languages,
