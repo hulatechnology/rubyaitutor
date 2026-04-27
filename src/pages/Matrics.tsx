@@ -236,61 +236,6 @@ const Matrics = () => {
         </div>
       </section>
 
-      {/* Visual Preview Section */}
-      <section className="pb-10 md:pb-14">
-        <div className="container mx-auto px-4 max-w-[1400px]">
-          <div className="text-center mb-8 md:mb-10">
-            <h2 className="text-3xl md:text-4xl mb-3">
-              Preview your <span className="text-primary">subject</span>
-            </h2>
-          </div>
-
-          {/* Preview images grid (no subject selection) */}
-          <div className="grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 grid-flow-col md:grid-flow-row auto-cols-[85%] md:auto-cols-auto">
-            {defaultPreviewImages.map((img) => (
-              <div
-                key={img.label}
-                className="group relative overflow-hidden rounded-2xl border border-border shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card snap-center"
-              >
-                <div className="overflow-hidden relative">
-                  <img
-                    src={img.src}
-                    alt={img.label}
-                    loading="lazy"
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {img.locked && (
-                    <>
-                      <div className="absolute inset-0 backdrop-blur-[4px] bg-gradient-to-t from-background/85 via-background/30 to-background/10" />
-                      <div className="absolute inset-0 flex flex-col items-center justify-end pb-6 px-4 text-center">
-                        <p className="text-foreground text-base md:text-lg font-extrabold mb-3">
-                          Unlock the full study pack
-                        </p>
-                        <button
-                          type="button"
-                          onClick={scrollToSubjects}
-                          className="inline-flex items-center gap-2 text-sm font-extrabold px-5 py-2.5 rounded-full text-cta-foreground hover:opacity-90 transition-opacity shadow-md"
-                          style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
-                        >
-                          Get Free Study Pack
-                        </button>
-                      </div>
-                    </>
-                  )}
-                </div>
-                {img.locked && (
-                  <div className="absolute top-3 left-3 bg-background/90 backdrop-blur-sm rounded-full px-3 py-1 border border-border">
-                    <p className="text-foreground text-xs font-extrabold">
-                      {img.label}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Subject Selection + Form */}
       <section id="subjects" className="py-10 md:py-14 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-3xl">
