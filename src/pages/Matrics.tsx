@@ -104,9 +104,7 @@ const Matrics = () => {
     );
   };
 
-  const scrollToSubjects = () => {
-    document.getElementById("subjects")?.scrollIntoView({ behavior: "smooth" });
-  };
+
 
   const formComplete = !!(form.name && form.school && form.email);
 
