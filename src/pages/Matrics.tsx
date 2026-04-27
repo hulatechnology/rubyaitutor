@@ -179,7 +179,7 @@ const Matrics = () => {
       </section>
 
       {/* What you'll get - moved up below hero */}
-      <section className="py-10 md:py-14">
+      <section className="pt-4 pb-10 md:pt-6 md:pb-14">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="text-3xl md:text-4xl mb-3">
