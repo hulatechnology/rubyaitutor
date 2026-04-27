@@ -40,11 +40,7 @@ const subjects = [
   { id: "english", name: "English", icon: Languages },
 ];
 
-const defaultPreviewImages = [
-  { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
-  { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
-  { src: previewStudyPlan, label: "Your 2026 Prep Paper 📝", locked: true },
-];
+
 
 const packCards = [
   {
