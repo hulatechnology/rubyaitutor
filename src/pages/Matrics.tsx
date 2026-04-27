@@ -135,7 +135,7 @@ const Matrics = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-8 pb-10 md:pt-12 md:pb-14">
+      <section className="pt-8 pb-4 md:pt-12 md:pb-6">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             {/* Left: copy */}
