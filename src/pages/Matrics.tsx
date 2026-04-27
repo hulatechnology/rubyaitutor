@@ -237,18 +237,8 @@ const Matrics = () => {
       </section>
 
       {/* Subject Selection + Form */}
-      <section id="subjects" className="py-10 md:py-14 bg-blue-tint">
+      <section id="subjects" className="pt-4 pb-10 md:pt-6 md:pb-14 bg-blue-tint">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-8">
-            <button
-              type="button"
-              onClick={() => document.getElementById("subject-picker")?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center justify-center gap-2 text-base font-extrabold px-7 py-3.5 rounded-full text-cta-foreground transition-all shadow-md hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" }}
-            >
-              <Download className="w-5 h-5" /> Download your study pack
-            </button>
-          </div>
 
           {/* Step indicator */}
           <div className="flex items-center justify-center gap-2 sm:gap-4 mb-8 flex-wrap">
