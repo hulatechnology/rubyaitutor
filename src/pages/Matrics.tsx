@@ -319,7 +319,7 @@ const Matrics = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-extrabold mb-1.5">School</label>
+                  <label className="block text-sm font-extrabold mb-1.5">Your School</label>
                   <input
                     type="text"
                     required
