@@ -39,7 +39,7 @@ const heroCarouselImages = [
 ];
 
 const subjects = [
-    { id: "math", name: "Maths", icon: PieChart, pdf: "/Ruby Maths 2 Study Guide 2026.pdf" },
+    { id: "math", name: "Mathematics", icon: PieChart, pdf: "/Ruby Maths 2 Study Guide 2026.pdf" },
     { id: "science", name: "Physical Science", icon: Atom, pdf: "/Ruby Physical Science P1 Study Guide 2026.pdf" },
     { id: "english", name: "English", icon: Languages, pdf: "/Ruby English P1 Study Guide 2026_.pdf" },
     { id: "mathslit", name: "Maths Literacy", icon: PieChart, pdf: "/Ruby Maths Lit P1 Study Guide 2026.pdf" },
@@ -369,7 +369,7 @@ const Matrics = () => {
                                             onChange={() => toggleSubject(s.id)}
                                             className="w-4 h-4 accent-primary"
                                         />
-                                        <s.icon className="w-5 h-5 text-primary flex-shrink-0" strokeWidth={1.8} />
+                                        <s.icon className="w-5 h-5 text-primary" strokeWidth={1.8} />
                                         <span className="text-base font-extrabold">{s.name}</span>
                                     </label>
                                 );
