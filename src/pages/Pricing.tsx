@@ -8,12 +8,12 @@ type Plan = {
     price: string;
     priceSuffix?: string;
     oldPrice?: string;
-    badge?: { label: string; tone: "primary" | "accent" };
+    badge?: { label: string; tone: "primary" | "accent" | "blue" };
     offer?: string;
     features: { text: string; sub?: string }[];
     cta: string;
-    ctaTone: "muted" | "primary" | "accent";
-    borderTone: "default" | "primary" | "accent";
+    ctaTone: "muted" | "primary" | "accent" | "blue";
+    borderTone: "default" | "primary" | "accent" | "blue";
 };
 
 const plans: Plan[] = [
@@ -58,6 +58,25 @@ const plans: Plan[] = [
         cta: "Go Premium",
         ctaTone: "primary",
         borderTone: "primary",
+    },
+    {
+        id: "matric-pack",
+        name: "Matric Exam Pack",
+        tagline: "Grade 12",
+        price: "R99",
+        oldPrice: "R199",
+        badge: { label: "New", tone: "blue" },
+        offer: "Launch Offer — Save R99",
+        features: [
+            { text: "50+ Matric Past Papers", sub: "(Practice & Guide Mode)" },
+            { text: "10+ Matric Study Guides", sub: "(Major Subjects)" },
+            { text: "15+ Matric 2026 Prep Papers", sub: "(Major Subjects)" },
+            { text: "Unlimited AI Feedback in 11 Languages" },
+            { text: "Unlimited Access", sub: "(1 May – 30 June 2026)" },
+        ],
+        cta: "Own It",
+        ctaTone: "blue",
+        borderTone: "blue",
     },
     {
         id: "master",
@@ -113,21 +132,25 @@ const Pricing = () => {
                     </div>
 
                     {/* Plan cards */}
-                    <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto items-stretch">
                         {plans.map((plan) => {
                             const borderClass =
                                 plan.borderTone === "primary"
                                     ? "border-primary"
                                     : plan.borderTone === "accent"
                                         ? "border-amber-400"
-                                        : "border-border";
+                                        : plan.borderTone === "blue"
+                                            ? "border-blue-400"
+                                            : "border-border";
 
                             const ctaClass =
                                 plan.ctaTone === "primary"
                                     ? "text-primary-foreground hover:opacity-90"
                                     : plan.ctaTone === "accent"
                                         ? "bg-amber-400 text-foreground hover:opacity-90"
-                                        : "bg-foreground text-background hover:opacity-90";
+                                        : plan.ctaTone === "blue"
+                                            ? "bg-blue-500 text-white hover:opacity-90"
+                                            : "bg-foreground text-background hover:opacity-90";
 
                             const ctaStyle =
                                 plan.ctaTone === "primary"
@@ -144,7 +167,9 @@ const Pricing = () => {
                                             <span
                                                 className={`inline-block px-4 py-1 rounded-full text-xs font-extrabold ${plan.badge.tone === "primary"
                                                         ? "bg-primary text-primary-foreground"
-                                                        : "bg-amber-400 text-foreground"
+                                                        : plan.badge.tone === "blue"
+                                                            ? "bg-blue-500 text-white"
+                                                            : "bg-amber-400 text-foreground"
                                                     }`}
                                             >
                                                 {plan.badge.label}
@@ -184,8 +209,13 @@ const Pricing = () => {
                                         {plan.features.map((f) => (
                                             <li key={f.text} className="flex items-start gap-3">
                                                 <Check
-                                                    className={`w-4 h-4 shrink-0 mt-0.5 ${plan.ctaTone === "accent" ? "text-amber-500" : "text-primary"
-                                                        }`}
+                                                    className={`w-4 h-4 shrink-0 mt-0.5 ${
+                                                        plan.ctaTone === "accent"
+                                                            ? "text-amber-500"
+                                                            : plan.ctaTone === "blue"
+                                                                ? "text-blue-500"
+                                                                : "text-primary"
+                                                    }`}
                                                 />
                                                 <span className="text-foreground">
                                                     <span className="font-bold">{f.text}</span>

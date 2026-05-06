@@ -39,7 +39,7 @@ const heroCarouselImages = [
 ];
 
 const subjects = [
-    { id: "math", name: "Mathematics", icon: PieChart, pdf: "/Ruby Maths 2 Study Guide 2026.pdf" },
+    { id: "math", name: "Maths", icon: PieChart, pdf: "/Ruby Maths 2 Study Guide 2026.pdf" },
     { id: "science", name: "Physical Science", icon: Atom, pdf: "/Ruby Physical Science P1 Study Guide 2026.pdf" },
     { id: "english", name: "English", icon: Languages, pdf: "/Ruby English P1 Study Guide 2026_.pdf" },
     { id: "mathslit", name: "Maths Literacy", icon: PieChart, pdf: "/Ruby Maths Lit P1 Study Guide 2026.pdf" },
@@ -62,7 +62,7 @@ const previewImagesBySubject: Record<string, typeof defaultPreviewImages> = {
 };
 
 const previewTabs = [
-    { id: "math", name: "Mathematics" },
+    { id: "math", name: "Maths" },
     { id: "science", name: "Physical Science" },
     { id: "english", name: "English" },
 ];
