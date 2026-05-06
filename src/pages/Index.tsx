@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import CTAButton from "@/components/CTAButton";
-import PromoBanner from "@/components/PromoBanner";
 import TrustStrip from "@/components/TrustStrip";
 import heroImage from "@/assets/ruby-heroes.png";
 import rubyTeachingUI from "@/assets/dds.png";
@@ -182,7 +181,6 @@ const ReportCarousel = () => {
 const Index = () => {
     return (
         <Layout>
-            <PromoBanner />
             {/* ── Hero ── */}
             <section className="py-8 md:py-20">
                 <div className="container mx-auto px-4">
