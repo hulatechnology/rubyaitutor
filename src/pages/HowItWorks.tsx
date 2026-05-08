@@ -52,13 +52,15 @@ const HowItWorks = () => (
               Your child starts with a gentle Discovery Activity. Ruby uses it to see what makes sense and what doesn't, then guides them forward one step at a time.
             </p>
           </div>
-          {/* Right: large chat preview */}
+          {/* Right: intro video */}
           <div className="md:w-3/5">
-            <img
-              src={heroChatImg}
-              alt="Ruby tutoring chat showing a child's first learning session"
-              className="w-full h-auto block object-contain"
-              style={{ filter: "drop-shadow(0 12px 28px rgba(26, 46, 108, 0.12))" }}
+            <video
+              src="/Ruby introduction video.mp4"
+              poster={heroChatImg}
+              controls
+              playsInline
+              className="w-full block rounded-2xl aspect-video object-cover"
+              style={{ boxShadow: "0 12px 28px rgba(26, 46, 108, 0.12)" }}
             />
           </div>
         </div>

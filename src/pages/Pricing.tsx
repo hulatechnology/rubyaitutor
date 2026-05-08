@@ -187,9 +187,13 @@ const Pricing = () => {
                                             <span className="text-4xl md:text-5xl font-extrabold tracking-tight">
                                                 {plan.price}
                                             </span>
-                                            {plan.priceSuffix && (
+                                            {plan.priceSuffix ? (
                                                 <span className="text-base text-muted-foreground font-bold">
                                                     {plan.priceSuffix}
+                                                </span>
+                                            ) : plan.price !== "Free" && (
+                                                <span className="text-base font-bold text-blue-500">
+                                                    /once-off
                                                 </span>
                                             )}
                                             {plan.oldPrice && (
