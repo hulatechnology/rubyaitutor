@@ -9,13 +9,50 @@ import rubyChat from "@/assets/ruby-engagement-chat.png";
 import reportImg1 from "@/assets/understanding-level-replace.png";
 import reportImg2 from "@/assets/root-cause-replace.png";
 import reportImg3 from "@/assets/parent-guidance-replace.png";
-import { Search, ClipboardList, Route, Sparkles, CheckCircle, Target, Lightbulb, TrendingUp, Clock, HelpCircle, GraduationCap, Shield, Users } from "lucide-react";
+import { Search, ClipboardList, Route, Sparkles, CheckCircle, Target, Lightbulb, TrendingUp, Clock, HelpCircle, GraduationCap, Shield, Users, Star } from "lucide-react";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+
+/* TODO: confirm real numbers before relying on these for marketing claims */
+const stats = [
+    { num: "2 400+", label: "Parents enrolled" },
+    { num: "CAPS", label: "Aligned curriculum" },
+    { num: "11", label: "Home languages" },
+    { num: "Gr 1–12", label: "All grades covered" },
+];
+
+/* PLACEHOLDER testimonials — replace quotes/names with real parent feedback before launch */
+const testimonials = [
+    {
+        quote: "My daughter was failing Maths in Grade 6. After two weeks with Ruby we discovered she never fully grasped fractions in Grade 4. Ruby went back and fixed that. Her marks jumped 18 points.",
+        name: "Nomsa K.",
+        role: "Parent · Johannesburg · Grade 6",
+        emoji: "👩🏾",
+    },
+    {
+        quote: "I was spending R1 200/month on a tutor. Ruby found the actual problem in the first session — something the tutor never identified in 8 months. Now we pay R99 and he's thriving.",
+        name: "Darryn P.",
+        role: "Parent · Cape Town · Grade 8",
+        emoji: "👨🏽",
+    },
+    {
+        quote: "My son does it in Zulu which makes a huge difference. He said it's the first time he actually understood why you carry the one in addition. He's only 9 years old.",
+        name: "Thandi M.",
+        role: "Parent · Durban · Grade 3",
+        emoji: "👩🏿",
+    },
+];
+
+const pricingPreview = [
+    { name: "Freebie", tag: "No card needed", price: "Free", highlight: false },
+    { name: "Scholar", tag: "Grade 1 – 11", price: "R99", suffix: "/mo", old: "R149", badge: "Most Popular", highlight: true },
+    { name: "Matric Pack", tag: "Grade 12 · Once-off", price: "R99", old: "R199", highlight: false },
+    { name: "Master", tag: "Grade 12 · Monthly", price: "R129", suffix: "/mo", old: "R199", highlight: false },
+];
 
 const reasons = [
     {
@@ -197,6 +234,10 @@ const Index = () => {
                             >
                                 <CTAButton />
                             </p>
+                            <p className="text-xs text-muted-foreground mt-3 flex items-center justify-center md:justify-start gap-1.5">
+                                <CheckCircle className="w-3.5 h-3.5 text-primary shrink-0" />
+                                No credit card needed · Free plan available
+                            </p>
                         </div>
                         <div className="animate-fade-up flex items-center justify-center w-full px-4 md:px-0 mt-4 md:mt-0 order-last" style={{ animationDelay: "0.2s" }}>
                             <img
@@ -205,6 +246,20 @@ const Index = () => {
                                 className="w-full max-w-[720px] md:max-w-[864px] h-auto object-contain"
                             />
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Social Proof Stats ── */}
+            <section className="py-6 bg-muted border-y border-border">
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 md:gap-x-20">
+                        {stats.map((s) => (
+                            <div key={s.label} className="text-center">
+                                <div className="text-2xl md:text-3xl font-extrabold text-primary leading-none">{s.num}</div>
+                                <div className="text-xs md:text-sm text-muted-foreground font-semibold mt-1">{s.label}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -237,6 +292,39 @@ const Index = () => {
                     </div>
                     <div className="text-center mt-8 md:mt-16">
                         <CTAButton />
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Testimonials (PLACEHOLDER copy — replace with real parent quotes) ── */}
+            <section className="py-8 md:py-20">
+                <div className="container mx-auto px-4 max-w-6xl">
+                    <div className="text-center mb-8 md:mb-16">
+                        <p className="text-xs md:text-sm font-extrabold tracking-wider text-primary uppercase mb-3">
+                            What parents are saying
+                        </p>
+                        <h2 className="text-3xl md:text-4xl">Real results from real families</h2>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {testimonials.map((t) => (
+                            <div key={t.name} className="bg-card rounded-xl p-6 border border-border shadow-sm flex flex-col">
+                                <div className="flex gap-0.5 text-amber-400 mb-3">
+                                    {Array.from({ length: 5 }).map((_, i) => (
+                                        <Star key={i} className="w-4 h-4 fill-current" />
+                                    ))}
+                                </div>
+                                <p className="text-muted-foreground leading-relaxed italic flex-1 mb-5">"{t.quote}"</p>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-full bg-blue-tint flex items-center justify-center text-lg shrink-0">
+                                        {t.emoji}
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-sm">{t.name}</p>
+                                        <p className="text-xs text-muted-foreground">{t.role}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -407,6 +495,62 @@ const Index = () => {
                 </div>
             </section>
 
+            {/* ── Pricing Preview ── */}
+            <section className="py-8 md:py-20 bg-muted">
+                <div className="container mx-auto px-4 max-w-6xl">
+                    <div className="text-center mb-8 md:mb-14">
+                        <p className="text-xs md:text-sm font-extrabold tracking-wider text-primary uppercase mb-3">
+                            Simple, affordable pricing
+                        </p>
+                        <h2 className="text-3xl md:text-4xl mb-4">
+                            Tutoring costs R1 000+/month. <span className="text-primary">Ruby starts free.</span>
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                            Start with a free Discovery Activity — no card required. Upgrade anytime for full learning support.
+                        </p>
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+                        {pricingPreview.map((p) => (
+                            <div
+                                key={p.name}
+                                className={`relative rounded-2xl border-2 bg-card p-6 shadow-sm flex flex-col ${p.highlight ? "border-primary" : "border-border"}`}
+                            >
+                                {p.badge && (
+                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                                        <span className="inline-block px-4 py-1 rounded-full text-xs font-extrabold bg-primary text-primary-foreground whitespace-nowrap">
+                                            {p.badge}
+                                        </span>
+                                    </div>
+                                )}
+                                <h3 className="text-xl font-extrabold mb-1">{p.name}</h3>
+                                <p className="text-sm text-muted-foreground mb-5">{p.tag}</p>
+                                <div className="flex items-baseline gap-2 flex-wrap mb-6">
+                                    <span className="text-4xl font-extrabold tracking-tight">{p.price}</span>
+                                    {p.suffix && (
+                                        <span className="text-sm text-muted-foreground font-bold">{p.suffix}</span>
+                                    )}
+                                    {p.old && (
+                                        <span className="text-sm text-muted-foreground line-through">{p.old}</span>
+                                    )}
+                                </div>
+                                <Link
+                                    to="/pricing"
+                                    className={`mt-auto inline-flex items-center justify-center w-full text-sm font-extrabold px-4 py-3 rounded-lg transition-all ${p.highlight ? "text-cta-foreground shadow-md hover:opacity-90" : "border border-border text-foreground hover:bg-muted"}`}
+                                    style={p.highlight ? { background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" } : undefined}
+                                >
+                                    See plan
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="text-center mt-10">
+                        <Link to="/pricing" className="text-primary font-bold hover:underline">
+                            View full pricing details →
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
             {/* ── Trust Strip ── */}
             <TrustStrip />
 
@@ -420,6 +564,9 @@ const Index = () => {
                         In less than 10 questions you'll see exactly where your child is struggling and how to help them move forward.
                     </p>
                     <CTAButton />
+                    <p className="text-sm text-muted-foreground mt-5">
+                        <span className="text-primary font-bold">Free plan available</span> · Scholar from <span className="text-primary font-bold">R99/month</span> · Cancel anytime
+                    </p>
                 </div>
             </section>
         </Layout>

@@ -4,14 +4,9 @@ import { Menu, X } from "lucide-react";
 import CTAButton from "./CTAButton";
 
 const navLinks = [
-    { to: "/", label: "Home" },
     { to: "/how-it-works", label: "How It Works" },
-    { to: "/why-children-struggle", label: "Why Children Struggle" },
-    { to: "/your-childs-report", label: "Your Child's Report" },
     { to: "/matrics", label: "Matrics" },
     { to: "/pricing", label: "Pricing" },
-    { to: "/faq", label: "FAQ" },
-    { to: "/contact", label: "Contact" },
 ];
 
 const Navbar = () => {
