@@ -88,7 +88,7 @@ const packCards = [
         items: [
             "Exam-style questions",
             "Based on recurring patterns",
-            "Simulates real June exam",
+            "Simulates real November exam",
         ],
     },
     {
@@ -206,7 +206,7 @@ const Matrics = () => {
                                 <Sparkles className="w-4 h-4" /> Free 2026 Study Pack
                             </div>
                             <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.15] mb-5 animate-fade-up">
-                                Stop guessing what's in your <span className="text-primary">June exam.</span>
+                                Stop guessing what's in your <span className="text-primary">November exam.</span>
                             </h1>
                             <p className="text-lg md:text-xl text-foreground/80 animate-fade-up" style={{ animationDelay: "0.1s" }}>
                                 Most students lose marks on patterns they never noticed.
@@ -351,7 +351,7 @@ const Matrics = () => {
                     {/* Subject picker - simple checkboxes, no cards */}
                     <div id="subject-picker" className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-md mb-6">
                         <h3 className="text-xl mb-1 text-center">Select your subjects</h3>
-                        <p className="text-sm text-muted-foreground text-center mb-5">Pick what you're writing in June</p>
+                        <p className="text-sm text-muted-foreground text-center mb-5">Pick what you're writing in November</p>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                             {subjects.map((s) => {
                                 const isSel = selected.includes(s.id);

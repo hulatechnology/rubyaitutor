@@ -72,7 +72,7 @@ const plans: Plan[] = [
             { text: "10+ Matric Study Guides", sub: "(Major Subjects)" },
             { text: "15+ Matric 2026 Prep Papers", sub: "(Major Subjects)" },
             { text: "Unlimited AI Feedback in 11 Languages" },
-            { text: "Unlimited Access", sub: "(1 May – 30 June 2026)" },
+            { text: "Unlimited Access", sub: "(1 August – 30 November 2026)" },
         ],
         cta: "Own It",
         ctaTone: "blue",
