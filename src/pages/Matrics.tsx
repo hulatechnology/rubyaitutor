@@ -38,6 +38,10 @@ import heroInside from "@/assets/matrics-hero-inside.png";
 import heroHowTo from "@/assets/matrics-hero-howto.png";
 import heroCommandWords from "@/assets/matrics-hero-commandwords.png";
 import heroPastPaper from "@/assets/matrics-hero-pastpaper.png";
+import charNova from "@/assets/character-nova.png";
+import charSol from "@/assets/character-sol.png";
+import charLex from "@/assets/character-lex.png";
+import charTerra from "@/assets/character-terra.png";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const WHATSAPP_URL = "https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20the%20study%20guides";
@@ -59,7 +63,6 @@ type PreviewImage = { src: string; label: string; locked?: boolean };
 type Guide = {
     id: string;
     name: string;
-    blurb: string;
     icon: typeof PieChart;
     accent: string;
     pdf?: string;
@@ -72,11 +75,10 @@ const guides: Guide[] = [
     {
         id: "math",
         name: "Mathematics",
-        blurb: "Papers 1 & 2 — the 5 skills worth the most marks",
         icon: PieChart,
         accent: "348 80% 40%",
         pdf: "/Ruby Maths 2 Study Guide 2026.pdf",
-        cover: preview5Skills,
+        cover: charNova,
         preview: [
             { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
             { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
@@ -86,11 +88,10 @@ const guides: Guide[] = [
     {
         id: "science",
         name: "Physical Sciences",
-        blurb: "Paper 1 — a method for every question type",
         icon: Atom,
         accent: "226 60% 45%",
         pdf: "/Ruby Physical Science P1 Study Guide 2026.pdf",
-        cover: scienceSkills,
+        cover: charSol,
         preview: [
             { src: scienceSkills, label: "5 Skills That Give You the Most Marks" },
             { src: scienceMethods, label: "How to Solve Each Question Type" },
@@ -100,11 +101,10 @@ const guides: Guide[] = [
     {
         id: "english",
         name: "English Home Language",
-        blurb: "Paper 1 — comprehension & language techniques",
         icon: Languages,
         accent: "351 75% 48%",
         pdf: "/Ruby English P1 Study Guide 2026_.pdf",
-        cover: previewMistakes,
+        cover: charLex,
         preview: [
             { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
             { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
@@ -114,11 +114,10 @@ const guides: Guide[] = [
     {
         id: "mathslit",
         name: "Mathematical Literacy",
-        blurb: "Paper 1 — exam-style worked examples",
         icon: Hash,
         accent: "35 70% 42%",
         pdf: "/Ruby Maths Lit P1 Study Guide 2026.pdf",
-        cover: previewStudyPlan,
+        cover: charNova,
         preview: [
             { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
             { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
@@ -126,10 +125,10 @@ const guides: Guide[] = [
         ],
     },
     // Placeholder — coming soon, not yet purchasable
-    { id: "lifesci", name: "Life Sciences", blurb: "Papers 1 & 2 — high-mark topics", icon: Leaf, accent: "150 30% 40%", comingSoon: true },
-    { id: "geo", name: "Geography", blurb: "Papers 1 & 2 — high-mark topics", icon: Map, accent: "200 45% 42%", comingSoon: true },
-    { id: "history", name: "History", blurb: "Papers 1 & 2 — high-mark topics", icon: Landmark, accent: "25 55% 40%", comingSoon: true },
-    { id: "accounting", name: "Accounting", blurb: "Paper 1 — high-mark topics", icon: Calculator, accent: "170 40% 35%", comingSoon: true },
+    { id: "lifesci", name: "Life Sciences", icon: Leaf, accent: "150 30% 40%", cover: charSol, comingSoon: true },
+    { id: "geo", name: "Geography", icon: Map, accent: "200 45% 42%", cover: charTerra, comingSoon: true },
+    { id: "history", name: "History", icon: Landmark, accent: "25 55% 40%", cover: charTerra, comingSoon: true },
+    { id: "accounting", name: "Accounting", icon: Calculator, accent: "170 40% 35%", cover: charNova, comingSoon: true },
 ];
 
 type Tier = { count: number; price: number; label: string; bonus?: string };
@@ -469,7 +468,13 @@ const Matrics = () => {
                                     >
                                         <div className="relative">
                                             {g.cover ? (
-                                                <img src={g.cover} alt={`${g.name} study guide`} loading="lazy" className="w-full h-36 object-cover" />
+                                                <img
+                                                    src={g.cover}
+                                                    alt={`${g.name} study guide`}
+                                                    loading="lazy"
+                                                    className="w-full h-36 object-cover object-top"
+                                                    style={{ background: `hsl(${g.accent} / 0.12)` }}
+                                                />
                                             ) : (
                                                 <div
                                                     className="w-full h-36 flex items-center justify-center"
@@ -496,8 +501,7 @@ const Matrics = () => {
                                             )}
                                         </div>
                                         <div className="p-4 flex flex-col flex-1">
-                                            <h3 className="text-base mb-1">{g.name} Study Guide</h3>
-                                            <p className="text-xs text-muted-foreground mb-3 flex-1">{g.blurb}</p>
+                                            <h3 className="text-base mb-3">{g.name} Study Guide</h3>
 
                                             {!g.comingSoon && (
                                                 <ul className="flex flex-col gap-1 mb-3.5">
