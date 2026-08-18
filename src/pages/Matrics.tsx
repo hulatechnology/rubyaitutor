@@ -123,7 +123,7 @@ const faqs = [
     },
     {
         q: "How does the bundle pricing work?",
-        a: "Add guides to your cart one at a time — the price updates automatically. 1 guide is R99, 2 is R149, 3 is R189, and the full bundle (every guide, plus AI Tutor access) is R199. It's a once-off payment, not a subscription.",
+        a: "Add guides to your cart one at a time — the price updates automatically. 1 guide is R99, 2 is R149, 3 is R179, and the full bundle (every guide, plus AI Tutor access) is R199. It's a once-off payment, not a subscription.",
     },
     {
         q: "Can I preview a guide before buying?",
