@@ -11,8 +11,10 @@ import Pricing from "./pages/Pricing";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import Matrics from "./pages/Matrics";
+import StudyGuideDetail from "./pages/StudyGuideDetail";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import { CartProvider } from "./context/CartContext";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,7 @@ const App = () => (
             <Sonner />
             <BrowserRouter>
                 <ScrollToTop />
+                <CartProvider>
                 <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/how-it-works" element={<HowItWorks />} />
@@ -32,8 +35,10 @@ const App = () => (
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/matrics" element={<Matrics />} />
+                    <Route path="/matrics/guide/:id" element={<StudyGuideDetail />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
+                </CartProvider>
             </BrowserRouter>
         </TooltipProvider>
     </QueryClientProvider>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import CTAButton from "./CTAButton";
@@ -9,7 +9,7 @@ const navLinks = [
     { to: "/pricing", label: "Pricing" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ rightSlot }: { rightSlot?: ReactNode }) => {
     const [open, setOpen] = useState(false);
     const location = useLocation();
 
@@ -35,7 +35,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="hidden lg:block">
-                    <CTAButton />
+                    {rightSlot ?? <CTAButton />}
                 </div>
 
                 {/* Mobile toggle */}
@@ -58,7 +58,7 @@ const Navbar = () => {
                             {link.label}
                         </Link>
                     ))}
-                    <CTAButton />
+                    {rightSlot ?? <CTAButton />}
                 </div>
             )}
         </nav>
