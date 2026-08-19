@@ -18,16 +18,13 @@ import {
     ShoppingCart,
     Eye,
     Check,
-    NotebookPen,
-    BookOpen,
-    ClipboardCheck,
-    Trophy,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroInside from "@/assets/matrics-hero-inside.png";
 import heroHowTo from "@/assets/matrics-hero-howto.png";
 import heroCommandWords from "@/assets/matrics-hero-commandwords.png";
 import heroPastPaper from "@/assets/matrics-hero-pastpaper.png";
+import rubyLogo from "@/assets/ruby-logo.png";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Navbar from "@/components/Navbar";
 import StudyGuideHowItWorks from "@/components/StudyGuideHowItWorks";
@@ -40,30 +37,35 @@ import { tiers, tierForCount, ctaGradient } from "@/data/pricing";
 
 const WHATSAPP_URL = "https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20the%20study%20guides";
 
-// Countdown to the (placeholder, unconfirmed) 2026 NSC exam start date — same
-// target date and same "computed once on load" behaviour as the source design.
+// The only guides with a real PDF behind them today; this is what "the full bundle" delivers.
+const REAL_GUIDE_IDS = ["math", "science", "english", "mathslit"];
+
+// Countdown to the (placeholder, unconfirmed) 2026 NSC exam start date (same
+// target date and same "computed once on load" behaviour as the source design).
 const EXAM_DATE = new Date("2026-10-21T00:00:00");
 const daysLeft = Math.max(0, Math.ceil((EXAM_DATE.getTime() - Date.now()) / 86400000));
 
 
-// Hero carousel slides — real screenshots of the guide content itself.
+// Hero carousel slides: real screenshots of the guide content itself.
 const heroSlides = [heroInside, heroHowTo, heroCommandWords, heroPastPaper];
 
-const heroFeats = [
-    { emoji: "📖", title: "CAPS Aligned", sub: "100% Curriculum" },
-    { emoji: "🎯", title: "Exam Focused", sub: "Past papers & memos" },
-    { emoji: "🤖", title: "AI Tutor", sub: "24/7 Homework help" },
+type IconOrLogo = string | { logo: true };
+
+const heroFeats: { icon: IconOrLogo; title: string; sub: string }[] = [
+    { icon: "📖", title: "CAPS Aligned", sub: "100% Curriculum" },
+    { icon: "🎯", title: "Exam Focused", sub: "Past papers & memos" },
+    { icon: { logo: true }, title: "AI Tutor", sub: "24/7 Homework help" },
 ];
 
 const trustBadges = [
-    { type: "icon" as const, icon: "📚", hue: "150 30% 40%", text: "Built from 5 years of real NSC past papers" },
-    { type: "icon" as const, icon: "✅", hue: "226 60% 45%", text: "Marked exactly like the memo" },
-    { type: "icon" as const, icon: "🌍", hue: "351 75% 48%", text: "Feedback in all 11 official languages" },
-    { type: "stat" as const, num: "8,800+", hue: "35 70% 42%", text: "guides downloaded 📈" },
-    { type: "stat" as const, num: "1,400+", hue: "348 80% 40%", text: "schools reached 🏫" },
+    { icon: "📚", hue: "150 30% 40%", primary: "Built from 5 years of real NSC past papers" },
+    { icon: "✅", hue: "226 60% 45%", primary: "Marked exactly like the memo" },
+    { icon: "🌍", hue: "351 75% 48%", primary: "Feedback in all 11 official languages" },
+    { icon: "📈", hue: "35 70% 42%", primary: "8,800+", secondary: "guides downloaded" },
+    { icon: "🏫", hue: "348 80% 40%", primary: "1,400+", secondary: "schools reached" },
 ];
 
-type FixPair = { problemIcon: string; problemText: string; fixIcon: string; fixText: ReactNode; hue: string };
+type FixPair = { problemIcon: string; problemText: string; fixIcon: IconOrLogo; fixText: ReactNode; hue: string };
 
 const fixPairs: FixPair[] = [
     {
@@ -77,19 +79,19 @@ const fixPairs: FixPair[] = [
         problemIcon: "😤",
         problemText: "Hours in a textbook with no idea which parts are actually worth marks.",
         fixIcon: "📈",
-        fixText: <>A guide built only from the <strong>highest-mark topics</strong> — not the whole textbook.</>,
+        fixText: <>A guide built only from the <strong>highest-mark topics</strong>, not the whole textbook.</>,
         hue: "226 60% 45%",
     },
     {
         problemIcon: "🤷",
         problemText: "You can see the memo's answer, but not how anyone was supposed to get there.",
-        fixIcon: "🤖",
-        fixText: <>An <strong>AI tutor that bridges the question and the answer</strong> — showing why a mark is earned.</>,
+        fixIcon: { logo: true },
+        fixText: <>An <strong>AI tutor that bridges the question and the answer</strong>, showing why a mark is earned.</>,
         hue: "351 75% 48%",
     },
     {
         problemIcon: "🌐",
-        problemText: "Tutoring that only happens in English — even if it's not your home language.",
+        problemText: "Tutoring that only happens in English, even if it's not your home language.",
         fixIcon: "🗣️",
         fixText: <>AI feedback in <strong>all 11 official languages</strong>, not just English.</>,
         hue: "35 70% 42%",
@@ -97,13 +99,13 @@ const fixPairs: FixPair[] = [
 ];
 
 const hiwSteps = [
-    { icon: NotebookPen, title: "Pick your subjects", text: "Choose the study guides you need for November." },
-    { icon: BookOpen, title: "Study the guide", text: "Learn the highest-mark topics and methods, not the whole textbook." },
-    { icon: ClipboardCheck, title: "Test yourself", text: "Write the prep paper under real exam conditions." },
-    { icon: Trophy, title: "Get your results", text: "Mark with the memo and see exactly where you stand." },
+    { icon: "📝", title: "Pick your subjects", text: "Choose the study guides you need for November." },
+    { icon: "📖", title: "Study the guide", text: "Learn the highest-mark topics and methods, not the whole textbook." },
+    { icon: "✅", title: "Test yourself", text: "Write the prep paper under real exam conditions." },
+    { icon: "🏆", title: "Get your results", text: "Mark with the memo and see exactly where you stand." },
 ];
 
-/* PLACEHOLDER testimonials — replace quotes/names with real student feedback before launch */
+/* PLACEHOLDER testimonials, replace quotes/names with real student feedback before launch */
 const testimonials = [
     { quote: "This has been so helpful, please keep on giving us exam tips! We can't pass without you.", name: "T. Moodley" },
     { quote: "We trust you because each of your study guides have been on point with the scope, thank you so much! I am looking forward to writing an exam for the first time!", name: "V. Bears" },
@@ -119,15 +121,35 @@ const testimonials = [
 const faqs = [
     {
         q: "What do I actually get?",
-        a: "A full PDF study guide, a 2026 prep paper, and a full memo with step-by-step marking explanations — delivered instantly.",
+        a: "A full PDF study guide, a 2026 prep paper, and a full memo with step-by-step marking explanations, delivered instantly.",
     },
     {
         q: "How does the bundle pricing work?",
-        a: "Add guides to your cart one at a time — the price updates automatically. 1 guide is R99, 2 is R149, 3 is R179, and the full bundle (every guide, plus AI Tutor access) is R199. It's a once-off payment, not a subscription.",
+        a: "Add guides to your cart one at a time and the price updates automatically. 1 guide is R99, 2 is R149, 3 is R179, and the full bundle (every guide, plus AI Tutor access) is R199. It's a once-off payment, not a subscription.",
     },
     {
         q: "Can I preview a guide before buying?",
-        a: 'Yes — every subject card has a "Preview guide" button showing real sample pages before you add it to your cart.',
+        a: 'Yes, every subject card has a "Preview guide" button showing real sample pages before you add it to your cart.',
+    },
+    {
+        q: "What is the AI Tutor access that comes with the full bundle?",
+        a: "It's included with the R199 full bundle, and gives you step-by-step help on any topic across your guides whenever you're stuck, not just the questions already in the guide.",
+    },
+    {
+        q: "How do I get the guide after I pay?",
+        a: "Your PDF is ready to download the moment payment goes through. Open it straight on your phone or laptop, no waiting and nothing posted to you.",
+    },
+    {
+        q: "Is this for matric only?",
+        a: "Yes, every guide is built specifically for Grade 12 students preparing for the November NSC exams.",
+    },
+    {
+        q: "What payment methods do you accept?",
+        a: "Checkout supports the usual card and instant EFT options you'd expect from a South African online store. [ ] confirm exact methods once checkout is live.",
+    },
+    {
+        q: "Do I need data or internet to use the guide?",
+        a: "You need data to download it once. After that, it's a PDF saved on your device, so you can study offline anytime without using more data.",
     },
 ];
 
@@ -146,6 +168,13 @@ const Matrics = () => {
     }, []);
 
     const scrollToShop = () => document.getElementById("shop")?.scrollIntoView({ behavior: "smooth" });
+
+    const buyFullBundle = () => {
+        REAL_GUIDE_IDS.forEach((id) => {
+            if (!cart.includes(id)) toggleCart(id);
+        });
+        document.getElementById("pricing-tiers")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    };
 
     const tier = tierForCount(cart.length);
     const singlePrice = tiers[0].price;
@@ -173,7 +202,11 @@ const Matrics = () => {
                                 <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-3 mb-7">
                                     {heroFeats.map((f) => (
                                         <div key={f.title} className="flex items-center gap-2.5">
-                                            <span className="text-xl leading-none">{f.emoji}</span>
+                                            {typeof f.icon === "string" ? (
+                                                <span className="text-xl leading-none">{f.icon}</span>
+                                            ) : (
+                                                <img src={rubyLogo} alt="" className="w-6 h-6 rounded-full object-cover shrink-0" />
+                                            )}
                                             <div className="text-left">
                                                 <p className="text-xs font-extrabold leading-tight">{f.title}</p>
                                                 <p className="text-[11px] text-muted-foreground font-semibold leading-tight">{f.sub}</p>
@@ -224,18 +257,21 @@ const Matrics = () => {
                     <div className="container mx-auto px-4 max-w-6xl">
                         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
                             {trustBadges.map((b) => (
-                                <div key={b.text} className="flex flex-col items-center text-center gap-2">
-                                    {b.type === "icon" ? (
-                                        <div
-                                            className="w-[42px] h-[42px] rounded-full flex items-center justify-center text-lg"
-                                            style={{ background: `hsl(${b.hue})`, boxShadow: `0 3px 0 hsl(${b.hue} / 0.4)` }}
-                                        >
-                                            {b.icon}
-                                        </div>
+                                <div key={b.primary} className="flex flex-col items-center text-center gap-2">
+                                    <div
+                                        className="w-[42px] h-[42px] rounded-full flex items-center justify-center text-lg"
+                                        style={{ background: `hsl(${b.hue})`, boxShadow: `0 3px 0 hsl(${b.hue} / 0.4)` }}
+                                    >
+                                        {b.icon}
+                                    </div>
+                                    {b.secondary ? (
+                                        <>
+                                            <p className="text-lg font-extrabold leading-tight" style={{ color: `hsl(${b.hue})` }}>{b.primary}</p>
+                                            <p className="text-[13.5px] font-bold text-foreground/90 -mt-1">{b.secondary}</p>
+                                        </>
                                     ) : (
-                                        <p className="text-2xl font-extrabold" style={{ color: `hsl(${b.hue})` }}>{b.num}</p>
+                                        <p className="text-[13.5px] font-bold text-foreground/90">{b.primary}</p>
                                     )}
-                                    <p className="text-[13.5px] font-bold text-foreground/90">{b.text}</p>
                                 </div>
                             ))}
                         </div>
@@ -247,7 +283,7 @@ const Matrics = () => {
                     <div className="container mx-auto px-4">
                         <div className="max-w-xl mx-auto text-center mb-10">
                             <h2 className="text-2xl md:text-3xl mb-2">😩 Sound familiar? Here's the <span className="text-primary">fix</span> 🎯</h2>
-                            <p className="text-muted-foreground">This is why most students walk in underprepared — not because they didn't try.</p>
+                            <p className="text-muted-foreground">This is why most students walk in underprepared, not because they didn't try.</p>
                         </div>
                         <div className="max-w-4xl mx-auto flex flex-col gap-3.5">
                             {fixPairs.map((pair) => (
@@ -260,7 +296,15 @@ const Matrics = () => {
                                         className="flex items-center gap-3.5 rounded-2xl px-5 py-4"
                                         style={{ background: `hsl(${pair.hue})` }}
                                     >
-                                        <span className="text-2xl leading-none shrink-0">{pair.fixIcon}</span>
+                                        {typeof pair.fixIcon === "string" ? (
+                                            <span className="text-2xl leading-none shrink-0">{pair.fixIcon}</span>
+                                        ) : (
+                                            <img
+                                                src={rubyLogo}
+                                                alt=""
+                                                className="w-8 h-8 rounded-full object-cover shrink-0 ring-2 ring-white/80"
+                                            />
+                                        )}
                                         <p className="text-[15px] font-semibold text-white leading-snug">{pair.fixText}</p>
                                     </div>
                                 </div>
@@ -282,7 +326,7 @@ const Matrics = () => {
                     </button>
                 </div>
 
-                {/* Trust Center — moving testimonial carousel */}
+                {/* Trust Center: moving testimonial carousel */}
                 <section className="py-14 md:py-20 bg-card overflow-hidden">
                     <div className="container mx-auto px-4 max-w-6xl">
                         <div className="text-center mb-10">
@@ -292,9 +336,9 @@ const Matrics = () => {
                     </div>
                     <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
                         {[...testimonials, ...testimonials].map((t, i) => (
-                            <div key={`${t.name}-${i}`} className="w-80 shrink-0 bg-primary rounded-2xl p-5 mx-2">
-                                <p className="text-sm text-white italic leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-                                <p className="mt-2.5 text-sm font-extrabold text-white">{t.name}</p>
+                            <div key={`${t.name}-${i}`} className="w-80 shrink-0 bg-white border-2 border-primary rounded-2xl p-5 mx-2">
+                                <p className="text-sm text-black italic leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
+                                <p className="mt-2.5 text-sm font-extrabold text-black">{t.name}</p>
                             </div>
                         ))}
                     </div>
@@ -412,14 +456,32 @@ const Matrics = () => {
                                     </div>
                                 );
                             })}
+
+                            {/* Bundle upsell card, always the last tile in the shop grid */}
+                            <div className="rounded-2xl border-2 border-primary bg-card shadow-sm overflow-hidden flex flex-col items-center text-center p-5">
+                                <img src={rubyLogo} alt="Ruby" className="w-16 h-16 rounded-full object-cover mb-3 mt-2" />
+                                <h3 className="text-base font-extrabold mb-1">Get every guide</h3>
+                                <p className="text-xs text-muted-foreground mb-3">All 4 study guides plus AI Tutor access, one price.</p>
+                                <span className="inline-block bg-primary/10 text-primary text-sm font-extrabold px-3 py-1 rounded-full mb-4">
+                                    R{tiers[3].price}
+                                </span>
+                                <button
+                                    type="button"
+                                    onClick={buyFullBundle}
+                                    className="w-full mt-auto inline-flex items-center justify-center gap-2 text-sm font-extrabold px-4 py-2.5 rounded-full text-cta-foreground shadow-md hover:opacity-90 transition-all"
+                                    style={ctaGradient}
+                                >
+                                    <ShoppingCart className="w-4 h-4" /> Get the full bundle
+                                </button>
+                            </div>
                         </div>
 
                         {/* Pricing tiers */}
-                        <div className="rounded-[22px] bg-card border border-border shadow-md p-5 md:p-7">
+                        <div id="pricing-tiers" className="rounded-[22px] bg-card border border-border shadow-md p-5 md:p-7">
                             <div className="text-center mb-6">
                                 <h3 className="text-xl font-bold">💰 The more you add, the less you pay</h3>
                                 <p className="text-sm text-muted-foreground mt-1">Your price updates automatically as you add guides to your cart above</p>
-                                <p className="text-xs font-extrabold text-primary mt-2">🔒 Once-off payment — not a subscription</p>
+                                <p className="text-xs font-extrabold text-primary mt-2">🔒 Once-off payment, not a subscription</p>
                             </div>
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                                 {tiers.map((t) => {
@@ -481,7 +543,7 @@ const Matrics = () => {
                 <section className="py-14 md:py-20 text-center text-white" style={ctaGradient}>
                     <div className="container mx-auto px-4 max-w-2xl">
                         <h2 className="text-2xl md:text-3xl text-white mb-2">⏰ {daysLeft} days left. Start with the topics that count.</h2>
-                        <p className="text-white/85 mb-6">Every guide is built the same way — five years of past papers, distilled into what's actually likely to be asked.</p>
+                        <p className="text-white/85 mb-6">Every guide is built the same way: five years of past papers, distilled into what's actually likely to be asked.</p>
                         <button
                             type="button"
                             onClick={scrollToShop}
@@ -493,7 +555,7 @@ const Matrics = () => {
                 </section>
             </main>
 
-            {/* Page-specific footer — no links out to the rest of the site */}
+            {/* Page-specific footer, no links out to the rest of the site */}
             <footer className="bg-primary text-primary-foreground py-10">
                 <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
                     <div>
@@ -511,7 +573,7 @@ const Matrics = () => {
                 </div>
             </footer>
 
-            {/* Floating WhatsApp / chat support — raised above the mobile cart bar when it's showing */}
+            {/* Floating WhatsApp / chat support, raised above the mobile cart bar when it's showing */}
             {!cartOpen && (
                 <WhatsAppButton
                     href={WHATSAPP_URL}

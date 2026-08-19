@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, FileText, ClipboardCheck, BookOpen, Eye, NotebookPen, Trophy, ShoppingCart, Check } from "lucide-react";
+import { ArrowLeft, FileText, ClipboardCheck, BookOpen, ShoppingCart, Check } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import StudyGuideHowItWorks from "@/components/StudyGuideHowItWorks";
@@ -8,9 +8,13 @@ import CartDrawer from "@/components/CartDrawer";
 import StickyCartBar from "@/components/StickyCartBar";
 import { useCart } from "@/context/CartContext";
 import { guides, findGuide } from "@/data/studyGuides";
-import { tierForCount, singlePrice, ctaGradient } from "@/data/pricing";
+import { tiers, singlePrice, ctaGradient } from "@/data/pricing";
+import rubyLogo from "@/assets/ruby-logo.png";
 
 const WHATSAPP_URL = "https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20the%20study%20guides";
+
+// The only guides with a real PDF behind them today; this is what "the full bundle" delivers.
+const REAL_GUIDE_IDS = ["math", "science", "english", "mathslit"];
 
 const whatYouGet = [
     { icon: FileText, text: "A full study guide, built from five years of real NSC papers" },
@@ -19,10 +23,10 @@ const whatYouGet = [
 ];
 
 const hiwSteps = [
-    { icon: NotebookPen, title: "Get this guide", text: "Add it to your cart and it's yours straight away." },
-    { icon: BookOpen, title: "Study the guide", text: "Learn the highest-mark topics and methods, not the whole textbook." },
-    { icon: ClipboardCheck, title: "Test yourself", text: "Write the prep paper under real exam conditions." },
-    { icon: Trophy, title: "Get your results", text: "Mark with the memo and see exactly where you stand." },
+    { icon: "📝", title: "Get this guide", text: "Add it to your cart and it's yours straight away." },
+    { icon: "📖", title: "Study the guide", text: "Learn the highest-mark topics and methods, not the whole textbook." },
+    { icon: "✅", title: "Test yourself", text: "Write the prep paper under real exam conditions." },
+    { icon: "🏆", title: "Get your results", text: "Mark with the memo and see exactly where you stand." },
 ];
 
 const StudyGuideDetail = () => {
@@ -35,8 +39,13 @@ const StudyGuideDetail = () => {
     const bundlePartners = (guide.bundleWith ?? [])
         .map((bid) => guides.find((g) => g.id === bid))
         .filter((g): g is NonNullable<typeof g> => Boolean(g));
-    const bundleTier = tierForCount(2);
     const inCart = cart.includes(guide.id);
+
+    const buyFullBundle = () => {
+        REAL_GUIDE_IDS.forEach((id) => {
+            if (!cart.includes(id)) toggleCart(id);
+        });
+    };
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -53,26 +62,91 @@ const StudyGuideDetail = () => {
                 </div>
 
                 {/* Hero */}
-                <section className="py-8 md:py-12">
+                <section className="pt-8 pb-4 md:pt-12 md:pb-6">
                     <div className="container mx-auto px-4 max-w-4xl">
-                        <div className="grid md:grid-cols-[1fr_1.1fr] gap-8 md:gap-12 items-center">
-                            <div className="relative rounded-[20px] overflow-hidden border border-border shadow-lg bg-card order-2 md:order-1">
-                                {guide.cover ? (
-                                    <img src={guide.cover} alt={`${guide.name} study guide`} className="w-full h-64 md:h-80 object-cover object-top" />
-                                ) : (
+                        <div className="grid md:grid-cols-[1fr_1.1fr] gap-8 md:gap-12 items-start">
+                            <div className="order-2 md:order-1 flex flex-col gap-4">
+                                <div className="relative rounded-[20px] overflow-hidden border border-border shadow-lg bg-card">
+                                    {guide.cover ? (
+                                        <img src={guide.cover} alt={`${guide.name} study guide`} className="w-full h-64 md:h-80 object-cover object-top" />
+                                    ) : (
+                                        <div
+                                            className="w-full h-64 md:h-80 flex items-center justify-center"
+                                            style={{ background: `hsl(${guide.accent} / 0.12)` }}
+                                        >
+                                            <guide.icon className="w-16 h-16" style={{ color: `hsl(${guide.accent})` }} strokeWidth={1.5} />
+                                        </div>
+                                    )}
                                     <div
-                                        className="w-full h-64 md:h-80 flex items-center justify-center"
-                                        style={{ background: `hsl(${guide.accent} / 0.12)` }}
+                                        className="absolute top-0 left-0 right-0 flex items-center gap-2 px-4 py-2.5 text-white"
+                                        style={{ background: `hsl(${guide.accent} / 0.92)` }}
                                     >
-                                        <guide.icon className="w-16 h-16" style={{ color: `hsl(${guide.accent})` }} strokeWidth={1.5} />
+                                        <guide.icon className="w-4 h-4" />
+                                        <span className="text-sm font-extrabold">{guide.name}</span>
+                                    </div>
+                                </div>
+
+                                {/* Recommended, above the bundle so the upsell order reads guide -> pair -> full bundle */}
+                                {bundlePartners.length > 0 && (
+                                    <div>
+                                        <p className="text-xs font-extrabold uppercase tracking-wide text-primary mb-2.5">
+                                            🎁 Recommended
+                                        </p>
+                                        <div className="flex flex-col gap-2">
+                                            {bundlePartners.map((partner) => {
+                                                const partnerInCart = cart.includes(partner.id);
+                                                return (
+                                                    <div
+                                                        key={partner.id}
+                                                        className="flex items-center gap-3 bg-card border border-border rounded-xl p-2.5"
+                                                    >
+                                                        <Link to={`/matrics/guide/${partner.id}`} className="flex items-center gap-3 flex-1 min-w-0">
+                                                            {partner.cover ? (
+                                                                <img src={partner.cover} alt="" className="w-10 h-10 rounded-lg object-cover object-top border border-border" />
+                                                            ) : (
+                                                                <div
+                                                                    className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                                                                    style={{ background: `hsl(${partner.accent} / 0.12)` }}
+                                                                >
+                                                                    <partner.icon className="w-5 h-5" style={{ color: `hsl(${partner.accent})` }} />
+                                                                </div>
+                                                            )}
+                                                            <p className="text-sm font-extrabold truncate">{partner.name}</p>
+                                                        </Link>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => toggleCart(partner.id)}
+                                                            aria-label={partnerInCart ? `Remove ${partner.name} from cart` : `Add ${partner.name} to cart`}
+                                                            className={`shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full transition-all ${partnerInCart
+                                                                    ? "bg-primary/10 text-primary border-2 border-primary"
+                                                                    : "text-cta-foreground shadow-md hover:opacity-90"
+                                                                }`}
+                                                            style={!partnerInCart ? ctaGradient : undefined}
+                                                        >
+                                                            {partnerInCart ? <Check className="w-3.5 h-3.5" /> : <ShoppingCart className="w-3.5 h-3.5" />}
+                                                        </button>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
                                     </div>
                                 )}
-                                <div
-                                    className="absolute top-0 left-0 right-0 flex items-center gap-2 px-4 py-2.5 text-white"
-                                    style={{ background: `hsl(${guide.accent} / 0.92)` }}
-                                >
-                                    <guide.icon className="w-4 h-4" />
-                                    <span className="text-sm font-extrabold">{guide.name}</span>
+
+                                {/* Get every guide, alongside this one */}
+                                <div className="flex items-center gap-4 bg-card border-2 border-primary rounded-2xl shadow-sm p-4">
+                                    <img src={rubyLogo} alt="Ruby" className="w-12 h-12 rounded-full object-cover shrink-0" />
+                                    <div className="flex-1 min-w-0">
+                                        <p className="text-sm font-extrabold">Get every guide</p>
+                                        <p className="text-xs text-muted-foreground">All 4 guides + AI Tutor, R{tiers[3].price}</p>
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={buyFullBundle}
+                                        className="shrink-0 inline-flex items-center justify-center gap-1.5 text-xs font-extrabold px-4 py-2.5 rounded-full text-cta-foreground shadow-md hover:opacity-90 transition-all"
+                                        style={ctaGradient}
+                                    >
+                                        <ShoppingCart className="w-3.5 h-3.5" /> Get bundle
+                                    </button>
                                 </div>
                             </div>
 
@@ -126,77 +200,8 @@ const StudyGuideDetail = () => {
                     </div>
                 </section>
 
-                {/* How it works */}
-                <StudyGuideHowItWorks steps={hiwSteps} />
-
-                {/* Preview */}
-                {guide.preview && guide.preview.length > 0 && (
-                    <section className="py-10 bg-muted/60 border-y border-border">
-                        <div className="container mx-auto px-4 max-w-4xl">
-                            <h2 className="text-xl font-bold mb-5 flex items-center gap-2">
-                                <Eye className="w-5 h-5 text-primary" /> A look inside
-                            </h2>
-                            <div className="grid sm:grid-cols-3 gap-4">
-                                {guide.preview.map((img) => (
-                                    <div key={img.label} className="relative overflow-hidden rounded-xl border border-border bg-card">
-                                        <img
-                                            src={img.src}
-                                            alt={img.label}
-                                            loading="lazy"
-                                            className={`w-full h-auto object-cover ${img.locked ? "blur-[3px]" : ""}`}
-                                        />
-                                        {img.locked && (
-                                            <div className="absolute inset-0 flex items-center justify-center bg-background/40">
-                                                <span className="text-[11px] font-extrabold bg-card/90 px-2 py-0.5 rounded-full">
-                                                    Unlocks with purchase
-                                                </span>
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* Best bought together */}
-                {bundlePartners.length > 0 && (
-                    <section className="py-12 md:py-16">
-                        <div className="container mx-auto px-4 max-w-4xl">
-                            <div className="text-center mb-8">
-                                <h2 className="text-2xl md:text-3xl mb-2">🎁 Best bought together</h2>
-                                <p className="text-muted-foreground">
-                                    Students taking {guide.name} usually take one of these too.
-                                    {bundleTier && ` 2 guides together is R${bundleTier.price}.`}
-                                </p>
-                            </div>
-                            <div className="grid sm:grid-cols-2 gap-4">
-                                {bundlePartners.map((partner) => (
-                                    <Link
-                                        key={partner.id}
-                                        to={`/matrics/guide/${partner.id}`}
-                                        className="flex items-center gap-4 bg-card border border-border rounded-2xl p-4 hover:border-primary/40 transition-all"
-                                    >
-                                        {partner.cover ? (
-                                            <img src={partner.cover} alt="" className="w-14 h-14 rounded-xl object-cover object-top border border-border" />
-                                        ) : (
-                                            <div
-                                                className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
-                                                style={{ background: `hsl(${partner.accent} / 0.12)` }}
-                                            >
-                                                <partner.icon className="w-6 h-6" style={{ color: `hsl(${partner.accent})` }} />
-                                            </div>
-                                        )}
-                                        <div>
-                                            <p className="text-sm font-extrabold">{partner.name}</p>
-                                            <p className="text-xs text-muted-foreground">Study guide + prep paper + memo</p>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
+                {/* How it works, heading dropped here since the hero above already anchors the page */}
+                <StudyGuideHowItWorks steps={hiwSteps} heading={false} />
             </main>
 
             <footer className="bg-primary text-primary-foreground py-10">

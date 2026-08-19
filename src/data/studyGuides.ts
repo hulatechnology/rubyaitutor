@@ -69,6 +69,7 @@ export const guides: Guide[] = [
         cover: charLex,
         description:
             "Covers the highest-mark question types in Paper 1 language in context: comprehension, summary writing, and language structures and conventions, the way examiners actually test them, not the whole textbook. Worked examples show you how full marks are earned on editing, cloze, and figures-of-speech questions, and a full prep paper with memo lets you test yourself under real conditions.",
+        bundleWith: ["english", "math", "mathslit"],
     },
     {
         id: "businessstudies",
@@ -78,6 +79,7 @@ export const guides: Guide[] = [
         cover: charNova,
         description:
             "Built around the case-study and essay questions that carry the most marks, covering business environments, human resources, and business operations the way they're tested, not the whole textbook. Worked examples show the structure examiners are marking for on scenario-based questions, and you finish with a full prep paper and memo.",
+        bundleWith: ["accounting", "economics"],
     },
     {
         id: "cat",
@@ -87,6 +89,7 @@ export const guides: Guide[] = [
         cover: charLuna,
         description:
             "Built around the theory questions that carry the most marks in Paper 1: systems technologies, hardware and software concepts, database concepts, and social implications, the topics that trip students up most. Every concept comes with a worked example pulled from real past papers, and you finish with a full prep paper and memo.",
+        bundleWith: ["businessstudies", "mathslit"],
     },
     {
         id: "economics",
@@ -96,6 +99,7 @@ export const guides: Guide[] = [
         cover: charLuna,
         description:
             "Focused on the highest-mark topics across both papers: microeconomics (markets, elasticity and market structures), macroeconomics (the circular flow, business cycles and the state), and economic pursuits and contemporary issues, with the graph-reading and calculation methods examiners expect to see. Every method comes with a worked example from real past papers, plus a full prep paper and memo so you can practise under real time pressure.",
+        bundleWith: ["accounting", "businessstudies"],
     },
     {
         id: "english",
@@ -199,6 +203,7 @@ export const guides: Guide[] = [
         cover: charStella,
         description:
             "Covers the highest-mark topics, tourism attractions, marketing, sustainable and responsible tourism, and world heritage sites and time zones, the way they actually come up in the exam, not the whole textbook. Worked examples show you how to handle map-work and scenario-based questions specifically, and a full prep paper with memo lets you test yourself before the real thing.",
+        bundleWith: ["geo", "history"],
     },
 ];
 

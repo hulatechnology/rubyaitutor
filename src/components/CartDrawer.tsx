@@ -91,11 +91,11 @@ const CartDrawer = () => {
                             Checkout <ArrowRight className="w-4 h-4" />
                         </button>
                         <p className="text-center text-[11px] text-muted-foreground font-semibold pt-2.5">
-                            🔒 Once-off payment — not a subscription
+                            🔒 Once-off payment, not a subscription
                         </p>
                         {checkoutStarted && (
                             <p className="text-center text-xs text-muted-foreground pt-3">
-                                Checkout isn't connected yet — this is a design preview.
+                                Checkout isn't connected yet, this is a design preview.
                             </p>
                         )}
                     </div>
