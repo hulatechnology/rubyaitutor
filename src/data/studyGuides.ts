@@ -13,11 +13,6 @@ import {
     Plane,
     Monitor,
 } from "lucide-react";
-import preview5Skills from "@/assets/matrics-5skills.png";
-import previewMistakes from "@/assets/matrics-mistakes.png";
-import previewStudyPlan from "@/assets/matrics-prep-paper.png";
-import scienceSkills from "@/assets/matrics-science-5skills.png";
-import scienceMethods from "@/assets/matrics-science-methods.png";
 import charNova from "@/assets/character-nova.png";
 import charSol from "@/assets/character-sol.png";
 import charLex from "@/assets/character-lex.png";
@@ -33,8 +28,6 @@ import charLuna from "@/assets/character-luna.png";
 // real, finalised guide list before launch.
 // ---------------------------------------------------------------------------
 
-export type PreviewImage = { src: string; label: string; locked?: boolean };
-
 export type Guide = {
     id: string;
     name: string;
@@ -42,7 +35,6 @@ export type Guide = {
     accent: string;
     pdf?: string;
     cover?: string;
-    preview?: PreviewImage[];
     comingSoon?: boolean;
     /** Product page description. No em dashes. */
     description?: string;
@@ -108,11 +100,6 @@ export const guides: Guide[] = [
         accent: "351 75% 48%",
         pdf: "/Ruby English P1 Study Guide 2026_.pdf",
         cover: charLex,
-        preview: [
-            { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
-            { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
-            { src: previewStudyPlan, label: "Your 2026 Prep Paper", locked: true },
-        ],
         description:
             "Paper 1 marks slip away in comprehension and language technique questions for reasons that have nothing to do with understanding the passage. This guide teaches the actual techniques examiners are marking for: inference, tone, rhetorical devices, and summary rules. Every technique comes with a worked example on a real extract, and you finish with a full prep paper and memo.",
         bundleWith: ["history"],
@@ -154,11 +141,6 @@ export const guides: Guide[] = [
         accent: "35 70% 42%",
         pdf: "/Ruby Maths Lit P1 Study Guide 2026.pdf",
         cover: charNova,
-        preview: [
-            { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
-            { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
-            { src: previewStudyPlan, label: "Your 2026 Prep Paper", locked: true },
-        ],
         description:
             "Maths Lit is less about formulas and more about knowing how to apply them when the paper is in front of you. This guide walks through the highest-mark question types (finance, measurement, data handling, maps and plans) the way they actually appear in the exam, with worked examples for each. A full 2026-style prep paper and memo let you practise the real thing before you sit it.",
         bundleWith: ["lifesci", "geo"],
@@ -170,11 +152,6 @@ export const guides: Guide[] = [
         accent: "348 80% 40%",
         pdf: "/Ruby Maths 2 Study Guide 2026.pdf",
         cover: charNova,
-        preview: [
-            { src: preview5Skills, label: "5 Skills That Give You the Most Marks" },
-            { src: previewMistakes, label: "Mistakes That Cost Students Marks" },
-            { src: previewStudyPlan, label: "Your 2026 Prep Paper", locked: true },
-        ],
         description:
             "Only what's worth knowing for Maths Papers 1 & 2, built from five years of real NSC papers. You'll get the five skills that carry the most marks every year, worked examples for every method, and a breakdown of the mistakes that quietly cost students marks even when they know the content. Finish with a full 2026-style prep paper and a step-by-step memo, so you walk into November having already written something close to the real thing.",
         bundleWith: ["science", "accounting"],
@@ -186,11 +163,6 @@ export const guides: Guide[] = [
         accent: "226 60% 45%",
         pdf: "/Ruby Physical Science P1 Study Guide 2026.pdf",
         cover: charSol,
-        preview: [
-            { src: scienceSkills, label: "5 Skills That Give You the Most Marks" },
-            { src: scienceMethods, label: "How to Solve Each Question Type" },
-            { src: previewStudyPlan, label: "Your 2026 Prep Paper", locked: true },
-        ],
         description:
             "Physical Sciences marks are won on method, not memory. This guide gives you a repeatable way to answer every question type that comes up in Paper 1, from mechanics to electricity. Each method is shown with a worked example pulled from real past papers, plus the patterns that repeat most often across the last five years' exams. Ends with a full prep paper and memo so you can test the method under real time pressure.",
         bundleWith: ["math", "lifesci"],

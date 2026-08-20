@@ -1,22 +1,13 @@
 import { useState, useEffect, type ReactNode } from "react";
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
-import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-    Lock,
     Clock,
     ShoppingCart,
-    Eye,
     Check,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -128,10 +119,6 @@ const faqs = [
         a: "Add guides to your cart one at a time and the price updates automatically. 1 guide is R99, 2 is R149, 3 is R179, and the full bundle (every guide, plus AI Tutor access) is R199. It's a once-off payment, not a subscription.",
     },
     {
-        q: "Can I preview a guide before buying?",
-        a: 'Yes, every subject card has a "Preview guide" button showing real sample pages before you add it to your cart.',
-    },
-    {
         q: "What is the AI Tutor access that comes with the full bundle?",
         a: "It's included with the R199 full bundle, and gives you step-by-step help on any topic across your guides whenever you're stuck, not just the questions already in the guide.",
     },
@@ -159,7 +146,6 @@ const faqs = [
 
 const Matrics = () => {
     const { cart, cartOpen, toggleCart } = useCart();
-    const [previewOpenFor, setPreviewOpenFor] = useState<string | null>(null);
     const [heroSlide, setHeroSlide] = useState(0);
 
     useEffect(() => {
@@ -355,8 +341,6 @@ const Matrics = () => {
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
                             {guides.map((g) => {
                                 const inCart = cart.includes(g.id);
-                                const previewing = previewOpenFor === g.id;
-                                const hasPreview = Boolean(g.preview && g.preview.length > 0);
                                 return (
                                     <div
                                         key={g.id}
@@ -391,17 +375,6 @@ const Matrics = () => {
                                             </span>
                                         </Link>
                                         <div className="p-4 flex flex-col flex-1">
-                                            {hasPreview && (
-                                                <button
-                                                    type="button"
-                                                    onClick={() => setPreviewOpenFor(previewing ? null : g.id)}
-                                                    className="inline-flex items-center gap-1.5 text-xs font-extrabold text-primary mb-3 self-start"
-                                                >
-                                                    <Eye className="w-3.5 h-3.5" />
-                                                    {previewing ? "Hide preview" : "Preview guide"}
-                                                </button>
-                                            )}
-
                                             <button
                                                 type="button"
                                                 onClick={() => toggleCart(g.id)}
@@ -422,37 +395,6 @@ const Matrics = () => {
                                                 )}
                                             </button>
                                         </div>
-
-                                        {previewing && g.preview && (
-                                            <div className="border-t border-border p-3">
-                                                <Carousel opts={{ align: "center" }} className="w-full">
-                                                    <CarouselContent>
-                                                        {g.preview.map((img) => (
-                                                            <CarouselItem key={img.label}>
-                                                                <div className="relative overflow-hidden rounded-xl border border-border">
-                                                                    <img
-                                                                        src={img.src}
-                                                                        alt={img.label}
-                                                                        loading="lazy"
-                                                                        className={`w-full h-auto object-cover ${img.locked ? "blur-[3px]" : ""}`}
-                                                                    />
-                                                                    {img.locked && (
-                                                                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-background/40">
-                                                                            <Lock className="w-5 h-5 text-primary" />
-                                                                            <span className="text-[11px] font-extrabold bg-card/90 px-2 py-0.5 rounded-full">
-                                                                                Unlocks with purchase
-                                                                            </span>
-                                                                        </div>
-                                                                    )}
-                                                                </div>
-                                                            </CarouselItem>
-                                                        ))}
-                                                    </CarouselContent>
-                                                    <CarouselPrevious className="-left-3 h-7 w-7" />
-                                                    <CarouselNext className="-right-3 h-7 w-7" />
-                                                </Carousel>
-                                            </div>
-                                        )}
                                     </div>
                                 );
                             })}
