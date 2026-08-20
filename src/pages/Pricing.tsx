@@ -63,8 +63,8 @@ const plans: Plan[] = [
         id: "matric-pack",
         name: "Matric Exam Pack",
         tagline: "Grade 12",
-        price: "R99",
-        oldPrice: "R199",
+        price: "R199",
+        oldPrice: "R240",
         badge: { label: "New", tone: "blue" },
         offer: "Launch Offer — Save R99",
         features: [
@@ -77,25 +77,6 @@ const plans: Plan[] = [
         cta: "Own It",
         ctaTone: "blue",
         borderTone: "blue",
-    },
-    {
-        id: "master",
-        name: "Master",
-        tagline: "Grade 12",
-        price: "R129",
-        priceSuffix: "/mo",
-        oldPrice: "R199",
-        badge: { label: "Grade 12 Edition", tone: "accent" },
-        offer: "Launch Offer — Save R70/mo",
-        features: [
-            { text: "Everything in Scholar" },
-            { text: "50+ Matric Past Papers", sub: "(Practice & Guide Mode)" },
-            { text: "9 Matric Study Guides", sub: "(Major Subjects)" },
-            { text: "10+ Matric 2026 Prep Papers", sub: "(Major Subjects)" },
-        ],
-        cta: "Access Everything",
-        ctaTone: "accent",
-        borderTone: "accent",
     },
 ];
 
@@ -132,7 +113,7 @@ const Pricing = () => {
                     </div>
 
                     {/* Plan cards */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto items-stretch">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
                         {plans.map((plan) => {
                             const borderClass =
                                 plan.borderTone === "primary"
