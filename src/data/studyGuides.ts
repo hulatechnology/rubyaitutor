@@ -125,6 +125,7 @@ export const guides: Guide[] = [
         name: "Computer Applications Technology",
         icon: Monitor,
         accent: "300 40% 40%",
+        pdf: "https://kmgnizvqkqkiulzgvkcb.supabase.co/storage/v1/object/public/study-guides/cat-p2-nov-2026-studyguide.pdf",
         cover: charLuna,
         description:
             "Built around the theory questions that carry the most marks in Paper 1: systems technologies, hardware and software concepts, database concepts, and social implications, the topics that trip students up most. Every concept comes with a worked example pulled from real past papers, and you finish with a full prep paper and memo.",
@@ -136,6 +137,7 @@ export const guides: Guide[] = [
         name: "Consumer Studies",
         icon: ShoppingBag,
         accent: "48 65% 42%",
+        pdf: "https://kmgnizvqkqkiulzgvkcb.supabase.co/storage/v1/object/public/study-guides/consumer-studies-p1-nov-2026-studyguide.pdf",
         cover: charStella,
         description:
             "Covers the highest-mark topics: the consumer in the marketplace, batching and food production, housing, and entrepreneurship, the way they're actually tested, not the whole textbook. Worked examples show you how full marks are earned on scenario and case-study questions, and a full prep paper with memo lets you test yourself under real conditions.",
