@@ -31,9 +31,8 @@ const WHATSAPP_URL = "https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20
 // The only guides with a real PDF behind them today; this is what "the full bundle" delivers.
 const REAL_GUIDE_IDS = ["math", "science", "english", "mathslit"];
 
-// Countdown to the (placeholder, unconfirmed) 2026 NSC exam start date (same
-// target date and same "computed once on load" behaviour as the source design).
-const EXAM_DATE = new Date("2026-10-21T00:00:00");
+// Countdown to the confirmed 2026 NSC exam start date.
+const EXAM_DATE = new Date("2026-10-13T00:00:00");
 const daysLeft = Math.max(0, Math.ceil((EXAM_DATE.getTime() - Date.now()) / 86400000));
 
 
@@ -112,7 +111,7 @@ const testimonials = [
 const faqs = [
     {
         q: "What do I actually get?",
-        a: "A full PDF study guide, a 2026 prep paper, and a full memo with step-by-step marking explanations, delivered instantly.",
+        a: "A full PDF study guide, a 2026 prep paper, and a full memo with step-by-step marking explanations, delivered instantly via email.",
     },
     {
         q: "How does the bundle pricing work?",
@@ -120,11 +119,11 @@ const faqs = [
     },
     {
         q: "What is the AI Tutor access that comes with the full bundle?",
-        a: "It's included with the R199 full bundle, and gives you step-by-step help on any topic across your guides whenever you're stuck, not just the questions already in the guide.",
+        a: "Ruby is our CAPS & IEB aligned personalised tutor that bridges the gap between the past paper questions and its memo, giving you step-by-step guidance through every question, with all answers marked according to the CAPS marking guidelines.",
     },
     {
         q: "How do I get the guide after I pay?",
-        a: "Your PDF is ready to download the moment payment goes through. Open it straight on your phone or laptop, no waiting and nothing posted to you.",
+        a: "Your PDF is emailed to you the moment payment goes through. Open it straight on your phone or laptop and start learning.",
     },
     {
         q: "Is this for matric only?",
@@ -132,11 +131,19 @@ const faqs = [
     },
     {
         q: "What payment methods do you accept?",
-        a: "Checkout supports the usual card and instant EFT options you'd expect from a South African online store. [ ] confirm exact methods once checkout is live.",
+        a: "We accept a number of payment methods including debit and credit cards.",
     },
     {
         q: "Do I need data or internet to use the guide?",
         a: "You need data to download it once. After that, it's a PDF saved on your device, so you can study offline anytime without using more data.",
+    },
+    {
+        q: "Do I need data or internet to use the AI Tutor?",
+        a: "Yes, you need data or Wi-Fi in order to fully experience the Ruby Platform.",
+    },
+    {
+        q: "Why should I buy the full bundle?",
+        a: "The full bundle is the best value for money and allows users to receive any live updates we make to the learning experience in the study guides or the platform.",
     },
 ];
 

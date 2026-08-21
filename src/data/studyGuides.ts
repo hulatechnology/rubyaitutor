@@ -12,6 +12,7 @@ import {
     LineChart,
     Plane,
     Monitor,
+    ShoppingBag,
 } from "lucide-react";
 import charNova from "@/assets/character-nova.png";
 import charSol from "@/assets/character-sol.png";
@@ -28,6 +29,10 @@ import catPreview1 from "@/assets/study-guide-previews/cat-1.png";
 import catPreview2 from "@/assets/study-guide-previews/cat-2.png";
 import catPreview3 from "@/assets/study-guide-previews/cat-3.png";
 import catPreview4 from "@/assets/study-guide-previews/cat-4.png";
+import consumerstudiesPreview1 from "@/assets/study-guide-previews/consumerstudies-1.png";
+import consumerstudiesPreview2 from "@/assets/study-guide-previews/consumerstudies-2.png";
+import consumerstudiesPreview3 from "@/assets/study-guide-previews/consumerstudies-3.png";
+import consumerstudiesPreview4 from "@/assets/study-guide-previews/consumerstudies-4.png";
 import economicsPreview1 from "@/assets/study-guide-previews/economics-1.png";
 import economicsPreview2 from "@/assets/study-guide-previews/economics-2.png";
 import economicsPreview3 from "@/assets/study-guide-previews/economics-3.png";
@@ -125,6 +130,18 @@ export const guides: Guide[] = [
             "Built around the theory questions that carry the most marks in Paper 1: systems technologies, hardware and software concepts, database concepts, and social implications, the topics that trip students up most. Every concept comes with a worked example pulled from real past papers, and you finish with a full prep paper and memo.",
         bundleWith: ["businessstudies", "mathslit"],
         previewImages: [catPreview1, catPreview2, catPreview3, catPreview4],
+    },
+    {
+        id: "consumerstudies",
+        name: "Consumer Studies",
+        icon: ShoppingBag,
+        accent: "48 65% 42%",
+        cover: charStella,
+        comingSoon: true,
+        description:
+            "Covers the highest-mark topics: the consumer in the marketplace, batching and food production, housing, and entrepreneurship, the way they're actually tested, not the whole textbook. Worked examples show you how full marks are earned on scenario and case-study questions, and a full prep paper with memo lets you test yourself under real conditions.",
+        bundleWith: ["businessstudies", "economics"],
+        previewImages: [consumerstudiesPreview1, consumerstudiesPreview2, consumerstudiesPreview3, consumerstudiesPreview4],
     },
     {
         id: "economics",
