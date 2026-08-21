@@ -5,6 +5,7 @@ import { guides } from "@/data/studyGuides";
 import { tiers, tierForCount, ctaGradient } from "@/data/pricing";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const AI_TUTOR_SIGNUP_URL = "https://ruby-ai-tutor.vercel.app/";
 
 const CartDrawer = () => {
     const { cart, cartOpen, setCartOpen, toggleCart, email, setEmail } = useCart();
@@ -19,6 +20,10 @@ const CartDrawer = () => {
             return;
         }
         setEmailError(null);
+        if (tierForCount(cart.length)?.count === 4) {
+            window.location.href = AI_TUTOR_SIGNUP_URL;
+            return;
+        }
         setCheckoutStarted(true);
     };
 
@@ -120,7 +125,7 @@ const CartDrawer = () => {
                             <p className="text-xs text-destructive font-semibold mb-3">{emailError}</p>
                         ) : (
                             <p className="text-xs text-muted-foreground mb-3">
-                                Your PDFs and AI Tutor access go here the moment payment goes through.
+                                Your PDFs are emailed to you.
                             </p>
                         )}
 
