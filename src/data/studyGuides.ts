@@ -128,7 +128,7 @@ export const guides: Guide[] = [
         pdf: "https://kmgnizvqkqkiulzgvkcb.supabase.co/storage/v1/object/public/study-guides/cat-p2-nov-2026-studyguide.pdf",
         cover: charLuna,
         description:
-            "Built around the theory questions that carry the most marks in Paper 1: systems technologies, hardware and software concepts, database concepts, and social implications, the topics that trip students up most. Every concept comes with a worked example pulled from real past papers, and you finish with a full prep paper and memo.",
+            "Built around the theory questions that carry the most marks: systems technologies, hardware and software concepts, database concepts, and social implications, the topics that trip students up most. Every concept comes with a worked example pulled from real past papers, and you finish with a full prep paper and memo.",
         bundleWith: ["businessstudies", "mathslit"],
         previewImages: [catPreview1, catPreview2, catPreview3, catPreview4],
     },
