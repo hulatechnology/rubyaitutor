@@ -474,7 +474,7 @@ const Matrics = () => {
                                 <AccordionItem
                                     key={f.q}
                                     value={`item-${i}`}
-                                    className="bg-card border border-border rounded-xl px-5 border-b-0"
+                                    className="bg-card border-2 border-destructive rounded-xl px-5 border-b-2"
                                 >
                                     <AccordionTrigger className="text-[15px] font-extrabold hover:no-underline py-4">
                                         {f.q}

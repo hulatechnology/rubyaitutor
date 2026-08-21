@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, ChevronLeft, ChevronRight, FileText, ClipboardCheck, BookOpen, ShoppingCart, Check } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -36,10 +36,23 @@ const StudyGuideDetail = () => {
     const { cart, cartOpen, toggleCart } = useCart();
     const [slide, setSlide] = useState(0);
 
+    // Cover is always slide one, real guide screenshots follow.
+    const slides = guide ? ([guide.cover, ...(guide.previewImages ?? [])].filter(Boolean) as string[]) : [];
+
+    // Reset to the cover whenever the guide changes (route param can change without remounting).
+    useEffect(() => {
+        setSlide(0);
+    }, [id]);
+
+    // Auto-advance the carousel, one image per second.
+    useEffect(() => {
+        if (slides.length <= 1) return;
+        const t = setInterval(() => setSlide((s) => (s + 1) % slides.length), 1000);
+        return () => clearInterval(t);
+    }, [slides.length, id]);
+
     if (!guide) return <Navigate to="/matrics" replace />;
 
-    // Cover is always slide one, real guide screenshots follow.
-    const slides = [guide.cover, ...(guide.previewImages ?? [])].filter(Boolean) as string[];
     const goTo = (i: number) => setSlide((i + slides.length) % slides.length);
 
     const bundlePartners = (guide.bundleWith ?? [])
@@ -74,9 +87,9 @@ const StudyGuideDetail = () => {
                             <div className="order-2 md:order-1 flex flex-col gap-4">
                                 <div className="relative rounded-[20px] overflow-hidden border border-border shadow-lg bg-card">
                                     {slides.length > 0 ? (
-                                        <div className="relative h-64 md:h-80 overflow-hidden">
+                                        <>
                                             <div
-                                                className="flex h-full transition-transform duration-300 ease-out"
+                                                className="flex items-start transition-transform duration-300 ease-out"
                                                 style={{ transform: `translateX(-${slide * 100}%)` }}
                                             >
                                                 {slides.map((src, i) => (
@@ -84,7 +97,7 @@ const StudyGuideDetail = () => {
                                                         key={i}
                                                         src={src}
                                                         alt={`${guide.name} study guide, image ${i + 1} of ${slides.length}`}
-                                                        className="w-full h-64 md:h-80 object-cover object-top shrink-0"
+                                                        className="w-full shrink-0"
                                                     />
                                                 ))}
                                             </div>
@@ -119,7 +132,7 @@ const StudyGuideDetail = () => {
                                                     </div>
                                                 </>
                                             )}
-                                        </div>
+                                        </>
                                     ) : (
                                         <div
                                             className="w-full h-64 md:h-80 flex items-center justify-center"
