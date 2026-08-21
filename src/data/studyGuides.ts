@@ -137,7 +137,6 @@ export const guides: Guide[] = [
         icon: ShoppingBag,
         accent: "48 65% 42%",
         cover: charStella,
-        comingSoon: true,
         description:
             "Covers the highest-mark topics: the consumer in the marketplace, batching and food production, housing, and entrepreneurship, the way they're actually tested, not the whole textbook. Worked examples show you how full marks are earned on scenario and case-study questions, and a full prep paper with memo lets you test yourself under real conditions.",
         bundleWith: ["businessstudies", "economics"],
