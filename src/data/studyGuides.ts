@@ -20,6 +20,45 @@ import charTerra from "@/assets/character-terra.png";
 import charStella from "@/assets/character-stella.png";
 import charLuna from "@/assets/character-luna.png";
 
+import businessstudiesPreview1 from "@/assets/study-guide-previews/businessstudies-1.png";
+import businessstudiesPreview2 from "@/assets/study-guide-previews/businessstudies-2.png";
+import businessstudiesPreview3 from "@/assets/study-guide-previews/businessstudies-3.png";
+import businessstudiesPreview4 from "@/assets/study-guide-previews/businessstudies-4.png";
+import catPreview1 from "@/assets/study-guide-previews/cat-1.png";
+import catPreview2 from "@/assets/study-guide-previews/cat-2.png";
+import catPreview3 from "@/assets/study-guide-previews/cat-3.png";
+import catPreview4 from "@/assets/study-guide-previews/cat-4.png";
+import economicsPreview1 from "@/assets/study-guide-previews/economics-1.png";
+import economicsPreview2 from "@/assets/study-guide-previews/economics-2.png";
+import economicsPreview3 from "@/assets/study-guide-previews/economics-3.png";
+import economicsPreview4 from "@/assets/study-guide-previews/economics-4.png";
+import geoPreview1 from "@/assets/study-guide-previews/geo-1.png";
+import geoPreview2 from "@/assets/study-guide-previews/geo-2.png";
+import geoPreview3 from "@/assets/study-guide-previews/geo-3.png";
+import geoPreview4 from "@/assets/study-guide-previews/geo-4.png";
+import historyPreview1 from "@/assets/study-guide-previews/history-1.png";
+import historyPreview2 from "@/assets/study-guide-previews/history-2.png";
+import historyPreview3 from "@/assets/study-guide-previews/history-3.png";
+import historyPreview4 from "@/assets/study-guide-previews/history-4.png";
+import lifesciPreview1 from "@/assets/study-guide-previews/lifesci-1.png";
+import lifesciPreview2 from "@/assets/study-guide-previews/lifesci-2.png";
+import lifesciPreview3 from "@/assets/study-guide-previews/lifesci-3.png";
+import lifesciPreview4 from "@/assets/study-guide-previews/lifesci-4.png";
+import mathslitPreview1 from "@/assets/study-guide-previews/mathslit-1.png";
+import mathslitPreview2 from "@/assets/study-guide-previews/mathslit-2.png";
+import mathslitPreview3 from "@/assets/study-guide-previews/mathslit-3.png";
+import mathslitPreview4 from "@/assets/study-guide-previews/mathslit-4.png";
+import mathPreview1 from "@/assets/study-guide-previews/math-1.png";
+import mathPreview3 from "@/assets/study-guide-previews/math-3.png";
+import sciencePreview1 from "@/assets/study-guide-previews/science-1.png";
+import sciencePreview2 from "@/assets/study-guide-previews/science-2.png";
+import sciencePreview3 from "@/assets/study-guide-previews/science-3.png";
+import sciencePreview4 from "@/assets/study-guide-previews/science-4.png";
+import tourismPreview1 from "@/assets/study-guide-previews/tourism-1.png";
+import tourismPreview2 from "@/assets/study-guide-previews/tourism-2.png";
+import tourismPreview3 from "@/assets/study-guide-previews/tourism-3.png";
+import tourismPreview4 from "@/assets/study-guide-previews/tourism-4.png";
+
 // ---------------------------------------------------------------------------
 // Catalog. PLACEHOLDER product data, alphabetical by name.
 // Only Mathematics, Physical Sciences, English Home Language and Mathematical
@@ -40,6 +79,8 @@ export type Guide = {
     description?: string;
     /** Guide ids recommended as "frequently bought together" with this one. */
     bundleWith?: string[];
+    /** Real screenshots from inside the guide, shown as a carousel after the cover on the product page. */
+    previewImages?: string[];
 };
 
 export const guides: Guide[] = [
@@ -72,6 +113,7 @@ export const guides: Guide[] = [
         description:
             "Built around the case-study and essay questions that carry the most marks, covering business environments, human resources, and business operations the way they're tested, not the whole textbook. Worked examples show the structure examiners are marking for on scenario-based questions, and you finish with a full prep paper and memo.",
         bundleWith: ["accounting", "economics"],
+        previewImages: [businessstudiesPreview1, businessstudiesPreview2, businessstudiesPreview3, businessstudiesPreview4],
     },
     {
         id: "cat",
@@ -82,6 +124,7 @@ export const guides: Guide[] = [
         description:
             "Built around the theory questions that carry the most marks in Paper 1: systems technologies, hardware and software concepts, database concepts, and social implications, the topics that trip students up most. Every concept comes with a worked example pulled from real past papers, and you finish with a full prep paper and memo.",
         bundleWith: ["businessstudies", "mathslit"],
+        previewImages: [catPreview1, catPreview2, catPreview3, catPreview4],
     },
     {
         id: "economics",
@@ -92,6 +135,7 @@ export const guides: Guide[] = [
         description:
             "Focused on the highest-mark topics across both papers: microeconomics (markets, elasticity and market structures), macroeconomics (the circular flow, business cycles and the state), and economic pursuits and contemporary issues, with the graph-reading and calculation methods examiners expect to see. Every method comes with a worked example from real past papers, plus a full prep paper and memo so you can practise under real time pressure.",
         bundleWith: ["accounting", "businessstudies"],
+        previewImages: [economicsPreview1, economicsPreview2, economicsPreview3, economicsPreview4],
     },
     {
         id: "english",
@@ -113,6 +157,7 @@ export const guides: Guide[] = [
         description:
             "Covers the highest-mark topics across both physical and human geography (map work, climatology, settlement geography) the way they're actually tested, not the whole textbook. Worked examples show you how to handle map-work and data-response questions specifically, and a full prep paper with memo lets you practise under real conditions.",
         bundleWith: ["history", "mathslit"],
+        previewImages: [geoPreview1, geoPreview2, geoPreview3, geoPreview4],
     },
     {
         id: "history",
@@ -123,6 +168,7 @@ export const guides: Guide[] = [
         description:
             "Built around the essay and source-based questions that carry the most marks in both papers. You'll learn the structure examiners are marking for, not just the content, with worked examples on real past-paper sources and essay topics, plus a full prep paper and memo.",
         bundleWith: ["geo", "english"],
+        previewImages: [historyPreview1, historyPreview2, historyPreview3, historyPreview4],
     },
     {
         id: "lifesci",
@@ -133,6 +179,7 @@ export const guides: Guide[] = [
         description:
             "Built around the topics that carry the most marks across both papers: genetics, human physiology, and evolution, the highest-frequency content from five years of real NSC papers. Every topic comes with a worked example showing exactly how marks are awarded, plus a diagram-labelling refresher for the questions students lose easy marks on. You finish with a full prep paper and memo.",
         bundleWith: ["mathslit", "science"],
+        previewImages: [lifesciPreview1, lifesciPreview2, lifesciPreview3, lifesciPreview4],
     },
     {
         id: "mathslit",
@@ -144,6 +191,7 @@ export const guides: Guide[] = [
         description:
             "Maths Lit is less about formulas and more about knowing how to apply them when the paper is in front of you. This guide walks through the highest-mark question types (finance, measurement, data handling, maps and plans) the way they actually appear in the exam, with worked examples for each. A full 2026-style prep paper and memo let you practise the real thing before you sit it.",
         bundleWith: ["lifesci", "geo"],
+        previewImages: [mathslitPreview1, mathslitPreview2, mathslitPreview3, mathslitPreview4],
     },
     {
         id: "math",
@@ -155,6 +203,7 @@ export const guides: Guide[] = [
         description:
             "Only what's worth knowing for Maths Papers 1 & 2, built from five years of real NSC papers. You'll get the five skills that carry the most marks every year, worked examples for every method, and a breakdown of the mistakes that quietly cost students marks even when they know the content. Finish with a full 2026-style prep paper and a step-by-step memo, so you walk into November having already written something close to the real thing.",
         bundleWith: ["science", "accounting"],
+        previewImages: [mathPreview1, mathPreview3],
     },
     {
         id: "science",
@@ -166,6 +215,7 @@ export const guides: Guide[] = [
         description:
             "Physical Sciences marks are won on method, not memory. This guide gives you a repeatable way to answer every question type that comes up in Paper 1, from mechanics to electricity. Each method is shown with a worked example pulled from real past papers, plus the patterns that repeat most often across the last five years' exams. Ends with a full prep paper and memo so you can test the method under real time pressure.",
         bundleWith: ["math", "lifesci"],
+        previewImages: [sciencePreview1, sciencePreview2, sciencePreview3, sciencePreview4],
     },
     {
         id: "tourism",
@@ -176,6 +226,7 @@ export const guides: Guide[] = [
         description:
             "Covers the highest-mark topics, tourism attractions, marketing, sustainable and responsible tourism, and world heritage sites and time zones, the way they actually come up in the exam, not the whole textbook. Worked examples show you how to handle map-work and scenario-based questions specifically, and a full prep paper with memo lets you test yourself before the real thing.",
         bundleWith: ["geo", "history"],
+        previewImages: [tourismPreview1, tourismPreview2, tourismPreview3, tourismPreview4],
     },
 ];
 

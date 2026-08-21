@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, FileText, ClipboardCheck, BookOpen, ShoppingCart, Check } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, FileText, ClipboardCheck, BookOpen, ShoppingCart, Check } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import StudyGuideHowItWorks from "@/components/StudyGuideHowItWorks";
@@ -33,8 +34,13 @@ const StudyGuideDetail = () => {
     const { id } = useParams<{ id: string }>();
     const guide = id ? findGuide(id) : undefined;
     const { cart, cartOpen, toggleCart } = useCart();
+    const [slide, setSlide] = useState(0);
 
     if (!guide) return <Navigate to="/matrics" replace />;
+
+    // Cover is always slide one, real guide screenshots follow.
+    const slides = [guide.cover, ...(guide.previewImages ?? [])].filter(Boolean) as string[];
+    const goTo = (i: number) => setSlide((i + slides.length) % slides.length);
 
     const bundlePartners = (guide.bundleWith ?? [])
         .map((bid) => guides.find((g) => g.id === bid))
@@ -67,8 +73,53 @@ const StudyGuideDetail = () => {
                         <div className="grid md:grid-cols-[1fr_1.1fr] gap-8 md:gap-12 items-start">
                             <div className="order-2 md:order-1 flex flex-col gap-4">
                                 <div className="relative rounded-[20px] overflow-hidden border border-border shadow-lg bg-card">
-                                    {guide.cover ? (
-                                        <img src={guide.cover} alt={`${guide.name} study guide`} className="w-full h-64 md:h-80 object-cover object-top" />
+                                    {slides.length > 0 ? (
+                                        <div className="relative h-64 md:h-80 overflow-hidden">
+                                            <div
+                                                className="flex h-full transition-transform duration-300 ease-out"
+                                                style={{ transform: `translateX(-${slide * 100}%)` }}
+                                            >
+                                                {slides.map((src, i) => (
+                                                    <img
+                                                        key={i}
+                                                        src={src}
+                                                        alt={`${guide.name} study guide, image ${i + 1} of ${slides.length}`}
+                                                        className="w-full h-64 md:h-80 object-cover object-top shrink-0"
+                                                    />
+                                                ))}
+                                            </div>
+                                            {slides.length > 1 && (
+                                                <>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => goTo(slide - 1)}
+                                                        aria-label="Previous image"
+                                                        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors"
+                                                    >
+                                                        <ChevronLeft className="w-5 h-5" />
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => goTo(slide + 1)}
+                                                        aria-label="Next image"
+                                                        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors"
+                                                    >
+                                                        <ChevronRight className="w-5 h-5" />
+                                                    </button>
+                                                    <div className="absolute bottom-2.5 left-0 right-0 flex justify-center gap-1.5">
+                                                        {slides.map((_, i) => (
+                                                            <button
+                                                                key={i}
+                                                                type="button"
+                                                                onClick={() => goTo(i)}
+                                                                aria-label={`Go to image ${i + 1}`}
+                                                                className={`w-[7px] h-[7px] rounded-full transition-colors ${i === slide ? "bg-white" : "bg-white/50"}`}
+                                                            />
+                                                        ))}
+                                                    </div>
+                                                </>
+                                            )}
+                                        </div>
                                     ) : (
                                         <div
                                             className="w-full h-64 md:h-80 flex items-center justify-center"
@@ -78,7 +129,7 @@ const StudyGuideDetail = () => {
                                         </div>
                                     )}
                                     <div
-                                        className="absolute top-0 left-0 right-0 flex items-center gap-2 px-4 py-2.5 text-white"
+                                        className="absolute top-0 left-0 right-0 flex items-center gap-2 px-4 py-2.5 text-white pointer-events-none"
                                         style={{ background: `hsl(${guide.accent} / 0.92)` }}
                                     >
                                         <guide.icon className="w-4 h-4" />
