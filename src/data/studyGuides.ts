@@ -13,6 +13,7 @@ import {
     Plane,
     Monitor,
     ShoppingBag,
+    ChefHat,
 } from "lucide-react";
 import charNova from "@/assets/character-nova.png";
 import charSol from "@/assets/character-sol.png";
@@ -97,7 +98,7 @@ export const guides: Guide[] = [
         cover: charLuna,
         description:
             "Focused on the highest-mark topics and the exact process for each one: ledgers, financial statements, and analysis and interpretation. Every process is shown as a worked example using real exam-style figures, and you finish with a full prep paper and memo so you can practise the full process under time pressure.",
-        bundleWith: ["math", "mathslit"],
+        bundleWith: ["businessstudies", "economics"],
     },
     {
         id: "afrikaans",
@@ -107,7 +108,7 @@ export const guides: Guide[] = [
         cover: charLex,
         description:
             "Covers the highest-mark question types in Paper 1 language in context: comprehension, summary writing, and language structures and conventions, the way examiners actually test them, not the whole textbook. Worked examples show you how full marks are earned on editing, cloze, and figures-of-speech questions, and a full prep paper with memo lets you test yourself under real conditions.",
-        bundleWith: ["english", "math", "mathslit"],
+        bundleWith: ["english", "history"],
     },
     {
         id: "businessstudies",
@@ -164,7 +165,7 @@ export const guides: Guide[] = [
         cover: charLex,
         description:
             "Paper 1 marks slip away in comprehension and language technique questions for reasons that have nothing to do with understanding the passage. This guide teaches the actual techniques examiners are marking for: inference, tone, rhetorical devices, and summary rules. Every technique comes with a worked example on a real extract, and you finish with a full prep paper and memo.",
-        bundleWith: ["history"],
+        bundleWith: ["afrikaans", "history"],
     },
     {
         id: "geo",
@@ -189,6 +190,17 @@ export const guides: Guide[] = [
         previewImages: [historyPreview1, historyPreview2, historyPreview3, historyPreview4],
     },
     {
+        id: "hospitality",
+        name: "Hospitality Studies",
+        icon: ChefHat,
+        accent: "15 60% 42%",
+        pdf: "https://kmgnizvqkqkiulzgvkcb.supabase.co/storage/v1/object/public/study-guides/hospitality-p1-nov-2026-studyguide_compressed.pdf",
+        cover: charStella,
+        description:
+            "Covers the highest-mark topics: food and beverage service, menu planning and costing, and front-of-house and housekeeping operations, the way they're actually tested, not the whole textbook. Worked examples show you how full marks are earned on scenario and calculation questions, and a full prep paper with memo lets you test yourself under real conditions.",
+        bundleWith: ["tourism", "consumerstudies"],
+    },
+    {
         id: "lifesci",
         name: "Life Sciences",
         icon: Leaf,
@@ -196,7 +208,7 @@ export const guides: Guide[] = [
         cover: charSol,
         description:
             "Built around the topics that carry the most marks across both papers: genetics, human physiology, and evolution, the highest-frequency content from five years of real NSC papers. Every topic comes with a worked example showing exactly how marks are awarded, plus a diagram-labelling refresher for the questions students lose easy marks on. You finish with a full prep paper and memo.",
-        bundleWith: ["mathslit", "science"],
+        bundleWith: ["science", "geo"],
         previewImages: [lifesciPreview1, lifesciPreview2, lifesciPreview3, lifesciPreview4],
     },
     {
