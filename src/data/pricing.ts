@@ -16,3 +16,6 @@ export const tierForCount = (n: number): Tier | null => {
 export const singlePrice = tiers[0].price;
 
 export const ctaGradient = { background: "linear-gradient(135deg, hsl(var(--cta)), hsl(var(--cta-end)))" };
+
+/** Where "Get the full bundle" sends buyers to create their AI Tutor account. */
+export const AI_TUTOR_SIGNUP_URL = "https://ruby-ai-tutor.vercel.app/";

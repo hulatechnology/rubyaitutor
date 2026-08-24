@@ -6,6 +6,7 @@ import {
     tiers,
     tierForCount,
     ctaGradient,
+    AI_TUTOR_SIGNUP_URL,
 } from "@/data/pricing";
 
 const EMAIL_PATTERN =
@@ -23,13 +24,6 @@ const EMAIL_PATTERN =
 
 const PAYFAST_CHECKOUT_URL =
     "https://ruby-ai-tutor.vercel.app/api/payfast/study-guides";
-
-// ─────────────────────────────────────────────────────────────────────────────
-// AI Tutor signup
-// ─────────────────────────────────────────────────────────────────────────────
-
-const AI_TUTOR_SIGNUP_URL =
-    "https://ruby-ai-tutor.vercel.app/";
 
 const CartDrawer = () => {
 

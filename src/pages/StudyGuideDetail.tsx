@@ -9,13 +9,10 @@ import CartDrawer from "@/components/CartDrawer";
 import StickyCartBar from "@/components/StickyCartBar";
 import { useCart } from "@/context/CartContext";
 import { guides, findGuide } from "@/data/studyGuides";
-import { tiers, singlePrice, ctaGradient } from "@/data/pricing";
+import { tiers, singlePrice, ctaGradient, AI_TUTOR_SIGNUP_URL } from "@/data/pricing";
 import rubyLogo from "@/assets/ruby-logo.png";
 
 const WHATSAPP_URL = "https://wa.me/27652985458?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20the%20study%20guides";
-
-// The only guides with a real PDF behind them today; this is what "the full bundle" delivers.
-const REAL_GUIDE_IDS = ["math", "science", "english", "mathslit"];
 
 const whatYouGet = [
     { icon: FileText, text: "A full study guide, built from five years of real NSC papers" },
@@ -61,9 +58,7 @@ const StudyGuideDetail = () => {
     const inCart = cart.includes(guide.id);
 
     const buyFullBundle = () => {
-        REAL_GUIDE_IDS.forEach((id) => {
-            if (!cart.includes(id)) toggleCart(id);
-        });
+        window.location.href = AI_TUTOR_SIGNUP_URL;
     };
 
     return (
