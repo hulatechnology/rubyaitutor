@@ -352,6 +352,24 @@ const Matrics = () => {
                         </div>
 
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+                            {/* Bundle upsell card, always the first tile in the shop grid */}
+                            <div className="rounded-2xl border-2 border-primary bg-card shadow-sm overflow-hidden flex flex-col items-center text-center p-5">
+                                <img src={rubyLogo} alt="Ruby" className="w-16 h-16 rounded-full object-cover mb-3 mt-2" />
+                                <h3 className="text-base font-extrabold mb-1">Get every guide</h3>
+                                <p className="text-xs text-muted-foreground mb-3">All 4 study guides plus AI Tutor access, one price.</p>
+                                <span className="inline-block bg-primary/10 text-primary text-sm font-extrabold px-3 py-1 rounded-full mb-4">
+                                    R{tiers[3].price}
+                                </span>
+                                <button
+                                    type="button"
+                                    onClick={buyFullBundle}
+                                    className="w-full mt-auto inline-flex items-center justify-center gap-2 text-sm font-extrabold px-4 py-2.5 rounded-full text-cta-foreground shadow-md hover:opacity-90 transition-all"
+                                    style={ctaGradient}
+                                >
+                                    <ShoppingCart className="w-4 h-4" /> Get the full bundle
+                                </button>
+                            </div>
+
                             {guides.map((g) => {
                                 const inCart = cart.includes(g.id);
                                 return (
@@ -411,24 +429,6 @@ const Matrics = () => {
                                     </div>
                                 );
                             })}
-
-                            {/* Bundle upsell card, always the last tile in the shop grid */}
-                            <div className="rounded-2xl border-2 border-primary bg-card shadow-sm overflow-hidden flex flex-col items-center text-center p-5">
-                                <img src={rubyLogo} alt="Ruby" className="w-16 h-16 rounded-full object-cover mb-3 mt-2" />
-                                <h3 className="text-base font-extrabold mb-1">Get every guide</h3>
-                                <p className="text-xs text-muted-foreground mb-3">All 4 study guides plus AI Tutor access, one price.</p>
-                                <span className="inline-block bg-primary/10 text-primary text-sm font-extrabold px-3 py-1 rounded-full mb-4">
-                                    R{tiers[3].price}
-                                </span>
-                                <button
-                                    type="button"
-                                    onClick={buyFullBundle}
-                                    className="w-full mt-auto inline-flex items-center justify-center gap-2 text-sm font-extrabold px-4 py-2.5 rounded-full text-cta-foreground shadow-md hover:opacity-90 transition-all"
-                                    style={ctaGradient}
-                                >
-                                    <ShoppingCart className="w-4 h-4" /> Get the full bundle
-                                </button>
-                            </div>
                         </div>
 
                         {/* Pricing tiers */}
