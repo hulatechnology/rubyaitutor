@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Mail, X } from "lucide-react";
+import { ArrowRight, Mail, School as SchoolIcon, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { guides } from "@/data/studyGuides";
 import {
@@ -34,6 +34,8 @@ const CartDrawer = () => {
         toggleCart,
         email,
         setEmail,
+        school,
+        setSchool,
     } = useCart();
 
     const [
@@ -44,6 +46,11 @@ const CartDrawer = () => {
     const [
         emailError,
         setEmailError,
+    ] = useState<string | null>(null);
+
+    const [
+        schoolError,
+        setSchoolError,
     ] = useState<string | null>(null);
 
     const [
@@ -107,6 +114,23 @@ const CartDrawer = () => {
             }
 
             setEmailError(null);
+
+            // ─────────────────────────────────────────────────────────────────
+            // Validate school
+            // ─────────────────────────────────────────────────────────────────
+
+            const cleanSchool =
+                school.trim();
+
+            if (!cleanSchool) {
+                setSchoolError(
+                    "Enter your school so we know who's buying."
+                );
+
+                return;
+            }
+
+            setSchoolError(null);
             setCheckoutError(null);
 
             // ─────────────────────────────────────────────────────────────────
@@ -180,6 +204,9 @@ const CartDrawer = () => {
                             body: JSON.stringify({
                                 email:
                                     cleanEmail,
+
+                                school:
+                                    cleanSchool,
 
                                 guideIds:
                                     cart,
@@ -607,16 +634,80 @@ const CartDrawer = () => {
 
                         {/* Email error */}
 
-                        {emailError ? (
+                        {emailError && (
 
                             <p className="text-xs text-destructive font-semibold mb-3">
                                 {emailError}
                             </p>
 
+                        )}
+
+                        {/* ───────────────────────────────────────────────────
+                            School
+                        ─────────────────────────────────────────────────── */}
+
+                        <label
+                            htmlFor="cart-school"
+                            className="block text-xs font-extrabold text-foreground/90 mb-1.5"
+                        >
+                            Which school are you at?
+                        </label>
+
+                        <div className="relative mb-1">
+
+                            <SchoolIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+
+                            <input
+                                id="cart-school"
+                                type="text"
+                                autoComplete="organization"
+                                placeholder="e.g. Rondebosch High School"
+                                value={school}
+                                disabled={
+                                    checkoutStarted
+                                }
+                                onChange={(e) => {
+
+                                    setSchool(
+                                        e.target.value
+                                    );
+
+                                    if (
+                                        schoolError
+                                    ) {
+                                        setSchoolError(
+                                            null
+                                        );
+                                    }
+
+                                    if (
+                                        checkoutError
+                                    ) {
+                                        setCheckoutError(
+                                            null
+                                        );
+                                    }
+                                }}
+                                className={`w-full pl-10 pr-3.5 py-3 rounded-xl border text-sm font-semibold bg-background focus:outline-none focus:ring-2 focus:ring-primary/40 ${schoolError
+                                        ? "border-destructive"
+                                        : "border-border"
+                                    }`}
+                            />
+
+                        </div>
+
+                        {/* School error */}
+
+                        {schoolError ? (
+
+                            <p className="text-xs text-destructive font-semibold mb-3">
+                                {schoolError}
+                            </p>
+
                         ) : (
 
                             <p className="text-xs text-muted-foreground mb-3">
-                                Your PDFs are emailed to you.
+                                Helps us understand who we're reaching.
                             </p>
 
                         )}

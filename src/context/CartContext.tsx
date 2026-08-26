@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 
 const STORAGE_KEY = "ruby-matric-cart";
 const EMAIL_STORAGE_KEY = "ruby-matric-email";
+const SCHOOL_STORAGE_KEY = "ruby-matric-school";
 
 type CartContextValue = {
     cart: string[];
@@ -10,6 +11,8 @@ type CartContextValue = {
     toggleCart: (id: string) => void;
     email: string;
     setEmail: (email: string) => void;
+    school: string;
+    setSchool: (school: string) => void;
 };
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
@@ -32,10 +35,19 @@ const readStoredEmail = (): string => {
     }
 };
 
+const readStoredSchool = (): string => {
+    try {
+        return localStorage.getItem(SCHOOL_STORAGE_KEY) ?? "";
+    } catch {
+        return "";
+    }
+};
+
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<string[]>(readStoredCart);
     const [cartOpen, setCartOpen] = useState(false);
     const [email, setEmail] = useState<string>(readStoredEmail);
+    const [school, setSchool] = useState<string>(readStoredSchool);
 
     useEffect(() => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
@@ -45,12 +57,16 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         localStorage.setItem(EMAIL_STORAGE_KEY, email);
     }, [email]);
 
+    useEffect(() => {
+        localStorage.setItem(SCHOOL_STORAGE_KEY, school);
+    }, [school]);
+
     const toggleCart = (id: string) => {
         setCart((prev) => (prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]));
     };
 
     return (
-        <CartContext.Provider value={{ cart, cartOpen, setCartOpen, toggleCart, email, setEmail }}>
+        <CartContext.Provider value={{ cart, cartOpen, setCartOpen, toggleCart, email, setEmail, school, setSchool }}>
             {children}
         </CartContext.Provider>
     );
