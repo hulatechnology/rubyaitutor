@@ -22,6 +22,7 @@ import StudyGuideHowItWorks from "@/components/StudyGuideHowItWorks";
 import CartNavButton from "@/components/CartNavButton";
 import CartDrawer from "@/components/CartDrawer";
 import StickyCartBar from "@/components/StickyCartBar";
+import MatricsExamPopup from "@/components/MatricsExamPopup";
 import { useCart } from "@/context/CartContext";
 import { guides } from "@/data/studyGuides";
 import { tiers, tierForCount, ctaGradient, AI_TUTOR_SIGNUP_URL } from "@/data/pricing";
@@ -538,6 +539,7 @@ const Matrics = () => {
 
             <StickyCartBar />
             <CartDrawer />
+            <MatricsExamPopup />
         </div>
     );
 };

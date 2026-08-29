@@ -14,6 +14,7 @@ import {
     Monitor,
     ShoppingBag,
     ChefHat,
+    Compass,
 } from "lucide-react";
 import charNova from "@/assets/character-nova.png";
 import charSol from "@/assets/character-sol.png";
@@ -199,6 +200,16 @@ export const guides: Guide[] = [
         description:
             "Covers the highest-mark topics: food and beverage service, menu planning and costing, and front-of-house and housekeeping operations, the way they're actually tested, not the whole textbook. Worked examples show you how full marks are earned on scenario and calculation questions, and a full prep paper with memo lets you test yourself under real conditions.",
         bundleWith: ["tourism", "consumerstudies"],
+    },
+    {
+        id: "lifeorientation",
+        name: "Life Orientation",
+        icon: Compass,
+        accent: "160 50% 38%",
+        cover: charStella,
+        description:
+            "Covers the full Life Orientation Common Assessment Task: careers and the world of work, democracy and human rights, and social and environmental responsibility, focused on the sections that carry the most marks. Worked examples show you how full marks are earned on the source-based and scenario questions, and a full prep paper with memo lets you practise the whole 100 mark paper under real conditions.",
+        bundleWith: ["english", "history"],
     },
     {
         id: "lifesci",

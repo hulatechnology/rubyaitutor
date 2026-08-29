@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ArrowRight, Mail, School as SchoolIcon, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowRight, Mail, School as SchoolIcon, Tag, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { guides } from "@/data/studyGuides";
 import {
@@ -25,6 +25,28 @@ const EMAIL_PATTERN =
 const PAYFAST_CHECKOUT_URL =
     "https://ruby-ai-tutor.vercel.app/api/payfast/study-guides";
 
+const VOUCHER_VALIDATE_URL =
+    "https://ruby-ai-tutor.vercel.app/api/vouchers/validate";
+
+type AppliedVoucher = {
+    code: string;
+    discount_type: "percentage" | "fixed";
+    discount_value: number;
+};
+
+/** Rand amount off a given price for an applied voucher, rounded to cents. */
+function voucherDiscountFor(
+    price: number,
+    voucher: AppliedVoucher | null,
+): number {
+    if (!voucher) return 0;
+    const raw =
+        voucher.discount_type === "percentage"
+            ? price * (voucher.discount_value / 100)
+            : voucher.discount_value;
+    return Math.min(price, Math.max(0, Math.round(raw * 100) / 100));
+}
+
 const CartDrawer = () => {
 
     const {
@@ -36,12 +58,34 @@ const CartDrawer = () => {
         setEmail,
         school,
         setSchool,
+        voucherCode,
+        setVoucherCode,
     } = useCart();
 
     const [
         checkoutStarted,
         setCheckoutStarted,
     ] = useState(false);
+
+    const [
+        voucherInput,
+        setVoucherInput,
+    ] = useState(voucherCode);
+
+    const [
+        appliedVoucher,
+        setAppliedVoucher,
+    ] = useState<AppliedVoucher | null>(null);
+
+    const [
+        voucherChecking,
+        setVoucherChecking,
+    ] = useState(false);
+
+    const [
+        voucherError,
+        setVoucherError,
+    ] = useState<string | null>(null);
 
     const [
         emailError,
@@ -57,6 +101,82 @@ const CartDrawer = () => {
         checkoutError,
         setCheckoutError,
     ] = useState<string | null>(null);
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Voucher
+    //
+    // Validated against the same endpoint the main site's pricing page uses.
+    // No `plan` param — study guides aren't a "plan", so we just read the
+    // code's terms and compute the discount on the cart total ourselves.
+    // The server re-validates authoritatively at checkout.
+    // ─────────────────────────────────────────────────────────────────────────
+
+    const validateVoucher = async (
+        rawCode: string,
+    ): Promise<AppliedVoucher | null> => {
+        const code = rawCode.trim().toUpperCase();
+        if (!code) {
+            setAppliedVoucher(null);
+            setVoucherError(null);
+            return null;
+        }
+        setVoucherChecking(true);
+        setVoucherError(null);
+        try {
+            const res = await fetch(
+                `${VOUCHER_VALIDATE_URL}?code=${encodeURIComponent(code)}`,
+            );
+            const data = await res.json();
+            if (data?.valid) {
+                const v: AppliedVoucher = {
+                    code,
+                    discount_type: data.discount_type,
+                    discount_value: Number(data.discount_value),
+                };
+                setAppliedVoucher(v);
+                setVoucherError(null);
+                return v;
+            }
+            setAppliedVoucher(null);
+            setVoucherError(data?.error || "That code isn't valid.");
+            return null;
+        } catch {
+            setAppliedVoucher(null);
+            setVoucherError("Couldn't check that code. Try again.");
+            return null;
+        } finally {
+            setVoucherChecking(false);
+        }
+    };
+
+    const applyVoucher = async () => {
+        const v = await validateVoucher(voucherInput);
+        if (v) setVoucherCode(v.code);
+    };
+
+    const clearVoucher = () => {
+        setAppliedVoucher(null);
+        setVoucherError(null);
+        setVoucherInput("");
+        setVoucherCode("");
+    };
+
+    // Validate a code that was pre-filled elsewhere (e.g. the exam popup) once,
+    // when the drawer opens. Keyed on the *context* code, which only changes on
+    // a popup pre-fill or an explicit apply/remove — never on keystrokes.
+    useEffect(() => {
+        if (
+            cartOpen &&
+            voucherCode.trim() &&
+            !appliedVoucher &&
+            !voucherChecking &&
+            !voucherError
+        ) {
+            setVoucherInput(voucherCode);
+            validateVoucher(voucherCode);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [cartOpen, voucherCode]);
 
     if (!cartOpen) {
         return null;
@@ -77,6 +197,20 @@ const CartDrawer = () => {
             ? singlePrice * cart.length -
             tier.price
             : 0;
+
+    // Voucher discount applies to the tier price. The 4-guide bundle skips
+    // PayFast entirely (see handleCheckout), so no voucher there.
+    const baseTierPrice = tier?.price ?? 0;
+
+    const voucherDiscount =
+        tier?.count === 4
+            ? 0
+            : voucherDiscountFor(baseTierPrice, appliedVoucher);
+
+    const finalPrice = Math.max(
+        0,
+        Math.round((baseTierPrice - voucherDiscount) * 100) / 100,
+    );
 
     // ─────────────────────────────────────────────────────────────────────────
     // Guides currently in the cart
@@ -210,6 +344,9 @@ const CartDrawer = () => {
 
                                 guideIds:
                                     cart,
+
+                                voucherCode:
+                                    appliedVoucher?.code ?? "",
                             }),
                         }
                     );
@@ -558,7 +695,12 @@ const CartDrawer = () => {
                             </span>
 
                             <span className="text-2xl font-extrabold">
-                                R{tier?.price}
+                                {voucherDiscount > 0 && (
+                                    <span className="text-base font-bold text-muted-foreground line-through mr-2">
+                                        R{baseTierPrice}
+                                    </span>
+                                )}
+                                R{finalPrice}
                             </span>
 
                         </div>
@@ -567,14 +709,90 @@ const CartDrawer = () => {
 
                         {savings > 0 && (
 
-                            <p className="text-xs text-primary font-semibold mb-4">
+                            <p className="text-xs text-primary font-semibold mb-1">
                                 You save R{savings} vs buying separately
                             </p>
 
                         )}
 
-                        {savings === 0 && (
+                        {/* Voucher */}
+
+                        {tier?.count === 4 ? (
+
                             <div className="mb-4" />
+
+                        ) : (
+
+                            <div className="mt-2 mb-4">
+
+                                {appliedVoucher ? (
+
+                                    <div className="flex items-center justify-between gap-2 rounded-xl border border-primary/40 bg-primary/[0.06] px-3 py-2">
+
+                                        <span className="text-xs font-extrabold text-primary flex items-center gap-1.5 min-w-0">
+                                            <Tag className="w-3.5 h-3.5 shrink-0" />
+                                            <span className="truncate">
+                                                {appliedVoucher.code} applied ·{" "}
+                                                {appliedVoucher.discount_type === "percentage"
+                                                    ? `${appliedVoucher.discount_value}% off`
+                                                    : `R${appliedVoucher.discount_value} off`}
+                                            </span>
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            onClick={clearVoucher}
+                                            className="text-xs font-extrabold text-muted-foreground hover:text-primary shrink-0"
+                                        >
+                                            Remove
+                                        </button>
+
+                                    </div>
+
+                                ) : (
+
+                                    <div className="flex gap-2">
+
+                                        <input
+                                            type="text"
+                                            autoCapitalize="characters"
+                                            placeholder="Voucher code"
+                                            value={voucherInput}
+                                            disabled={checkoutStarted || voucherChecking}
+                                            onChange={(e) => {
+                                                setVoucherInput(e.target.value.toUpperCase());
+                                                if (voucherError) setVoucherError(null);
+                                            }}
+                                            onKeyDown={(e) => {
+                                                if (e.key === "Enter") {
+                                                    e.preventDefault();
+                                                    applyVoucher();
+                                                }
+                                            }}
+                                            className="flex-1 min-w-0 px-3 py-2 rounded-xl border border-border text-sm font-semibold bg-background focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                        />
+
+                                        <button
+                                            type="button"
+                                            onClick={applyVoucher}
+                                            disabled={checkoutStarted || voucherChecking || !voucherInput.trim()}
+                                            className="px-4 py-2 rounded-xl text-sm font-extrabold border border-border hover:border-primary/40 disabled:opacity-50"
+                                        >
+                                            {voucherChecking ? "…" : "Apply"}
+                                        </button>
+
+                                    </div>
+
+                                )}
+
+                                {voucherError && (
+                                    <p className="text-xs text-destructive font-semibold mt-1.5">
+                                        {voucherError}
+                                    </p>
+                                )}
+
+                            </div>
+
                         )}
 
                         {/* ───────────────────────────────────────────────────

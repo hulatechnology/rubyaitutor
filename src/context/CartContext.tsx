@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 const STORAGE_KEY = "ruby-matric-cart";
 const EMAIL_STORAGE_KEY = "ruby-matric-email";
 const SCHOOL_STORAGE_KEY = "ruby-matric-school";
+const VOUCHER_STORAGE_KEY = "ruby-matric-voucher";
 
 type CartContextValue = {
     cart: string[];
@@ -13,6 +14,10 @@ type CartContextValue = {
     setEmail: (email: string) => void;
     school: string;
     setSchool: (school: string) => void;
+    /** Voucher code the buyer has entered (or that a promo popup pre-filled).
+     *  The cart drawer validates it against the API before checkout. */
+    voucherCode: string;
+    setVoucherCode: (code: string) => void;
 };
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
@@ -43,11 +48,20 @@ const readStoredSchool = (): string => {
     }
 };
 
+const readStoredVoucher = (): string => {
+    try {
+        return localStorage.getItem(VOUCHER_STORAGE_KEY) ?? "";
+    } catch {
+        return "";
+    }
+};
+
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<string[]>(readStoredCart);
     const [cartOpen, setCartOpen] = useState(false);
     const [email, setEmail] = useState<string>(readStoredEmail);
     const [school, setSchool] = useState<string>(readStoredSchool);
+    const [voucherCode, setVoucherCode] = useState<string>(readStoredVoucher);
 
     useEffect(() => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
@@ -61,12 +75,16 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         localStorage.setItem(SCHOOL_STORAGE_KEY, school);
     }, [school]);
 
+    useEffect(() => {
+        localStorage.setItem(VOUCHER_STORAGE_KEY, voucherCode);
+    }, [voucherCode]);
+
     const toggleCart = (id: string) => {
         setCart((prev) => (prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]));
     };
 
     return (
-        <CartContext.Provider value={{ cart, cartOpen, setCartOpen, toggleCart, email, setEmail, school, setSchool }}>
+        <CartContext.Provider value={{ cart, cartOpen, setCartOpen, toggleCart, email, setEmail, school, setSchool, voucherCode, setVoucherCode }}>
             {children}
         </CartContext.Provider>
     );
