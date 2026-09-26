@@ -1,0 +1,145 @@
+/* Results page styles, scoped under .results-page so they never touch the rest of the site. */
+.results-page {
+  --rp-card-soft: #FAF7F2;
+  --rp-ink: #191712;
+  --rp-ink-2: #5F5A51;
+  --rp-ink-muted: #898781;
+  --rp-border: #EFEBE3;
+  --rp-green: oklch(0.52 0.13 155);
+  --rp-good: #0ca30c;
+  --rp-warn: #b8790a;
+  --rp-warn-tint: rgba(184,121,10,0.09);
+  --rp-bad: #d03b3b;
+  --rp-bad-tint: rgba(208,59,59,0.08);
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 0 60px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--rp-ink);
+}
+.results-page *, .results-page *::before, .results-page *::after { border-color: var(--rp-border); }
+
+/* ---------- Hero ---------- */
+.results-page .rp-hero { padding: 36px 20px 20px; }
+.results-page .rp-headline { font: 400 clamp(30px,6vw,44px)/1.1 'Instrument Serif', Georgia, serif; letter-spacing: -.02em; margin: 10px 0 6px; text-wrap: pretty; }
+.results-page .rp-sub { font: 500 14px/1.5 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-2); max-width: 90ch; margin: 0; }
+
+.results-page .rp-stat-strip { display: flex; gap: 24px; align-items: center; margin-top: 22px; flex-wrap: wrap; }
+.results-page .rp-donut-wrap { position: relative; width: 150px; height: 150px; flex: none; }
+.results-page .rp-donut-wrap svg { width: 150px; height: 150px; display: block; transform: rotate(-90deg); }
+.results-page .rp-donut-num { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 700 58px/1 'Plus Jakarta Sans', sans-serif; letter-spacing: -.05em; }
+.results-page .rp-stat-cards { flex: 1; min-width: 220px; display: flex; flex-direction: column; gap: 8px; }
+.results-page .rp-stat-card { background: #fff; border: 1px solid var(--rp-border); border-radius: 14px; padding: 12px 15px; display: flex; align-items: center; gap: 13px; }
+.results-page .rp-stat-card b { font: 700 24px/1 'Plus Jakarta Sans', sans-serif; letter-spacing: -.04em; color: oklch(0.46 0.13 155); min-width: 66px; }
+.results-page .rp-stat-card span { font: 600 12px/1.35 'Plus Jakarta Sans', sans-serif; }
+.results-page .rp-note { font: 500 12px/1.5 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-2); margin: 16px 0 0; max-width: 80ch; }
+
+/* ---------- Subject chips + key ---------- */
+.results-page .rp-head { padding-bottom: 6px; }
+.results-page .rp-subject-nav { padding: 10px 20px 8px; display: flex; flex-wrap: wrap; gap: 10px; }
+.results-page .rp-chip { flex: none; display: inline-flex; align-items: center; gap: 7px; background: #fff; border: 1.5px solid var(--rp-ink); border-radius: 999px; padding: 9px 14px; font: 800 12.5px/1 'Plus Jakarta Sans', sans-serif; text-decoration: none; color: var(--rp-ink); white-space: nowrap; box-shadow: 0 1px 0 rgba(25,23,18,0.06); }
+.results-page .rp-chip .rp-cdot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.results-page .rp-chip b { font-weight: 800; color: var(--rp-ink-2); }
+.results-page .rp-key { padding: 0 20px 9px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font: 600 10.5px/1.3 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-2); }
+.results-page .rp-key strong { color: var(--rp-ink); font-weight: 800; }
+.results-page .rp-key-item { display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+.results-page .rp-key-swatch { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+
+/* ---------- Subject sections ---------- */
+.results-page .rp-subjects { padding: 8px 20px 0; }
+.results-page .rp-subject { margin-top: 38px; border-top: 4px solid; border-radius: 2px; padding-top: 16px; scroll-margin-top: 84px; }
+.results-page .rp-subject-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+.results-page .rp-subject-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.results-page .rp-subject-name { font: 400 26px/1.1 'Instrument Serif', Georgia, serif; margin: 0; flex: 1; min-width: 0; }
+.results-page .rp-subject-avg { flex: none; font: 800 15px/1 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-2); }
+
+.results-page .rp-paper-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px,100%), 1fr)); gap: 14px; }
+
+.results-page .rp-paper-card { background: #fff; border: 1px solid var(--rp-border); border-radius: 16px; padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 10px; }
+.results-page .rp-paper-head { display: flex; align-items: center; gap: 11px; }
+.results-page .rp-paper-badge { flex: none; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font: 800 13px/1 'Plus Jakarta Sans', sans-serif; letter-spacing: -.02em; }
+.results-page .rp-paper-title { flex: 1; min-width: 0; }
+.results-page .rp-paper-name { font: 700 14px/1.3 'Plus Jakarta Sans', sans-serif; }
+.results-page .rp-paper-meta { font: 500 11px/1.4 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-muted); }
+.results-page .rp-paper-pct { font: 800 22px/1 'Plus Jakarta Sans', sans-serif; letter-spacing: -.03em; flex: none; }
+
+.results-page .rp-rows-label { font: 600 10px/1 'Plus Jakarta Sans', sans-serif; letter-spacing: .04em; text-transform: uppercase; color: var(--rp-ink-muted); padding: 0 0 2px 10px; }
+.results-page .rp-paper-note { font: 600 11px/1.5 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-2); background: var(--rp-card-soft); border-radius: 10px; padding: 8px 10px; }
+.results-page .rp-paper-warning { font: 700 11px/1.5 'Plus Jakarta Sans', sans-serif; color: #7a2323; background: var(--rp-bad-tint); border: 1px solid rgba(208,59,59,.25); border-radius: 10px; padding: 8px 10px; }
+
+.results-page .rp-row { border-left: 3px solid transparent; padding: 5px 0 5px 10px; border-radius: 4px; }
+.results-page .rp-row--good { border-left-color: var(--rp-good); }
+.results-page .rp-row--partial { border-left-color: var(--rp-warn); background: var(--rp-warn-tint); }
+.results-page .rp-row--gap { border-left-color: var(--rp-bad); background: var(--rp-bad-tint); }
+.results-page .rp-row-main { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.results-page .rp-row-part { font: 600 12.5px/1.35 'Plus Jakarta Sans', sans-serif; min-width: 0; overflow-wrap: anywhere; }
+.results-page .rp-row-marks { flex: none; font: 700 12.5px/1 'Plus Jakarta Sans', sans-serif; font-variant-numeric: tabular-nums; color: var(--rp-ink-2); }
+.results-page .rp-row-gap { font: 500 11.5px/1.4 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-2); margin-top: 2px; }
+
+.results-page .rp-choice-block { margin-top: 4px; padding-top: 10px; border-top: 1px dashed var(--rp-border); display: flex; flex-direction: column; gap: 6px; }
+.results-page .rp-choice-label { font: 600 11.5px/1.4 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-muted); }
+.results-page .rp-choice-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font: 600 12px/1.3 'Plus Jakarta Sans', sans-serif; }
+.results-page .rp-choice-row .rp-pct { font: 800 13px/1 'Plus Jakarta Sans', sans-serif; }
+
+.results-page .rp-donut-num small { font-size: .42em; letter-spacing: 0; position: relative; top: -.55em; margin-left: .03em; }
+
+/* ---------- Offer (buy box) ---------- */
+.results-page .rp-offer { margin-top: 22px; background: #fff; border: 1px solid var(--rp-border); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; box-shadow: 0 2px 10px rgba(25,23,18,0.05); }
+.results-page .rp-offer-lead { margin: 0; font: 600 14px/1.5 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink); max-width: 70ch; }
+.results-page .rp-offer-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; color: #fff; font: 800 15px/1.2 'Plus Jakarta Sans', sans-serif; text-decoration: none; padding: 15px 24px; border-radius: 999px; box-shadow: 0 4px 14px rgba(185,20,50,0.25); transition: opacity .15s; }
+.results-page .rp-offer-button:hover { opacity: .92; }
+.results-page .rp-arrow { width: 16px; height: 16px; flex: none; }
+.results-page .rp-tiers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; width: 100%; }
+.results-page .rp-tier { border: 1px solid var(--rp-border); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; background: var(--rp-card-soft); }
+.results-page .rp-tier b { font: 800 18px/1 'Plus Jakarta Sans', sans-serif; letter-spacing: -.02em; }
+.results-page .rp-tier span { font: 600 11.5px/1.3 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-2); }
+.results-page .rp-tier--best { border: 1.5px solid hsl(var(--cta)); background: hsl(var(--cta) / 0.06); }
+.results-page .rp-tier--best b { color: hsl(var(--cta)); }
+.results-page .rp-offer-link { font: 700 13px/1.3 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-2); text-decoration: underline; text-underline-offset: 3px; }
+.results-page .rp-offer-link:hover { color: var(--rp-ink); }
+
+/* ---------- Collapsed paper detail ---------- */
+.results-page .rp-toggle { width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #fff; border: 1.5px solid var(--rp-ink); border-radius: 999px; padding: 11px 16px; cursor: pointer; font: 800 13px/1.2 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink); box-shadow: 0 1px 0 rgba(25,23,18,0.08); transition: background .15s; }
+.results-page .rp-toggle:hover { background: var(--rp-card-soft); }
+.results-page .rp-toggle[aria-expanded="true"] { background: var(--rp-card-soft); }
+.results-page .rp-toggle-icon { width: 17px; height: 17px; flex: none; transition: transform .15s; }
+.results-page .rp-toggle-icon--open { transform: rotate(180deg); }
+
+/* ---------- Per-subject buy link ---------- */
+.results-page .rp-subject-buy { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #fff; border: 1.5px solid var(--rp-ink); border-radius: 14px; padding: 13px 16px; text-decoration: none; color: var(--rp-ink); font: 600 13.5px/1.35 'Plus Jakarta Sans', sans-serif; transition: background .15s; }
+.results-page .rp-subject-buy:hover { background: var(--rp-card-soft); }
+.results-page .rp-subject-buy strong { font-weight: 800; }
+.results-page .rp-subject-buy-price { flex: none; display: inline-flex; align-items: center; gap: 6px; font: 800 14px/1 'Plus Jakarta Sans', sans-serif; color: hsl(var(--cta)); }
+.results-page .rp-cta-actions { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+/* ---------- Call to action ---------- */
+.results-page .rp-cta { margin: 44px 20px 0; background: #fff; border: 1px solid var(--rp-border); border-radius: 18px; padding: 26px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.results-page .rp-cta h3 { margin: 0 0 4px; font: 400 22px/1.2 'Instrument Serif', Georgia, serif; color: var(--rp-ink); }
+.results-page .rp-cta p { margin: 0; font: 500 12.5px/1.5 'Plus Jakarta Sans', sans-serif; color: var(--rp-ink-2); }
+.results-page .rp-cta-button { flex: none; display: inline-flex; align-items: center; gap: 8px; background: oklch(0.52 0.13 155); color: #fff; font: 700 13px/1 'Plus Jakarta Sans', sans-serif; text-decoration: none; padding: 13px 20px; border-radius: 999px; white-space: nowrap; }
+.results-page .rp-cta-button:hover { opacity: .92; color: #fff; }
+
+@media (max-width: 480px) {
+  .results-page .rp-hero { padding: 26px 16px 14px; }
+  .results-page .rp-stat-strip { gap: 16px; justify-content: center; }
+  .results-page .rp-stat-cards { flex-basis: 100%; }
+  .results-page .rp-donut-wrap { width: 128px; height: 128px; }
+  .results-page .rp-donut-wrap svg { width: 128px; height: 128px; }
+  .results-page .rp-donut-num { font-size: 48px; }
+  .results-page .rp-subject-nav { padding: 8px 16px 6px; gap: 8px; }
+  .results-page .rp-chip { padding: 8px 12px; font-size: 12px; }
+  .results-page .rp-key { padding: 0 16px 8px; }
+  .results-page .rp-subjects { padding: 4px 16px 0; }
+  .results-page .rp-subject { margin-top: 30px; }
+  .results-page .rp-subject-name { font-size: 23px; }
+  .results-page .rp-paper-card { padding: 14px 13px 12px; }
+  .results-page .rp-cta { margin: 34px 16px 0; padding: 22px 18px; }
+  .results-page .rp-cta-button { width: 100%; justify-content: center; }
+  .results-page .rp-cta-actions { width: 100%; }
+  .results-page .rp-offer { padding: 16px; }
+  .results-page .rp-offer-button { width: 100%; font-size: 14px; padding: 15px 16px; }
+  .results-page .rp-tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .results-page .rp-offer-link { align-self: center; }
+}

@@ -6,6 +6,7 @@ import CTAButton from "./CTAButton";
 const navLinks = [
     { to: "/how-it-works", label: "How It Works" },
     { to: "/matrics", label: "Matrics" },
+    { to: "/results", label: "Results" },
     { to: "/pricing", label: "Pricing" },
 ];
 

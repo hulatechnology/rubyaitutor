@@ -11,6 +11,7 @@ import Pricing from "./pages/Pricing";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import Matrics from "./pages/Matrics";
+import Results from "./pages/Results";
 import StudyGuideDetail from "./pages/StudyGuideDetail";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
@@ -35,6 +36,7 @@ const App = () => (
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/matrics" element={<Matrics />} />
+                    <Route path="/results" element={<Results />} />
                     <Route path="/matrics/guide/:id" element={<StudyGuideDetail />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
