@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, X } from "lucide-react";
 import Layout from "@/components/Layout";
 import { RESULTS_SUBJECTS, type Band, type ResultPaper, type ResultRow, type ResultSubject } from "@/data/results";
+import { RESULT_DETAIL } from "@/data/resultsDetail";
 import { findGuide } from "@/data/studyGuides";
 import { tiers, ctaGradient, AI_TUTOR_SIGNUP_URL } from "@/data/pricing";
 import "./results.css";
@@ -22,23 +23,93 @@ const subjectAvg = (subj: ResultSubject) =>
 
 const bundle = tiers[tiers.length - 1];
 
-const Row = ({ row, bandFn, hideGap }: { row: ResultRow; bandFn?: (a: number, e: number) => Band; hideGap?: boolean }) => {
+/** Subjects in alphabetical order: chips by the short name they show, sections by full name. */
+const BY_SHORT = [...RESULTS_SUBJECTS].sort((x, y) => x.short.localeCompare(y.short));
+const BY_NAME = [...RESULTS_SUBJECTS].sort((x, y) => x.name.localeCompare(y.name));
+
+type Detail = { subj: ResultSubject; paper: ResultPaper; row: ResultRow };
+const detailKey = (subj: ResultSubject, paper: ResultPaper, row: ResultRow) => `${subj.id}|${paper.label}|${row.p}`;
+
+const Row = ({ row, bandFn, onOpen }: { row: ResultRow; bandFn?: (a: number, e: number) => Band; onOpen?: () => void }) => {
     const band = (bandFn ?? rowBand)(row.a, row.e);
+    const marks = `${row.approx ? "~" : ""}${row.e}/${row.a}`;
+    if (onOpen) {
+        return (
+            <button type="button" className={`rp-row rp-row--${band} rp-row--link`} onClick={onOpen} aria-label={`${row.p}, ${marks}`}>
+                <div className="rp-row-main">
+                    <span className="rp-row-part">{row.p}</span>
+                    <span className="rp-row-marks">
+                        {marks}
+                        <ChevronDown className="rp-row-arrow" />
+                    </span>
+                </div>
+            </button>
+        );
+    }
     return (
         <div className={`rp-row rp-row--${band}`}>
             <div className="rp-row-main">
                 <span className="rp-row-part">{row.p}</span>
-                <span className="rp-row-marks">
-                    {row.approx ? "~" : ""}
-                    {row.e}/{row.a}
-                </span>
+                <span className="rp-row-marks">{marks}</span>
             </div>
-            {row.g && !hideGap && <div className="rp-row-gap">{row.g}</div>}
         </div>
     );
 };
 
-const PaperCard = ({ subj, paper, idx }: { subj: ResultSubject; paper: ResultPaper; idx: number }) => {
+const DetailSheet = ({ detail, onClose }: { detail: Detail | null; onClose: () => void }) => {
+    const [shown, setShown] = useState(false);
+    useEffect(() => {
+        if (!detail) return;
+        const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+        document.addEventListener("keydown", onKey);
+        document.body.style.overflow = "hidden";
+        const raf = requestAnimationFrame(() => requestAnimationFrame(() => setShown(true)));
+        return () => {
+            document.removeEventListener("keydown", onKey);
+            document.body.style.overflow = "";
+            cancelAnimationFrame(raf);
+            setShown(false);
+        };
+    }, [detail, onClose]);
+    if (!detail) return null;
+    const { subj, paper, row } = detail;
+    const qs = RESULT_DETAIL[detailKey(subj, paper, row)] ?? [];
+    return (
+        <div className={`rp-sheet-root${shown ? " rp-sheet-open" : ""}`}>
+            <div className="rp-sheet-backdrop" onClick={onClose} />
+            <div className="rp-sheet" role="dialog" aria-modal="true" aria-labelledby="rp-sheet-title">
+                <div className="rp-sheet-head">
+                    <div className="rp-sheet-titles">
+                        <div className="rp-sheet-eyebrow">
+                            <i style={{ background: subj.color }} />
+                            {subj.name} · {paper.label} · June 2026
+                        </div>
+                        <h3 className="rp-sheet-title" id="rp-sheet-title">{row.p}</h3>
+                        <div className="rp-sheet-score">{row.e} of {row.a} marks covered by the June guide</div>
+                    </div>
+                    <button type="button" className="rp-sheet-close" onClick={onClose} aria-label="Close" autoFocus>
+                        <X />
+                    </button>
+                </div>
+                <div className="rp-sheet-body">
+                    {qs.map((q, i) => (
+                        <div className="rp-q-item" key={i}>
+                            <div className="rp-q-top">
+                                <span className="rp-q-num">{/^\d/.test(q.n) ? "Q" : ""}{q.n}</span>
+                                <span className="rp-q-text">{q.q}</span>
+                                <span className="rp-q-marks">{q.m} {q.m === 1 ? "mark" : "marks"}</span>
+                            </div>
+                            <div className="rp-q-where"><b>In the guide:</b> {q.w}</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const PaperCard = ({ subj, paper, idx, onOpen }: { subj: ResultSubject; paper: ResultPaper; idx: number; onOpen: (d: Detail) => void }) => {
+    const opener = (r: ResultRow) => (RESULT_DETAIL[detailKey(subj, paper, r)] ? () => onOpen({ subj, paper, row: r }) : undefined);
     const [open, setOpen] = useState(false);
     const badge = paper.label.startsWith("Paper ") ? "P" + paper.label.split(" ")[1] : "P";
     // Folded view: fully covered questions first (biggest first), then the highest share of marks earned.
@@ -64,7 +135,7 @@ const PaperCard = ({ subj, paper, idx }: { subj: ResultSubject; paper: ResultPap
                     <div className="rp-rows-label">Earned / available marks</div>
                     <div>
                         {paper.rows.map((r) => (
-                            <Row key={r.p} row={r} bandFn={paper.customBand} />
+                            <Row key={r.p} row={r} bandFn={paper.customBand} onOpen={opener(r)} />
                         ))}
                     </div>
                 </>
@@ -73,7 +144,7 @@ const PaperCard = ({ subj, paper, idx }: { subj: ResultSubject; paper: ResultPap
                     <div className="rp-rows-label">Top-scoring questions</div>
                     <div>
                         {topWins.map((r) => (
-                            <Row key={r.p} row={r} bandFn={paper.customBand} hideGap />
+                            <Row key={r.p} row={r} bandFn={paper.customBand} onOpen={opener(r)} />
                         ))}
                     </div>
                 </>
@@ -146,6 +217,8 @@ const Offer = () => (
 );
 
 const Results = () => {
+    const [detail, setDetail] = useState<Detail | null>(null);
+    const closeDetail = useCallback(() => setDetail(null), []);
     useEffect(() => {
         const prevTitle = document.title;
         document.title = "Our Results | Ruby";
@@ -198,13 +271,13 @@ const Results = () => {
                     <Offer />
 
                     <p className="rp-note">
-                        Every row below reads <strong>earned&nbsp;/&nbsp;available</strong>. "Earned" is the marks a student who studied only the guide could pick up on that question. "Available" is what the real question was worth. Rows in amber or red show exactly what the guide is missing.
+                        Every row below reads <strong>earned&nbsp;/&nbsp;available</strong>. "Earned" is the marks a student who studied only the guide could pick up on that question. "Available" is what the real question was worth.
                     </p>
                 </header>
 
                 <div className="rp-head">
                     <nav className="rp-subject-nav">
-                        {RESULTS_SUBJECTS.map((subj) => (
+                        {BY_SHORT.map((subj) => (
                             <a className="rp-chip" href={`#${subj.id}`} key={subj.id}>
                                 <span className="rp-cdot" style={{ background: subj.color }} />
                                 {subj.short} <b>{subjectAvg(subj)}%</b>
@@ -220,7 +293,7 @@ const Results = () => {
                 </div>
 
                 <div className="rp-subjects">
-                    {RESULTS_SUBJECTS.map((subj) => (
+                    {BY_NAME.map((subj) => (
                         <section className="rp-subject" id={subj.id} key={subj.id} style={{ borderColor: subj.color }}>
                             <div className="rp-subject-head">
                                 <span className="rp-subject-dot" style={{ background: subj.color }} />
@@ -229,7 +302,7 @@ const Results = () => {
                             </div>
                             <div className="rp-paper-grid">
                                 {subj.papers.map((p, i) => (
-                                    <PaperCard subj={subj} paper={p} idx={i} key={p.label} />
+                                    <PaperCard subj={subj} paper={p} idx={i} key={p.label} onOpen={setDetail} />
                                 ))}
                             </div>
                             <SubjectBuy subj={subj} />
@@ -251,6 +324,7 @@ const Results = () => {
                         <Link className="rp-offer-link" to="/matrics">Browse single guides</Link>
                     </div>
                 </div>
+                <DetailSheet detail={detail} onClose={closeDetail} />
             </div>
         </Layout>
     );
